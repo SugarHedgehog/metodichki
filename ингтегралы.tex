@@ -1,0 +1,165 @@
+\input{packs.tex}
+\begin {document}
+\small
+\begin{tabular}{p{0.5\textwidth}p{0.4\textwidth}}
+	\begin{tabular}{||c|l||c|c||}
+		\hline
+		$x^ndx$&$\cfrac{x^{n+1}}{n+1}$&$a^xdx$&$\cfrac{a^x}{ln|a|}$\\
+		\hline
+		$\cfrac{dx}{x}$&$\ln\Big|\cfrac{x}{a}\Big|$&$\sin{x}dx$&$-\cos{x}$\\
+		\hline
+		$\cfrac{dx}{a^2+x^2}$&$\cfrac{1}{a} \operatorname{arctg} x{\cfrac{x}{a}}$&$\cos{x}dx$&$\sin{x}$\\
+		\hline
+		$\cfrac{dx}{a^2-x^2}$&$\cfrac{1}{2a}\ln\Big|\cfrac{a+x}{a-x}\Big|$&$\cfrac{dx}{\sin^2x}$&$-\operatorname{ctg} x$\\
+		\hline
+		$\cfrac{dx}{\sqrt{a^2-x^2}}$&$\arcsin\cfrac{x}{a}$&$\cfrac{dx}{\cos^2x}$&$\operatorname{tg} x$\\
+		\hline
+		$\cfrac{dx}{\sqrt{x^2\pm a^2}}$&$\ln|x\pm\sqrt{x^2\pm a^2}|$&$\operatorname{sh} xdx$&$\operatorname{ch} xdx$\\
+		\hline
+		$\cfrac{xdx}{\sqrt{x^2\pm a^2}}$&$\pm\sqrt{x^2\pm a^2}$&$\operatorname{ch}xdx$&$\operatorname{sh}xdx$\\
+		\hline
+		$\sqrt{x^2\pm a^2}dx$&$\cfrac{x}{2}\sqrt{x^2\pm a^2}+\cfrac{a^2}{2}\operatorname{arcsin}\cfrac{x}{a}$&$\cfrac{dx}{\operatorname{ch}^2x}$&$\operatorname{th}x$\\
+		\hline
+		$\sqrt{x^2\pm a^2}dx$&$\cfrac{x}{2}\sqrt{x^2\pm a^2}\pm \cfrac{a^2}{2}ln\Big|x+\sqrt{x^2\pm a^2}\Big|$&$\cfrac{dx}{\operatorname{sh}^2x}$&$-\operatorname{cth}x$\\
+		\hline
+		$\cfrac{xdx}{a^2\pm x^2}$&$\pm\ln\Big|a^2\pm x^2\Big|$&$e^{kx}$&$\dfrac{e^{kx}}{k}$\\
+		\hline
+	\end{tabular}&
+	\begin{tabular}{||c|c||}
+		\hline
+		$d(e^{x})$&$e^xdx$\\[5pt]
+		\hline
+		$d(\sin{x})$&$\cos{x}dx$\\[5pt]
+		\hline
+		$d(\cos{x})$&$-\sin{x}dx$\\[4pt]
+		\hline
+		$d(x^2+1)$&$2xdx$\\[5pt]
+		\hline
+		$d(\ln{x})$&$\cfrac{dx}{x}$\\[5pt]
+		\hline
+		$d(\operatorname{tg}{x})$&$\cfrac{dx}{\cos^2{x}}$\\ [4pt]
+		\hline
+		$d(\operatorname{ctg}x)$&$-\cfrac{dx}{\sin^2{x}}$\\[4pt]
+		\hline
+		$d(\arcsin{x})$&$\cfrac{dx}{\sqrt{1-x^2}}$\\[4pt]
+		\hline
+		$d(\arccos{x})$&$-\cfrac{dx}{\sqrt{1-x^2}}$\\[4pt]
+		\hline
+		$d(\operatorname{arctg}x)$&$\cfrac{dx}{1+x^2}$\\[4.4pt]
+		\hline
+		$d(\operatorname{arcctg}x)$&$-\cfrac{dx}{1+x^2}$\\
+		\hline
+	\end{tabular}
+\end{tabular}
+
+\begin{tabular}{ll}
+	\begin{tabular}{||p{7cm}||}
+		\hline
+		Метод Остроградского\\
+		\hline
+		$\int \cfrac{Q_{m}}{P_{n}}dx=\cfrac{Q_{1}(x)}{P_{1}(x)}-\int\cfrac{Q_{2}(x)}{P_{2(x)}}dx$ \\[2pt]
+		Где $Q_{1}(x)$ и $Q_{2}(x)$ на степень ниже, чем  \\[2pt]
+		$P_{1}(x)=P'_{n}(x)$ и $P_{2}(x)$ \\
+		$P_{1}(x)=$NOD$(P_{n}(x),P_{1}(x))$\\
+		$P_{2}(x)=\cfrac{P_{n}(x)}{P_{1}(x)}$ \\[6pt]
+		\hline
+	\end{tabular}&
+	\begin{tabular}{||p{7.15cm}||}
+		\hline
+		Подстановки Эйлера\\
+		\hline 
+		$\sqrt{ax^2+bx+c}=\pm\sqrt{a}+z, a>0$\\ [6pt]
+		$\sqrt{ax^2+bx+c}=xz\pm\sqrt{c},c>0$\\[7pt]
+		$\sqrt{a(x-x_1)(x-x_2)}=z(x-x_1)$\\[7pt]
+		Делаем замену под необходимый случай через z\\[6pt]
+		Находим новое dz, через дифференцирование\\
+		\hline
+	\end{tabular}
+\end{tabular}
+
+\small
+\; \begin{tabular}[t]{||*{4}{p{0.1735\textwidth}|}|}
+	\hline
+	\multicolumn{4}{|c|}{Интеграрирование иррациональных выражений}\\
+	\hline
+	$\int R(x,x^{\alpha},x^{\beta},\dots)dx$, где R рацианольная функция
+	
+	А $\alpha=\cfrac{m_1}{n_1}$,$\beta=\cfrac{m_2}{n_2}$
+	$x=t^k$, $k$-общий делитель знаменателей всех дробей степеней $x$.
+	
+	$\int R(x,(ax+b)^{\alpha},(ax+b)^{\beta},\dots)dx,$
+	
+	$ ax+b=t^k$
+	$\int R(x, (\cfrac{ax+b}{cx+d})^{\alpha}$
+	
+	,$(\cfrac{ax+b}{cx+d})^{\beta},\dots)$,
+	
+	$\cfrac{ax+b}{cx+d}=t^k$
+	&$\int R(x,\sqrt{a^2-x^2})dx, x=a\sin{t}$
+	
+	$\int R(x,\sqrt{a^2+x^2}), x=\operatorname{tg}{t}$
+	$\int R(x,\sqrt{x^2-a^2}), x=a\sec{t}=\cfrac{a}{\cos{t}}$
+	&$\int x^{m}(a+bx^{n})^{p}$
+	
+	1.р-целое число - $x=z^{N}, N$
+	
+	2.$\cfrac{m+1}{n}$- целое число, $a+bx^{n}=z^{k}$, где $k$ - знаменатель дроби $p$
+	
+	3.$\cfrac{m+1}{n}+p$- целое число, $a+bx^{n}=x^{n}z^{r}$, $r$-знаменатель $p$
+	&$\int \cfrac{P_n}{\sqrt{U}}dx$, где $P_n$-многочлен n степени, $u=ax^x+bx+c$
+	
+	$\int\cfrac{P_n}{\sqrt{U}}dx=$ $(A_{1}x^{n-1}+A_{2}x^{n-2}+\dots+A_n)$$+B\int\cfrac{dx}{\sqrt{U}}$
+	
+	Где $A_1,A_2\dots,B$-константы, получаемые путём дифференцирования этого равенства, умножения его на$\sqrt{U}$
+	
+	$\int P_{n}\sqrt{U}dx=$ $(A_{1}x^{n+1}+A_{2}x^{n}+\dots+A_{n+2})\sqrt{U}+B\int\cfrac{dx}{\sqrt{U}} $\\
+	\hline
+	\multicolumn{3}{||l}{$\int\cfrac{(Ax+b)dx}{(x-\alpha)\sqrt{ax^2+bx+c}}$, тогда замена  $x-\alpha=t$} &\\\cline{3-4}
+	\hline
+\end{tabular}
+
+\small
+\; \begin{tabular}{||*{2}{p{0.2\textwidth}|}p{6.31cm}||}
+	\hline
+	\multicolumn{3}{||c||}{Интегрирование парамметрических функций}\\
+	\hline	$\int \sin{x} dx \int\cos{x}dx$&$\int \sin^{m}{x}\cos^{n}{x}dx$&
+	
+	$\int \sin{ax}\sin{bx}dx $
+	$\int\cos{ax}\cos{bx} dx$
+	$\int \sin{ax}\cos{bx} $\\
+	\hline
+	$\sin^2{x}=\cfrac{1}{2}(1-\cos{2x})$
+	$\cos^2{x}=\cfrac{1}{2}(1+\cos{2x})$&
+	1.$t=\sin{x} \quad t=\cos{x}$, 
+	если нечётные n или m
+	2.$\sin{x}\cos{x}=\cfrac{1}{2}\sin{2x}$
+	$\sin^2{x}=\cfrac{1}{2}(1-\cos{x})$&
+	$ \sin{ax}\sin{bx}=\cfrac{1}{2}(\cos{(a-b)x}-\cos{(a+b)x})$
+	$\cos{ax}\cos{bx}=\cfrac{1}{2}(\cos{(a+b)x}+\cos{(a-b)x})$
+	$ \sin{ax}\cos{bx} =\cfrac{1}{2}(\sin{(a+b)x}+\sin{(a-b)x})$\\
+	\hline
+	\multicolumn{2}{||l|}{$\int R(\sin{x}\cos{x})$, где R рацианальная функция от косинуса и синуса	}&$\int \operatorname{tg}^{n}{x}dx$
+	$\int \operatorname{ctg}^{n}{x}dx$
+	$ n>0, n\in\mathbb{Z}$
+	\\
+	\hline
+	\multicolumn{2}{||l|}	{$\operatorname{tg}{\cfrac{x}{2}}=t$   $\sin{x}=\cfrac{2\operatorname{tg}{\cfrac{x}{2}}} {1+\operatorname{tg}^2{\cfrac{x}{2}}} $
+		$\cos{x}=\cfrac{1-\operatorname{tg}^2{\cfrac{x}{2}}} {1+\operatorname{tg}^2{\cfrac{x}{2}}}$}&	
+	$t=\operatorname{tg}{x} \quad t=\operatorname{ctg}{x}$\\
+	\hline	
+\end{tabular}
+
+\;  \begin{tabular}{||p{16.7cm}||}
+	\hline
+	$\int P(x)e^{ax}dx=e^{ax}(\cfrac{P(x)}{a}-\cfrac{P'(x)}{a^2}+\dots+(-1)^{n}\cfrac{P^{(n)}(x)}{a^{n+1}})$
+	
+	$\int P(x)\cos{ax}dx=\cfrac{\sin{ax}}{a}(P(x)-\cfrac{P"(x)}{a^2}+\cfrac{P^{\romannumeral 4}(x)}{a^4}-\dots)+\cfrac{\cos{ax}}{a^2}(P'(x)-\cfrac{P^{\romannumeral 3}(x)}{a^2}+\cfrac{P^{\romannumeral 5}(x)}{a^2})$
+	
+	$\int P(x)\sin{ax}dx=\cfrac{-\cos{ax}}{a}(P(x)-\cfrac{P"(x)}{a^2}+\cfrac{P^{\romannumeral 4}(x)}{a^4}-\dots)+\cfrac{\cos{ax}}{a^2}(P'(x)-\cfrac{P^{\romannumeral 3}(x)}{a^2}+\cfrac{P^{\romannumeral 5}(x)}{a^2})$\\
+	\hline
+\end{tabular} 
+
+\end {document}
+
+
+

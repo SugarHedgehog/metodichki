@@ -1,8 +1,8 @@
 \input{packs.tex}
 \begin{document}
 \section{Метрики}
- {\setlength{\extrarowheight}{8pt}
-  \begin{tabular}{||p{2.5cm}|m{6cm}|p{7cm}||}
+{\setlength{\extrarowheight}{5pt}
+  \begin{tabularx}{\textwidth}{||l|l|X||}
 
       \hline
       Название              & Метрика                                                                  & Какое множество или пространство                                                                                   \\
@@ -18,7 +18,7 @@
       \\
       \hline
 
-      $\mathbb{R}^n_p$      & $\rho_p (x, y)=(\sum_{k = 1}^{\infty}|x_k-y_k|^p)^\frac{1}{p}$            & \multirow{2}{6cm}{$\mathbb{R}^n$ - множество n-метрных векторов $x=(x_1, x_2, \dots, x_n)$  }                         \\
+      $\mathbb{R}^n_p$      & $\rho_p (x, y)=(\sum_{k = 1}^{n}|x_k-y_k|^p)^\frac{1}{p}$            & \multirow{2}{6cm}{$\mathbb{R}^n$ - множество n-метрных векторов $x=(x_1, x_2, \dots, x_n)$  }                         \\
       \cline{1-2}
       $\mathbb{R}^n_\infty$ & $\rho_\infty (x, y)=\underset{1\leq k\leq n}{\max}|x_k-y_k|$              &                                                                                                                    \\
       \hline
@@ -28,13 +28,13 @@
       \hline
       $M[a, b]$              & $\rho (x, y)=\underset{a \leq t \leq b}{\sup}|x(t)-y(t)|$                 & Пространство числовых функций, определённых и ограниченных на $[a, b]$                                              \\
       \hline
-      $l_p$                 & $\rho_p (x, y)=(\sum_{k = 1}^{\infty}|x_k-y_k|^p)^\frac{1}{p}$            & Пространство числовых последовательностей $x=(x_1, x_2, \dots, x_k, \dots)$, суммируемых с $p$-той степенью            \\
+      $l_p$                 & $\rho_p (x, y)=(\sum_{k = 1}^{\infty}|x_k-y_k|^p)^\frac{1}{p}$            & Пространство числовых последовательностей $x=~(x_1, x_2, \dots, x_k, \dots)$, суммируемых с $p$-той степенью            \\
       \hline
-      $m$                   & $\rho (x, y)=\underset{k \in \mathbb{N} }{\sup}|x_k-y_k|$                 & Пространство произвольных числовых последовательностей $x=(x_1, x_2, \dots, x_k, \dots)$, таких что $\sup|x_k|<\infty$ \\
+      $m$                   & $\rho (x, y)=\underset{k \in \mathbb{N} }{\sup}|x_k-y_k|$                 & Пространство произвольных числовых последовательностей $x=~(x_1, x_2, \dots, x_k, \dots)$, таких что $\sup|x_k|<\infty$ \\
       \hline
-      $s$                   & $\rho_p (x, y)=\sum_{k = 1}^{\infty} \cfrac{|x_k-y_k|}{2^k(1+|x_k-y_k|)}$ & Пространство произвольных числовых последовательностей $x=(x_1, x_2, \dots, x_k, \dots)$                               \\
+      $s$                   & $\rho_p (x, y)=\sum_{k = 1}^{\infty} \cfrac{|x_k-y_k|}{2^k(1+|x_k-y_k|)}$ & Пространство произвольных числовых последовательностей $x=~(x_1, x_2, \dots, x_k, \dots)$                               \\
       \hline
-  \end{tabular}}
+  \end{tabularx}}
 
 
 \section{Определения}

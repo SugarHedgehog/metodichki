@@ -1,18 +1,16 @@
 \input{packs.tex}
 \newcommand{\br}{\geqslant}
-\newcommand{\mr}{\leqslant}
-\newcommand{\Fi}{\varphi}
+\newcommand{\mr }{\leqslant}
 \newcommand{\mes}{\{X, \rho\}}
-\newcommand{\ria}{\rightarrow}
-\newcommand{\ovrl}{\overline}
-\newcommand{\MS}{Пусть $\{X, \rho\}$~--- метрическое пространство}
+\newcommand{\MS}{Пусть $\{X, \rho\}$~--метрическое пространство}
 \newcommand{\tttk}{тогда и только тогда, когда }
 \newcommand{\Rnp}{\mathbb{R}^n_p}
 \newcommand{\crk}{^{\circ}}
 \linespread{1.15}
+\usepackage{xhfill}
 \begin{document}
 \pagestyle{empty}
-Без доков:
+\section*{Без  доков}
 
 Примеры метрических пространств
 
@@ -20,208 +18,255 @@
 \begin{tabularx}{\textwidth}{||l|l|X||}
 
     \hline
-    Название              & Метрика                                                                   & Какое множество или пространство                                                                                        \\
+    Название               & Метрика                                                                    & Какое множество или пространство                                                                                         \\
     \hline
 
-    Дискретная            & $
+    Дискретная             & $
         \rho (x, y) =
     \begin{cases}
             1 & x=y      \\
             0 & x \neq y \\
-        \end{cases}$       & $X$ - произвольное непустое множество
+        \end{cases}$        & $X$ произвольное непустое множество
 
     \\
     \hline
 
-    $\Rnp$      & $\rho_p (x, y)=(\sum_{k = 1}^{n}|x_k-y_k|^p)^\frac{1}{p}$                 & \multirow{2}{6cm}{$\mathbb{R}^n$ - множество n-мерных векторов $x=(x_1, x_2, \dots, x_n)$  }                            \\
+    $\Rnp$                 & $\rho_p (x, y)=(\sum_{k = 1}^{n}|x_k-y_k|^p)^\frac{1}{p}$                  & \multirow{2}{6cm}{$\mathbb{R}^n$ множество n-мерных векторов $x=(x_1, x_2, \dots, x_n)$  }                               \\
     \cline{1-2}
-    $\mathbb{R}^n_\infty$ & $\rho_\infty (x, y)=\underset{1\leq k\leq n}{\max}|x_k-y_k|$              &                                                                                                                         \\
+    $\mathbb{R}^n_\infty $ & $\rho_\infty  (x, y)=\underset{1\leq k\leq n}{\max}|x_k-y_k|$              &                                                                                                                          \\
     \hline
-    $C[a, b]$             & $\rho (x, y)=\underset{a \leq t \leq b}{\max}|x(t)-y(t)|$                 & \multirow{2}{6cm}{Пространство числовых функций, непрерывных на $[a, b]$}                                               \\
+    $C[a, b]$              & $\rho (x, y)=\underset{a \leq t \leq b}{\max}|x(t)-y(t)|$                  & \multirow{2}{6cm}{Пространство числовых функций, непрерывных на $[a, b]$}                                                \\
     \cline{1-2}
-    $C_1[a, b]$           & $\rho (x, y)=\int_{b}^{a}|x(t)-y(t)|dx $                                  &                                                                                                                         \\[5pt]
+    $C_1[a, b]$            & $\rho (x, y)=\int_{b}^{a}|x(t)-y(t)|dx $                                   &                                                                                                                          \\[5pt]
     \hline
-    $M[a, b]$             & $\rho (x, y)=\underset{a \leq t \leq b}{\sup}|x(t)-y(t)|$                 & Пространство числовых функций, определённых и ограниченных на $[a, b]$                                                  \\
+    $M[a, b]$              & $\rho (x, y)=\underset{a \leq t \leq b}{\sup}|x(t)-y(t)|$                  & Пространство числовых функций, определённых и ограниченных на $[a, b]$                                                   \\
     \hline
-    $l_p$                 & $\rho_p (x, y)=(\sum_{k = 1}^{\infty}|x_k-y_k|^p)^\frac{1}{p}$            & Пространство числовых последовательностей $x=~(x_1, x_2, \dots, x_k, \dots)$, суммируемых с $p$-той степенью            \\
+    $l_p$                  & $\rho_p (x, y)=(\sum_{k = 1}^{\infty }|x_k-y_k|^p)^\frac{1}{p}$            & Пространство числовых последовательностей $x=~(x_1, x_2, \dots, x_k, \dots)$, суммируемых с $p$-той степенью             \\
     \hline
-    $m$                   & $\rho (x, y)=\underset{k \in \mathbb{N} }{\sup}|x_k-y_k|$                 & Пространство произвольных числовых последовательностей $x=~(x_1, x_2, \dots, x_k, \dots)$, таких что $\sup|x_k|<\infty$ \\
+    $m$                    & $\rho (x, y)=\underset{k \in \mathbb{N} }{\sup}|x_k-y_k|$                  & Пространство произвольных числовых последовательностей $x=~(x_1, x_2, \dots, x_k, \dots)$, таких что $\sup|x_k|<\infty $ \\
     \hline
-    $s$                   & $\rho_p (x, y)=\sum_{k = 1}^{\infty} \cfrac{|x_k-y_k|}{2^k(1+|x_k-y_k|)}$ & Пространство произвольных числовых последовательностей $x=~(x_1, x_2, \dots, x_k, \dots)$                               \\
+    $s$                    & $\rho_p (x, y)=\sum_{k = 1}^{\infty } \cfrac{|x_k-y_k|}{2^k(1+|x_k-y_k|)}$ & Пространство произвольных числовых последовательностей $x=~(x_1, x_2, \dots, x_k, \dots)$                                \\
     \hline
 \end{tabularx}}
-\hfill \break
-\hspace*{8mm}\textbf{Лемма 1}
+\vspace{\baselineskip}
 
-Пусть на $[a, b]$ функция $\Fi (t) \br 0$, непрерывна на $\int_{b}^{a}\Fi
-    (t)\, dx=0$, тогда $\Fi\equiv 0$ на $[a, b]$.
+\textbf{Лемма 1}
+
+Пусть на $[a, b]$ функция $\varphi (t) \br 0$, непрерывна на $\int_{b}^{a}\varphi
+    (t)\, dx=0$, тогда $\varphi\equiv 0$ на $[a, b]$.
+
+    \noindent\dotfill
 
 \textbf{Теорема 1 (свойства замыкания) }
 
-\MS. $\forall(M, M_1, M_2\subset X)[(M\subset \ovrl{M})
-        \wedge \newline (\ovrl{\ovrl{M}}\subset \ovrl{M})
-        \wedge (M_1 \subset M_2 \ria \ovrl{M_1} \subset \ovrl{M_2})
-        \wedge(\ovrl{M_1\cup M_2}=\ovrl M_1 \cup \ovrl M_2)]$
+\MS. $\forall(M, M_1, M_2\subset X)[(M\subset \overline{M})
+        \wedge \newline (\overline{\overline{M}}\subset \overline{M})
+        \wedge (M_1 \subset M_2 \rightarrow \overline{M_1} \subset \overline{M_2})
+        \wedge(\overline{M_1\cup M_2}=\overline M_1 \cup \overline M_2)]$
 
+    \noindent\dotfill
+    
 \textbf{Теорема 2 (критерий точки прикосновения)}
 
-\MS и $M \subset X$. Точка $x \in \ovrl M $ \tttk
-$\exists( \{ x_n \} \subset M)[\underset{n \ria \infty }{x_n \ria x}]$
+\MS и $M \subset X$. Точка $x \in \overline M $ \tttk
+$\exists( \{ x_n \} \subset M)[\underset{n \rightarrow \infty  }{x_n \rightarrow x}]$
 
 \textbf{Примеры замкнутых множеств}
 
 \begin{tabular}{c c c}
-    1. $\forall B[x_0, r]\subset \mes $& 
-    2. $\varnothing \subset \mes $&
+    1. $\forall B[x_0, r]\subset \mes $ &
+    2. $\varnothing \subset \mes $      &
     3. $X \subset \mes$
 \end{tabular}
 
+\noindent\dotfill
+    
 \textbf{Теорема 3}
 
-В метрическом пространстве объединение конечного числа и пересечение любого числа 
-замкнутых множеств ~--- замкнутое множество.
+В метрическом пространстве объединение конечного числа и пересечение любого числа
+замкнутых множеств ~--замкнутое множество.
 
+\noindent\dotfill
+    
 \textbf{Свойства сходящихся последовательностей  }
 \begin{enumerate}
-    \item Пусть в метрическом пространстве $\{x_n\}$ сходится. $\forall(x_{n_k} \subset 
-    {x_n})$ сходится к тому же пределу, что и $\{x_n\}$
-    \item Последовательность в метрическом пространстве может иметь только один 
-    предел
+    \item Пусть в метрическом пространстве $\{x_n\}$ сходится. $\forall(x_{n_k} \subset
+              \{x_n \})$ сходится к тому же пределу, что и $\{x_n\}$
+    \item Последовательность в метрическом пространстве может иметь только один
+          предел
     \item Любая сходящаяся последов в метрическом пространстве ограничена.
-    \item Пусть в метрическом пространстве даны две последовательности 
-    
-    $\underset{n \ria \infty }{x_n \ria x \text{ и } y_n \ria y} $. Тогда 
-    $\underset{n \ria \infty }{\rho(x_n, y_n) \ria \rho(x, y)}$
+    \item Пусть в метрическом пространстве даны две последовательности
+
+          $\underset{n \rightarrow \infty  }{x_n \rightarrow x \text{ и } y_n \rightarrow y} $. Тогда
+          $\underset{n \rightarrow \infty  }{\rho(x_n, y_n) \rightarrow \rho(x, y)}$
 \end{enumerate}
 
+\noindent\dotfill
+    
 \textbf{Сходимость в пространстве $\Rnp$   }
 
-Пусть $1 \mr p < \infty$, ${x^m}\subset \Rnp $ и $\underset{m \ria \infty }{x^m \ria x}$
+Пусть $1 \mr  p < \infty $, ${x^m}\subset \Rnp $ и $\underset{m \rightarrow \infty  }{x^m \rightarrow x}$
 
-$\rho(x^m, x)= (\sum_{k = 1}^{n}|x^m_k-x_k|^p)^{1/p} \ria 0$ (покоординатная сходимость)
+$\rho(x^m, x)= (\sum_{k = 1}^{n}|x^m_k-x_k|^p)^{1/p} \rightarrow 0$ (покоординатная сходимость)
 
+\noindent\dotfill
+    
 \textbf{Сходимость в пространстве $C[a, b]$}
 
-Пусть $\{ x_n \}\subset C[a, b]$ сходится по метрике к функции $x \in C[a, b]$. 
+Пусть $\{ x_n \}\subset C[a, b]$ сходится по метрике к функции $x \in C[a, b]$.
 
-$\underset{n \ria \infty }{\rho(x_n, x)}=\underset{a \mr t \mr b}{max}|x_n(t)-x(t)| \ria 0$
+$\underset{n \rightarrow \infty  }{\rho(x_n, x)}=\underset{a \mr  t \mr  b}{\max}|x_n(t)-x(t)| \rightarrow 0$
 
 \hspace*{30mm}$\Updownarrow$
 
 $\forall(\varepsilon>0)\exists(N\in \mathbb{N})\forall(n\br N)\forall(t\in[a, b])
-[|x_n(t)-x(t)|<\varepsilon]$(равномерная сходимость)
+    [|x_n(t)-x(t)|<\varepsilon]$(равномерная сходимость)
 
+    \noindent\dotfill
+    
 \textbf{Теорема 4 (свойства внутренности)}
 
-\MS. 
+\MS.
 
 $\forall(M, M_1, M_2\subset X)[(M\crk \subset M)
-\wedge((M\crk)\crk=M)
-\wedge(M_1 \subset M_2 \ria M_1\crk \subset M_2\crk) 
-\wedge \\((M_1 \cap M_2)\crk=M_1\crk \cap  M_2\crk)]$
+        \wedge((M\crk)\crk=M)
+        \wedge(M_1 \subset M_2 \rightarrow M_1\crk \subset M_2\crk)
+        \wedge \\((M_1 \cap M_2)\crk=M_1\crk \cap  M_2\crk)]$
 
+        \noindent\dotfill
+    
 \textbf{Теорема 5 (связь внутренности и замыкания)}
 
 \MS и $M \subset X$. Тогда:
 
-$X\backslash M\crk=\ovrl{X\backslash M}$ $X 
-\backslash \ovrl M = (X \backslash M)\crk$
+$X\backslash M\crk=\overline{X\backslash M}$ $X
+    \backslash \overline M = (X \backslash M)\crk$
 
+    \noindent\dotfill
+    
 \textbf{Примеры открытых множеств  }
 
 \begin{tabular}{c c c}
-    1. $\forall B(x_0, r)\subset \mes $& 
-    2. $\varnothing \subset \mes $&
+    1. $\forall B(x_0, r)\subset \mes $ &
+    2. $\varnothing \subset \mes $      &
     3. $X \subset \mes$
 \end{tabular}
 
+\noindent\dotfill
+    
 \textbf{Теорема 6 (о дополнении)  }
 
-В метрическом пространстве дополнение открытого множество замкнуто, 
+В метрическом пространстве дополнение открытого множество замкнуто,
 а дополнение замкнутого множества открыто
 
+\noindent\dotfill
+    
 \textbf{Теорема 7  }
 
-В метрическом пространстве объединение любого числа и пересечения конечного числа 
-открытых множеств ~--- открытое множество. 
+В метрическом пространстве объединение любого числа и пересечения конечного числа
+открытых множеств~-- открытое множество.
 
+\noindent\dotfill
+    
 \textbf{Теорема 10 (о полноте подпространства) }
 
-\MS и $M \subset X$. Для того чтобы $ \{M, \rho\}$ было полным подпространством 
-$\mes$, необходимо и достаточно, а в случае полноты $\mes$ и достаточно, чтобы 
+\MS и $M \subset X$. Для того чтобы $ \{M, \rho\}$ было полным подпространством
+$\mes$, необходимо и достаточно, а в случае полноты $\mes$ и достаточно, чтобы
 множество $M$ было замкнуто в $\mes$.
 
+\noindent\dotfill
+    
 \textbf{Теорема 11 (о вложенных шарах) }
 
-\MS и в нём задана последовательность $ \{ B[a_n, r_n] \} $ замкнутых шаров таких, 
-что $\underset{n \ria \infty}{r_n \ria 0}$ и $\forall(n \in \mathbb{N})[B[a_{n+1}, 
-r_{n+1}]\subset B[a_n, r_n]]$
+\MS и в нём задана последовательность $ \{ B[a_n, r_n] \} $ замкнутых шаров таких,
+что $\underset{n \rightarrow \infty }{r_n \rightarrow 0}$ и $\forall(n \in \mathbb{N})[B[a_{n+1},
+                r_{n+1}]\subset B[a_n, r_n]]$
 
 Тогда в $X$ существует единственная точка, принадлежащая всем этим шарам.
 
+\noindent\dotfill
+    
 \textbf{Теорема 14 (об эквивалентности определений)   }
 
 Непрерывность по Гейне в точке $x_0 \in M$:
 
-$\forall( \{ x_n \}\subset M)[(\underset{n \ria \infty}{\lim} x_n = x_0 )\ria 
-(\underset{n \ria \infty}{\lim}f(x_n)=f(x_0))]$
+$\forall( \{ x_n \}\subset M)[(\underset{n \rightarrow \infty }{\lim} x_n = x_0 )\rightarrow
+        (\underset{n \rightarrow \infty }{\lim}f(x_n)=f(x_0))]$
 
 \hspace*{30mm}$\Updownarrow$
 
 Непрерывность по Коши в точке $x_0 \in M$:
 
-$\forall(\varepsilon>0)\exists(\delta>0)\forall(x \in M)[\rho_X(x, x_0)<\delta\ria 
-\rho(f(x), f(x_0))<\varepsilon]$
+$\forall(\varepsilon>0)\exists(\delta>0)\forall(x \in M)[\rho_X(x, x_0)<\delta\rightarrow
+        \rho(f(x), f(x_0))<\varepsilon]$
 
+        \noindent\dotfill
+    
 \textbf{Следствие из теоремы 14}
 
-Для непрерывности функции $f:M \ria Y$ в точке $x_0 \in M$ достаточно, чтобы для 
-$\forall(x_n \ria x \in X)$ последовательность ${f(x_n)}$ сходилась в $Y$.
+Для непрерывности функции $f:M \rightarrow Y$ в точке $x_0 \in M$ достаточно, чтобы для
+$\forall(x_n \rightarrow x \in X)$ последовательность ${f(x_n)}$ сходилась в $Y$.
 
+\noindent\dotfill
+    
 \textbf{Теорема 15 (о прообразах открытых множеств) }
 
-Пусть $\{X, \rho_X \}$, $\{Y \rho_Y \}$ - метрические пространства. Функция $f: 
-X \ria Y$ непрерывна на $X$ \tttk для любого открытого множества $A \subset Y$ 
-прообраз $f^{-1}[A]$~--- открытое множество в $X$.
+Пусть $\{X, \rho_X \}$, $\{Y \rho_Y \}$ метрические пространства. Функция $f:
+    X \rightarrow Y$ непрерывна на $X$ \tttk для любого открытого множества $A \subset Y$
+прообраз $f^{-1}[A]$~--открытое множество в $X$.
 
+\noindent\dotfill
+    
 \textbf{Теорема 16 (о прообразах замкнутых множеств)}
 
-Пусть $\{X, \rho_X \}$, $\{Y \rho_Y \}$ - метрические пространства. Функция $f: 
-X \ria Y$ непрерывна на $X$ \tttk для любого замкнутого множества $A \subset Y$ 
-прообраз $f^{-1}[A]$~--- замкнутое множество в $X$.
+Пусть $\{X, \rho_X \}$, $\{Y \rho_Y \}$ метрические пространства. Функция $f:
+    X \rightarrow Y$ непрерывна на $X$ \tttk для любого замкнутого множества $A \subset Y$
+прообраз $f^{-1}[A]$~--замкнутое множество в $X$.
 
+\noindent\dotfill
+    
 \textbf{Теорема 17 (о неподвижной точке) }
 
-Пусть \mes~--- полное метрическое пространство, множество $M= \ovrl M \subset X 
-\text{ и } f:M \ria M$~--- сжимающее отображение. Тогда $f$ имеет в $M$ 
-единственную неподвижную точку $x^*=f(x^*)$.Кроме того, для любого $x_0 
-\in M $ последовательность $\underset{n \in \mathbb{N} }{x_n=f(x_{n-1})}$ сходится 
+Пусть \mes~--полное метрическое пространство, множество $M= \overline M \subset X
+    \text{ и } f:M \rightarrow M$~--сжимающее отображение. Тогда $f$ имеет в $M$
+единственную неподвижную точку $x^*=f(x^*)$.Кроме того, для любого $x_0
+    \in M $ последовательность $\underset{n \in \mathbb{N} }{x_n=f(x_{n-1})}$ сходится
 к $x^*$ и справедлива оценка погрешности :
 
 $\rho(x_n, x^*)\br \cfrac{q^n}{1-q}\rho(f(x_0), x_0)$
 
+\noindent\dotfill
+    
 \textbf{Теорема 18   }
 
 В метрическом пространстве любое относите компактное множество ограниченно.
 
+\noindent\dotfill
+    
 \textbf{Теорема 19 (Вейерштрасса)}
 
 Пусть $M$ компактное множество в метрическом пространстве $\mes$ и функция
-$f:M \ria \mathbb{R}^1$ непрерывна на $M$. Тогда множество $f[M]$ отграничено в 
-$\mathbb{R}^1$ и $\exists(a \in M)[f(a)=\underset{x \in M}{\inf} f(x)]\wedge 
-\exists(b\in M)[f(b)=
-\underset{x \in M}{\sup} f(x)] $
+$f:M \rightarrow \mathbb{R}^1$ непрерывна на $M$. Тогда множество $f[M]$ отграничено в
+$\mathbb{R}^1$ и $\exists(a \in M)[f(a)=\underset{x \in M}{\\inf} f(x)]\wedge
+    \exists(b\in M)[f(b)=
+        \underset{x \in M}{\sup} f(x)] $
 
+        \noindent\dotfill
+    
 \textbf{Теорема 20}
 
 Вполне ограниченное множество в метрическом пространстве ограниченно.
 
+\noindent\dotfill
+    
 \textbf{Следствие из теоремы Хаусдорфа}
 
-\MS. Для того чтобы множество $M \subset X$ было относительно компактным 
+\MS. Для того чтобы множество $M \subset X$ было относительно компактным
 необходимо, а в случае полноты пространства $X$ и достаточно, чтобы множество $M$
 было вполне ограниченным.
 
+\noindent\dotfill
+    
 \textbf{Теорема 22 (относительная компактность в $ \Rnp $) }
 
 Множество $M \subset \Rnp$ относительно компактно \tttk это множество в $\Rnp$
@@ -229,23 +274,535 @@ $\mathbb{R}^1$ и $\exists(a \in M)[f(a)=\underset{x \in M}{\inf} f(x)]\wedge
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-С  доками:
-
+\section*{С  доками}
+    
 \textbf{Примеры полных метрических пространств  }
 
-\textbf{Примеры метрических пространств, не являющихся полными}
+\begin{enumerate}
+    \item Дискретное пространство полно. Всякая фундаментальная последовательность
+          в нём, начиная с некоторого номера, стабилизируется.
+    \item Пространство $\Rnp$, где $1\br p \br \infty $. Пусть $\{x^m\}\subset\Rnp$~---
+          фундаментальная последовательность. Здесь $x^m=(x^m_1, x^m_2, \dots, x^m_n)$.
+          Тогда
 
+          $\forall(\varepsilon>0)\exists(N)\forall(m\mr 0)[\rho(x^{m+q},x^m)=
+              (\sum_{k = 1}^{n}|x^{m+q}_k-x^m_k|^p)^(1/p)<\varepsilon]$.
+
+          Откуда получим
+
+          $\forall(\varepsilon>0)\exists(N)\forall(m\mr  N)\forall(q\br 0)\forall(k=
+              \overline{1,n})[|x^{m+q}_k-x^m_k|<\varepsilon]$
+
+          Следовательно при $k=const$ $\{x^m_k\}^\infty _{m=1}$ фундаментальная
+          в $\mathbb{R}^1\Longrightarrow$  сходится.
+
+          $\forall(k=\overline{1,n})\exists(x_k\in\mathbb{R}^1)[x_k=\underset{m \to
+                      \infty }{\lim} x^m_k]$.
+
+          Тогда $\{x^m \} \longrightarrow x=(x_1,x_2,\dots,x_n)\in\mathbb{R}^1$
+          (сходится покоординатно к $x$) $\Longleftrightarrow $ сходимости по метрике
+
+          $\underset{m\rightarrow\infty }{\rho(x^m,x)\rightarrow\sim0}$. $\mathbb{R}^n_p$ полное.
+
+    \item Пространство $C[a, b]$Пусть $\{x_n\} \subset C[a, b]$ — фундаментальная
+          последовательность, то есть
+
+          $\forall (\varepsilon > 0)\exists (N)\forall (n \mr  N )\forall (p \mr  0)[\rho(x_{n+p}, x_n) =  \underset{a\mr  t \mr  b}{\max}|x_{n+p}(t) x_n(t)|
+              <\varepsilon]$.
+
+          \hspace*{30mm}$\Updownarrow$
+
+          $\forall(\varepsilon > 0)\exists(N )\forall( n \mr  N )\forall( p \mr  0)\forall( t \in
+              [a, b])[|x_{n+p}(t) x_n(t)|<\varepsilon]$.
+
+          \Rightarrow при $t=const \in [a, b]$ ${x_n(t)}$ фундаментальна в $\mathbb{R}^1$.
+          Тогда определена $x(t)$, которая является
+          поточечным пределом $\{x_n(t)\}$. Получим при $p \rightarrow \infty $
+
+          $\forall( \varepsilon > 0)\exists(N )\forall( n \mr  N )\forall( t \in  [a, b])[
+                  |x(t) x_n(t)| \mr  \varepsilon]$.
+          $\implies  x(t)$ является равномерным пределом $\{x_n(t)\}$.
+
+          Покажем, что функция $x(t)$ непрерывна. Пусть $t_0 \in  [a, b]$.
+          При $\varepsilon > 0$ выберем $m \in  N$ такое, что
+
+          $\forall( t \in  [a, b]) [ |x_m(t) x(t)| < \varepsilon/3]$.
+
+          Выберем также $\delta = \delta(m) > 0$ такое, что
+
+          $\forall( t \in  [a, b]) [ (|t t_0| < \delta) \rightarrow (|x_m(t_0) x_m(t)| < \varepsilon/3)]$.
+          Тогда для $t$ таких, что $|t t_0| < \delta$ выполнена оценка
+
+          $|x(t) -x(t_0)| \mr  |x(t)- x_m(t)| + |x_m(t) -x_m(t_0)| + |x_m(t_0)- x(t_0)| <
+              \varepsilon.$
+
+          Итак, $x \in  C[a, b]$. Осталось вспомнить, что в $C[a, b]$ сходимость по метрике
+          равносильна равномерной сходимости последовательности функций, то есть
+          $(x_n, x) \rightarrow 0 \text{ при } n \rightarrow \infty $.
+          %%%%%%%%%%%%%%
+    \item Пространство $l_p$ $(1 \mr  p < \infty )$.
+          Пусть $\{x_n \}= (x_n, x_n, \dots , x_n, \dots)$
+          — фундаментальная последовательность в $l_p.$
+
+          Тогда $\forall( \varepsilon > 0)\exists(N )\forall( n \br  N )
+              \forall( q \br  0)[\rho(x^{n+q}, x_n) =  (\sum^\infty_{k=1} |x^{n+q}
+              x^n_k|^p )^{1/p}<\varepsilon]$.
+
+
+          Отсюда следует, что
+
+          $\forall( \varepsilon > 0)\exists(N )\forall( n \br  N )\forall( q \br  0)
+              \forall( k)[|x^{n+q}_k - x^n_k| < \varepsilon]$.
+
+          $\forall(k=const) \in  N$ $\{x_n \}$ сходится.
+
+          Пусть $x_n \rightarrow x_k$ при $n \rightarrow
+              \infty $. Обозначим $x = (x_1, x_2, \dots , x_k, \dots)$.
+
+          Нужно показать:
+          а) $x \in  l_p$, то есть	$\sum^\infty_{k=1}|x_k|^p<\infty$;
+          б) $\rho(x , x) \rightarrow 0$.
+
+          а) Зафиксируем $m \in  N$. Тогда
+
+          $\forall( n \br  N )\forall( q \br  0)[(\sum^m_{k=1}|x^{n+q}_k-x^n_k|^p)
+              ^{1/p}]<\varepsilon$
+
+          Перейдем к пределу при $q \rightarrow \infty $. Получим
+
+          $\forall(n\br N)[(\sum^m_{k=1}|x_k-x^n_k|^p)^{1/p}\mr\varepsilon]$
+
+          Далее, фиксируя $n \br  N$ , установим оценку
+
+          из которой следует, что ряд $\sum^{\infty }_{k=1} |x_k|^p$  сходится
+          и $x = (x_1, x_2, \dots , x_k, \dots) \in  l_p$.
+
+          б) Из оценки, справедливой для всех $m \in  N$ и $n \br  N$ , при $m \rightarrow \infty $
+          получим
+
+          $(\sum^\infty_{k=1}|x_k— x_n|^p)^{1/p} \mr  \varepsilon.$
+
+          Итак, $\rho(x_n, x) \rightarrow 0$ при $n \rightarrow \infty $ и полнота
+          пространства $l_p $доказана.
+
+\end{enumerate}
+
+\noindent\dotfill
+    
+\textbf{Примеры метрических пространств, не являющихся полными}
+Пространство $C_1[a, b]$  не является полным. Для простоты считаем, что $[a, b] =
+    [-1, 1]$
+. В пространстве $C_1[-1, 1]$ рассмотрим последовательность функций
+
+$x_n(t=)\begin{cases}
+        0,  & -1\mr t \mr 0           \\
+        nt, & 0 \mr t \mr \frac{1}{n} \\
+        1,  & \frac{1}{n}\mr t \mr 1.
+    \end{cases}$
+
+Фундаментальность последовательности $\{x_n\}$ в $C_1[-1, 1]$ следует из того,
+что для всех $m \br n$ при $n \rightarrow \infty $
+
+Последовательность функций $\{x_n\}$ на $[-1, 1]$ поточечно сходится к разрывной
+функции
+$y(t) =	\begin{cases}0, & -1 \mr  t \mr  0 \\
+             1, & 0 < t \mr  1 .
+    \end{cases}$
+
+Предположим, что  $\exists z \in C_1[-1, 1]$ и $\rho(x_n, z) \rightarrow 0$ при
+$n \rightarrow \infty $. Тогда
+
+$$\int_{-1}^{1} |y(t)- z(t)| \,dt \mr\int_{-1}^{1} |y(t)- x_n(t)|\,dt +
+    \int_{-1}^{1}|x_n(t)- z(t)| \,dt=\frac{1}{2n}+\rho(x_n,z)\rightarrow 0$$ при $n \rightarrow \infty$
+
+Получили, что	$\int_{-1}^{1}|y(t) z(t)| \,dt = 0.$ Из равенства
+
+$$0 =\int_{-1}^{1}|y(t)- z(t)| \,dt +
+    \int_{0}^\delta|y(t)- z(t)| \,dt +\int_\delta^1|y(t) -z(t)| \,dt$$
+справедливого для произвольного сколь угодно малого $\delta > 0$, следует
+$$\int_{-1}^0 |y(t) z(t)| \,dt =\int^{1}_\delta |y(t) -z(t)| \,dt = 0.$$
+
+$y(t) -z(t) на [-1, 0] \cup [\delta, 1]$, получим $z(0) = y(0) = 0$ и $z(\delta)
+    = y(\delta) = 1.$(По лемме 1 и непрерывности функции)
+Тогда $z(+0) = \underset{\delta \to \infty }{\lim}z(\delta)= 1$. Итак, $z(0)\neq z(+0)$, то
+есть функция $z(t)$ разрывна в точке $t = 0$. Это противоречие доказывает, что
+фундаментальная последовательность $x_n$ не сходится в пространстве $C_1[-1, 1]$.
+
+\noindent\dotfill
+    
 \textbf{Теорема 8 (об открытом множестве на прямой) }
 
+Всякое непустое ограниченное открытое множество на прямой есть объединение
+конечного или счетного числа попарно непересекающихся интервалов.
+
+Пусть $A \subset \mathbb{R}^1$ – ограниченное и открытое множество.
+Возьмем $x \in  A$ и рассмотрим множество $F = [x, +\infty ) \cap CA$.
+Множество $F$ замкнуто как пересечение двух замкнутых множеств [x, +\infty ) и CA.
+Множество $F$ непустое, так как $A$ ограничено. Кроме того, множество $F$
+ограничено снизу точкой $x$. Пусть $b = \inf F$ . Очевидно, $x \mr  b$.
+Заметим, что $x \in  A$, а $b \in  F = F \subset CA \Rightarrow x < b$.
+
+Рассмотрим полуинтервал $[x, b)$ и покажем, что [$x, b) \subset
+    A$. Предположим, что [$x, b) \not\subset A$.
+Тогда $\exists(y  \in  [x, b)) [ y  \in /  A]$. Получили $y  \in  F$
+такой, что $y  < b$,
+но это невозможно, так как $b = \inf F$ . Таким образом, $[x, b) \subset A$. Заметим также,
+                что $b \notin  A$, так как $b \in  F \Rightarrow b \in  CA$.
+
+                Если для того же$ x \in  A$ рассмотреть множество $\Phi = (-\infty , x] \cap CA$, то,
+рассуждая подобным образом, получим для $a = sup \Phi$,
+что $(a, x] \subset A$ и $a \notin  A$.
+
+Таким образом, если $x \in  A$, то существует интервал $(a, b) \ni x$ такой,
+что  $(a, b)  \subset A$  и $ a, b  \notin  A$.  Такие  интервалы,  из  которых  состоит
+открытое
+множество A, называются составляющими интервалами множества $A$.
+
+Покажем, что составляющие интервалы попарно не пересекаются. Пусть даны два
+составляющих интервала $(a, b)$ и $(a', b')$, которые пересекаются, например,
+с условием $a < a' < b < b'$. Тогда $a' \in  (a, b) \Rightarrow a' \in  A$,
+так  как  $(a, b)  \subset A$.  Но  $a' \notin   A$,  как  конец  составляющего  интервала
+$(a', b')$.
+
+Полученное противоречие означает, что $(a, b) \cap (a', b') = \varnothing$.
+Осталось заметить, что на прямой любое множество попарно непересекающихся интервалов
+не более, чем счетно.
+
+\noindent\dotfill
+    
 \textbf{Теорема 9 (о замкнутом множестве на прямой)}
 
+Всякое непустое ограниченное замкнутое множество на прямой
+получается из наименьшего отрезка, его содержащего, путем выбрасывания конечного или
+счетного числа попарно непересекающихся интервалов.
+
+Пусть непустое множество $F \subset \mathbb{R}^1$ ограничено и замкнуто. Пусть
+$[\alpha, \beta ]$ – наименьший отрезок, содержащий это множество.
+Заметим, что $\alpha, \beta
+    \in  F$ .  Представим  $F$  в  виде  $F  =  [\alpha, \beta ] \backslash
+    ( [\alpha, \beta ] \cap CF )  = [\alpha, \beta ] \backslash ( (\alpha, \beta )
+    \cap CF )$.
+Множество $(\alpha, \beta ) \cap CF$ открыто, поэтому (теорема 8)
+$ (\alpha, \beta )	CF  =\underset{n}{\bigcup}(a_n , b_n )$,
+где интервалы$ (a_n, b_n )$ попарно не пересекаются
+\Rightarrow $F  = [\alpha , \beta ] \backslash \underset{n}{\bigcup}(a_n , b_n )$.
+
+\noindent\dotfill
+    
 \textbf{Теорема 13 (Бэра)}
+Всякое полное метрическое пространство является множеством второй категории.
 
-\textbf{Примеры сепарабельных пространств}
+\MS. Предположим, что множество X не является множеством второй
+категории. Тогда $X  = \stackrel{\infty}{\underset{n=1}{\bigcup}}  M_n$($M_n$ – нигде не плотные).
+Возьмем произвольный замкнутый шар $B[a, 1] \subset X$. Так как $B(a, 1) \subset B[a, 1]$,
+а множество $M_1$ нигде не плотно, то
+$\exists(B(x_1, r) \subset B(a, 1)) [ B(x_1, r) \cap M_1 =\varnothing]$.
+Возьмем шар $B[x_1, r_1] \subset B(x_1, r)$, для которого также
+$B[x_1, \mathbb{R}^1] \cap M_1 = \varnothing$. Можно считать, что $r_1 < 1/2$.
 
-\textbf{Примеры пространств, не являющихся сепарабельными}
+Точно так же можно построить $B[x_2, r_2]  \subset B[x_1, r_1]$  такой,
+что$ B[x_2, r_2]$$\cap M2 = \varnothing$ и $r_2 < 1/(2^n)$.
+    Поступая подобным образом, получим последовательность замкнутых шаров
+${B[x_n, r_n]}$ таких, что $r_n < 1/(2^n)\rightarrow 0$
+    при $n\rightarrow \infty$  и $\forall(n \in  N) [ B[x_{n+1}, r_{n+1}] \subset B[x_n, r_n]]$.
 
-\textbf{Теорема 21 (Хаусдорфа) }
+    Воспользуемся теоремой 11 о вложенных шарах. Тогда в $X$ существует
+    элемент  $\overline{x}  \in  \stackrel{\infty}{\underset{n=1}{\bigcap}} B[x_n, r_n]$.
+    Так  как    $\overline{x}\in  B[x_1, \mathbb{R}^1]$,  то
+$\overline{x} \notin M_1$.  Аналогично
+$x \notin   M_n$  для любого $n$. Это означает, что $\overline{x} \notin X$. Получили противоречие.
 
+\noindent\dotfill
+    
+    \textbf{Примеры сепарабельных пространств}
+    \begin{enumerate}
+        \item Пространство $\Rnp$ для  $1\mr  p < \infty$ . Возьмем множество $Q^n \subset \Rnp$.
+              Как известно, $Q^n \sim N$. Покажем, что $Q^n = Rn$.
+              Пусть элемент $x = (x_1, x_2, \dots, x_n) \in \Rnp$ и задано $\varepsilon > 0$.
+              По свойству плотности в $\mathbb{R}^1$ множества рациональных чисел
+              $Q$ найдется $\alpha = (\alpha_1, \alpha_2, \dots, \alpha_n) \in  Q^n$  такой,
+              что для всех $k = \overline{1, n}$ выполняется $|x_k \alpha_k| < \varepsilon /(n^{1/p})$.
+              В таком случае,
+              $\rho(x, \alpha) =(\sum^n_{k=1}|x_k \alpha_k|^p)^{1/p}< \varepsilon $.
+
+              \Rightarrow$x$ – точка прикосновения множества $Q^n$. Учитывая произвольность $x \in  \Rnp$,
+              доказали, что множество $Q^n$ всюду плотно в $\Rnp$. ♥
+        \item Пространство  $C[a, b]$.
+
+              Рассмотрим множество $M$ всевозможных многочленов на $[a, b]$ с
+              рациональными коэффициентами.
+              Заметим, что это множество  $M = \stackrel{\infty}{\underset{n=0}{\bigcup}}M_n$
+              ($M_n $ –  множество  многочленов с  рациональными коэффициентами, степень
+              которых не превышает $n$).
+              Так как каждый многочлен однозначно определяется своими коэффициентами,
+              то $M_n \sim Q^{n+1}$. Но $Q^{n+1} \sim N$, поэтому и
+              $M_n \sim N \Rightarrow M \sim N$, то есть является счетным множеством.
+
+              Покажем, что $\overline{M} = C[a, b]$.
+              Возьмем элемент $x \in  C[a, b]$ и $\varepsilon  > 0$. В силу теоремы
+              Стоуна-Вейерштрасса найдется многочлен
+              $$P (t) = \alpha_0 + \alpha_1 t + \alpha_2 t^2 + \dots + \alpha_n t^n$$
+              с вещественными коэффициентами $\alpha_i \in  R  (i  =  \overline{1, n})$ такой, что для всех
+              $t \in  [a, b]$ выполняется $|x(t) -P(t)| < \varepsilon /2$. Построим многочлен
+              $ Q \in  M$
+              $$ Q(t) = \beta_0 + \beta_1 t + \beta_2 t^2 + \dots + \beta_n t^n$$
+              с коэффициентами $\beta_i  \in  Q  (i  =  \overline{1, n})$  и такой, что
+              $|\alpha_i-\beta_i| < \varepsilon /[2(n + 1)K^i]$,
+              где $K = \max{|a|, |b|}$. В таком случае для всех $t \in  [a, b]$ получим
+              $$|P (t)- Q(t)| \mr |\alpha_0- \beta_0| + |\alpha_1- \beta_1|K + \dots
+                  + |\alpha_n- \beta_n|K^n < \varepsilon /2.$$
+              $$\Downarrow $$
+              $$\rho(x, Q) \mr  \underset{a\mr t\mr b}{\max }|x(t)- P (t)|
+                  + \underset{a\mr t\mr b}{\max} |P (t)- Q(t)| < \varepsilon .$$
+
+              Установили, что $x \in  \overline{M}$ , то есть $\overline{M} = C[a, b]$.
+              Таким образом, M счетное всюду плотное в $C[a, b]$ множество,
+              а пространство $C[a, b]$ сепарабельно.
+        \item	Пространство $s$.
+
+              Рассмотрим множество $M$ последовательностей с рациональными
+              координатами, у которых число ненулевых координат конечно.
+              Заметим,  что
+              $M  =  \stackrel{\infty}{\underset{n=1}{\bigcup}} M_n$(  $M_n$  –
+              множество  последовательностей с рациональными
+              координатами, у которых ненулевыми могут быть только
+              первые $n$ координат). Очевидно, что $M_n \sim Q^n \sim N$.
+              Поэтому и $M \sim N$, то есть
+              множество M является счетным.
+
+              Покажем, что $\overline{M}  = s$.
+              Пусть $x = (x_1, x_2, \dots, x_k, \dots) \in s$ и $\varepsilon  > 0$.
+              Выберем
+              $m \in  N$ такое, что	$\stackrel{\infty}{\underset{k=m+1}{\sum}}1/2^k < \varepsilon /2$.
+              Найдем $\alpha_i \in  Q (i = \overline{1, m})$ такие, что
+              $|x_k -\alpha_k| < \varepsilon /m$. Тогда
+
+              $$\stackrel{m}{\underset{k=1}{\sum}}\frac{|x_k-\alpha_k|}{2^k(1+|x_k-\alpha_k|)}<
+                  \frac{1}{2}\stackrel{m}{\underset{k=1}{\sum}}|x_k-\alpha_k|<\frac{\varepsilon}{2}$$
+              В результате для $\alpha_= (\alpha_1, \alpha_2, \dots, \alpha_m, 0, 0, \dots) \in  M$ получим
+
+              $$\rho(x,\alpha)=\stackrel{m}{\underset{k=1}{\sum}}
+                  \frac{|x_k-\alpha_k|}{2^k(1+|x_k-\alpha_k|)} +
+                  \stackrel{\infty}{\underset{k=m+1}{\sum}}
+                  \frac{|x_k|}{1+|x_k|}<\frac{\varepsilon}{2} +
+                  \stackrel{\infty}{\underset{k=m+1}{\sum}}\frac{1}{2^k}<\varepsilon$$
+
+              Установили, что $x \in  \overline{M}$ , то есть $\overline{M} = s$.
+              Таким образом, $M$ счетное всюду
+              плотное в $s$ множество, но тогда пространство $s$ сепарабельно.
+        \item	Пространство $l_p$ для $1 \mr  p < \infty$ .
+
+              Вновь рассмотрим счетное множество
+              $M$ из предыдущего примера. Очевидно, что $M \subset l_p$.
+              Покажем, что $\overline{M} = l_p$.
+              Возьмем $x = (x_1, x_2, \dots, x_k, \dots) \in  l_p$ и $\varepsilon  > 0$.
+              Так как $\stackrel{\infty}{\underset{k=1}{\sum}}|x_k|^p < \infty$ ,
+              то найдется $m \in  N$ такое,
+              что	$\stackrel{\infty}{\underset{k=m+1}{\sum}}|x_k|^p  < \varepsilon^p   /2$.
+              Найдем $\alpha_i \in  Q (i = \overline{1, m})$ такие, что $|x_k-\alpha_k| < \varepsilon /(2m)^{1/p}$.
+              Тогда для элемента $\alpha_= (\alpha_1, \alpha_2, \dots, \alpha_m, 0, 0, \dots) \in  M $получим
+
+              $$\rho^p(x, \alpha) = \stackrel{m}{\underset{k=1}{\sum}}|x_k-\alpha_k|^p+
+                  \stackrel{\infty}{\underset{k=m+1}{\sum}}|x_k|^p<
+                  \varepsilon^p$$
+
+              $\Rightarrow\rho(x, \alpha) < \varepsilon $. Таким образом, $x \in  M$ ,
+              то есть $\overline{M} = l_p$.
+              Показали, что M счетное всюду плотное в $l_p$ множество, но тогда пространство $l_p$ сепарабельно.
+    \end{enumerate}
+
+    \noindent\dotfill
+    
+    \textbf{Примеры пространств, не являющихся сепарабельными}
+
+    \begin{enumerate}
+        \item     Пространство $M [a, b]$. Пусть параметр $\tau \in  [a, b]$. Определим на функцию
+              $$x_\tau (t) =
+                  \begin{cases}
+                      1, & t = \tau, \\
+                      0, & t= \tau.
+                  \end{cases}	$$
+
+              Очевидно, функция $x_\tau \in  M [a, b]$. Рассмотрим в $M [a, b]$
+              множество функций
+              $K = \{x_\tau | \tau \in  [a, b] \}$.
+              Заметим, что $K \sim [a, b]$, то есть является
+              множеством мощности континуум, в частности K несчетное.
+              Пусть теперь $\tau_1 \neq \tau_2,$ тогда
+
+
+              $$\rho(x_{\tau_1} , x_{\tau_2} ) = \underset{a\mr  t \mr  b}{\sup}
+                  |x_{\tau_1} (t)- x_{\tau_2} (t)| = 1.$$
+
+              Предположим, что существует некоторое множество $M \subset M [a, b]$ такое,
+              что
+              $\overline{M}   =  M [a, b]$.
+              Тогда
+              $\forall(x_\tau   \in   K)\exists(y_\tau   \in   M )[ \rho(x_\tau , y_\tau )
+                      <  1/3 ]$.  При  этом
+
+
+              разным функциям $x_{\tau_1} , x_{\tau_2}   \in  K  (\tau_1\neq\tau_2)$
+              соответствуют разные функции
+              $y_{\tau_1} , y_{\tau_2} \in  M$ .
+              Иначе, если $y_{\tau_1} = y_{\tau_2} = y \in  M $, получим противоречие
+              $$1 = \rho(x_{\tau_1} , x_{\tau_2} ) \mr  \rho(x_{\tau_1} , y) +
+                  \rho(y, x_{\tau_2} ) < 1/3 + 1/3 = 2/3.$$
+              Таким образом, элементов в множестве $M$ не меньше, чем в множестве $K$,
+              которое несчетно.
+              $\Rightarrow$ множество $M$ несчетно, а пространство M $[a, b]$
+              несепарабельно.
+        \item	Пространство $m$. Рассмотрим в $m$ множество $K$ всевозможных
+              последовательностей из 0 и 1. Из теории множеств известно, что $K$
+              является множеством
+              мощности континуум. Пусть $x_1, x_2 \in  K$ – две разные
+              последовательности. Очевидно,
+              что $\rho(x_1, x_2) = 1$.
+
+              Дальнейшие рассуждения аналогичны тем, что проделаны выше в
+              пространстве $M [a, b]$.
+              Действительно, предположим, что существует некоторое множество
+              последовательностей
+              $M \subset m$ такое, что $\overline{M} = m$. В таком случае,
+              $\forall(x  \in  K)\exists(y  \in  M )[ \rho(x, y)  <  1/3 ]$.
+              При  этом  разным
+              последовательностям
+              $x_1, x_2 \in  K$ соответствуют разные $y1, y2 \in  M$ .
+              В противном случае, если
+              соответствующие $y1 = y2$, получим $1 = \rho(x_1, x_2) < 2/3$.
+              Как и выше отсюда следует,
+              что множество $M$ несчетно и пространство $m$ несепарабельно.
+    \end{enumerate}
+
+
+    \noindent\dotfill
+    
+    \textbf{Теорема 21 (Хаусдорфа) }
+
+    \MS. Для того,
+    чтобы множество $M \subset X$ было относительно компактным необходимо,
+    а в случае
+    полноты пространства $X$ и достаточно, чтобы множество M
+    было вполне ограниченным.
+
+    Необходимость. Пусть $M $относительно компактно и не пусто.
+    Возьмем
+    произвольное $\varepsilon  > 0$ и $x_1 \in  M$ . Может оказаться, что
+$M  \subset B(x_1, \varepsilon )$,
+    тогда
+$\varepsilon$ -сетью для $M$ будет множество $\{x_1\}.$
+    Если же $M  \not\subset B(x_1, \varepsilon )$, то
+$\exists(x_2 \in  M )[ \rho(x_2, x_1) \br \varepsilon  ].$
+    Может оказаться, что $M$
+$\subset B(x_1, \varepsilon ) \cup B(x_2, \varepsilon )$, тогда $\varepsilon$ -сетью для
+$M$ будет множество
+$\{x_1, x_2\}$. Если же это не выполнено, то
+$\exists(x_3 \in  M )[ (\rho(x_3, x_1) \br \varepsilon ) \wedge  (\rho(x_3, x_2) \br \varepsilon ) ]$
+    , и т.д.
+
+    Продолжая этот процесс, возможно, что на каком-то $n$-ом шаге построим
+
+$x_1, x_2, \dots, x_n \in  M$  такие, что множество $\{x_k\}^n_{k=1}$	будет конечной
+$\varepsilon$ -сетью
+    для $M$ , что завершит доказательство необходимости.
+    Иначе это построение элементов
+$x_n$ будет продолжаться бесконечно.
+    В этом случае построим последовательность $\{x_n\} \subset M$  такую,
+    что $\rho(x_i, x_j) \br \varepsilon  (i\neq	j)$. Но тогда из
+$\{x_n\}$
+    нельзя выделить сходящуюся подпоследовательность, что противоречит
+    относительной
+    компактности множества $M$ .
+
+    Достаточность. Пусть $X$ – полное пространство и множество $M$  $\subset X$
+    вполне ограничено. Возьмем последовательность $\varepsilon_n \searrow  0$ при
+$n \rightarrow \infty$ .
+    Для каждого
+$ \varepsilon_n$ построим для $M$  конечную $\varepsilon_n$-сеть $S_n = {z^n_1, z^n_2, \dots, z^n_{m_n} }$. Пусть
+    дана последовательность $\{x_n\} \subset M$ . Покажем, что из этой последовательно-
+    сти можно выделить сходящуюся подпоследовательность.
+
+    Заметим, что $\{x_n\} \subset M \subset \stackrel{m_1}{\underset{i=1}{\bigcup}} B(z^1_i, \varepsilon_1)$.
+    Так как шаров конечное число,
+
+    то существует шар $B(z^1_i, \varepsilon_1)$, который содержит бесконечно
+    много членов последовательности $\{x_n\}$, то есть
+$\exists(\{x^1_n \} \subset \{x^1_n\})[ \{x^1_n \} \subset B(z^1_i, \varepsilon_1) ]$.
+    Повторяя
+    рассуждения для $S_2$, получим существование шара $B(z^2_i, \varepsilon_2)$, содержащего
+    подпоследовательность $\{x^2_n \} \subset {x^1_n }$, то есть ${x^2_n } \subset B(z^2_1, \varepsilon_2)$.
+Продолжая    этот процесс получим,
+$$\forall( m \in  N)\exists (B(z^m_i, \varepsilon_m))\exists (\{x^m\} \subset \{x^{m-1}\})
+    [\{x^m_n \} \subset B(z^m_i, \varepsilon_m)]$$  ,
+где последовательность ${x^0_n } = \{x_n\}$. Составим диагональную последовательность
+${x_k^k} \subset \{x_n\}$. Покажем, что диагональная последовательность фундаментальна.
+Действительно, $x_k^k, x_{k+p}^{k+p} \in  B(z^k_i, \varepsilon_k)$, где $p \br 0$. Поэтому
+$$\rho(x_{k+p}^{k+p}, x_k^k) \mr  \rho(x_{k+p}^{k+p}, z^k_i) + \rho(z^k_i, x_k^k) < 2\varepsilon_k \rightarrow 0
+    (k \rightarrow \infty ).$$
+Осталось заметить, что фундаментальная последовательность ${x^k_k} \subset \{x_n\}$ в
+силу полноты пространства $X$ сходится.
+
+\noindent\dotfill
+    
 \textbf{Теорема 23 (Арцела) }
+
+Множество $M \subset C[a, b]$ относительно компактно
+тогда и только тогда, когда оно ограничено и равностепенно непрерывно.
+
+Пусть множество $M$ относительно компактно. Тогда, по теореме 18,
+оно ограничено. Покажем равностепенную непрерывность $M$ .
+Возьмем произвольное $\varepsilon   >  0$. Выберем в $C[a, b]$  множество $\{\varphi\}^k_{i=1}$	,
+являющееся  конечной  $\varepsilon /3$-сетью  для  $M$ .  Каждая  функция  $\varphi_i(t)$,
+где $ i  =  \overline{1,k}$,
+непрерывна на $[a, b] \Rightarrow$ равномерно непрерывна. Тогда
+$$\exists(\delta_i > 0)\forall(t_1, t_2 \in  [a, b]) [(|t_1-t_2| < \delta_i) \rightarrow
+        (|\varphi_i (t_1)- \varphi_i(t_2)| < \varepsilon /3)].$$
+Возьмем $\delta = \underset{1 \mr  i \mr  k}{\min}  \delta_i > 0$ и функцию 
+$x \in  M$ , для которой найдем
+функцию $\varphi_i$ из $\varepsilon /3$-сети такую, что $\rho(x, \varphi_i) < \varepsilon /3$. Тогда при
+условии $|t_1-t_2| < \delta$ получим
+$$|x(t_1)- x(t_2)| \mr  |x(t_1) -\varphi_i(t_1)| + |\varphi_i(t_1) -\varphi_i(t_2)|+
+    |\varphi_i(t_2)- x(t_2)| < 2\rho(x, \varphi_i) + \varepsilon /3 < \varepsilon .$$
+Таким образом, множество $M$ равностепенно непрерывно.
+
+Пусть теперь множество $M$ ограничено и равностепенно непрерывно. Покажем, что $M$
+относительно компактно. Пусть дана последовательность функций $x_n \in  M $. Выделим
+из $\{x_n\}$ сходящуюся подпоследовательность.
+
+
+Рассмотрим множество $[a, b] \cap \mathbb{Q}  =  {r_1, r_2, \dots, r_k, \dots}$ рациональных  чисел.
+Числовая последовательность ${x_n(r_1)}$ ограничена. Тогда существует сходящаяся
+подпоследовательность ${x^1_n (r_1)} \subset {x_n(r_1)}$. 
+Далее рассмотрим последовательность
+$\{x^1_n (r_2)\}$, которая также ограничена. 
+Тогда существует сходящаяся  подпоследовательность
+${x^2_n (r_2)} \subset {x^1_n (r_2)}$.  Повторяя  эти  рассуждения для точек
+$r3, r4, \dots, r_k, \dots$, получим вложенные последовательности
+$\{x_n\} \supset  {x^1_n } \supset {x^2_n } \supset \dots \supset {x^k_n} \supset \dots$
+такие, что для всех$ k \in  \mathbb{N} $ сходятся последовательности $\{x^k_n(r_k)\}^\infty_{n=1}$    . Выберем диагональную последовательность $\{x_n\}$.
+Очевидно, что $\{x^n_n\} \subset \{x_n\}$ и последовательность ${x^n_n(t)}$
+сходится в любой рациональной точке $t = r_k \in  [a, b]$. Объясняется это тем, что
+$\{x^n_n(r_k)\}^\infty_{n=k}	\subset \{x^k_n(r_k)\}^\infty_{n=1}.$  
+
+Возьмем произвольное $\varepsilon  > 0$ и из условия равностепенной непрерывности множества
+функций $M$ выберем по $\varepsilon /3$ соответствующее $\delta > 0$. Построим разбиение
+$a = t_0 < t_1 < t_2 < \dots < t_m = b$ отрезка $[a, b]$ на промежутки длины меньше $\delta$.
+В каждом отрезке $[t_{i-1}, t_i]$ возьмем по одной рациональной точке
+
+$r_i  \in  (t_{i-1}, t_i)$,  где  $i  =  \overline{1, m}$.  
+Последовательность  $\{x^n_n(t)\}$ сходится  в  точках
+
+$r_1, r_2, \dots, r_m$, тогда
+$$\exists(N  \in  \mathbb{N})\forall(n \br N )\forall(p \br 0)\forall(i = \overline{1,m}) [|x^{n+p}_{n+p}(r_i)
+        x^n_n(r_i)| < \varepsilon /3 ].$$
+
+Возьмем точку $t \in  [a, b]$. Пусть эта точка $t \in  [t_{i-1}, t_i]$. В таком случае при
+$n \br$ N и $p \br 0$ получим из и свойства равностепенной непрерывности
+$|x^{n+p}_{n+p}(t)- x^n_n(t)| \mr  |x^{n+p}_{n+p}(t) x^{n+p}_{n+p}(r_i)|+|x^{n+p}_{n+p}(ri) -x_n^n(r_i)|+|x^n_n(r_i) x^n_n(t)| < \varepsilon.$ 
+Таким образом, показали
+$$\forall(\varepsilon  > 0)\exists(N  \in  \mathbb{N})\forall(n \br N )\forall(p \br 0)\forall(t \in  [a, b])
+    [ |x^{n+p}_{n+p}(t) x^n_n(t)| < \varepsilon  ]$$,
+что означает фундаментальность последовательности $\{x_n\}$ в полном пространстве $C[a, b]$.
+\Rightarrow последовательность $\{x_n\}$ сходится, а множество $M$ относительно компактно.
+
 \end{document}

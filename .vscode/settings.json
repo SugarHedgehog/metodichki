@@ -40,5 +40,9 @@
     "cSpell.words": [
       "Перепараметризация",
       "самопересекаются"
-    ]
+    ],
+    "cSpell.enableFiletypes": [
+      "latex-expl3"
+    ],
+    "cSpell.language": "en,ru,en-GB,ru-RU"
   }

@@ -1,0 +1,186 @@
+\documentclass[a4paper, 12pt]{extarticle}
+\input{packs.tex}
+\usepackage{tcolorbox}
+\newcommand{\D}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\DQ}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+
+\begin{document}
+    \section*{Линейные уравнения}
+    \subsection*{Приведение к каноническом виду по шагам}
+    Исходное уравнение:
+    \begin{tcolorbox}[height=1.5cm,valign=center, width=8cm, bottom=0.6cm]
+        $$ \DQ{u}{x}+2\DM{u}{x}{y}+x\DQ{u}{y}+3x\D{u}{x}-4y\D{u}{y}=0.$$
+    \end{tcolorbox}
+    Его коэффициенты равны: $a=1$, $b=1$, $c=x$, $d=3x$, $e=-4y$
+    \begin{enumerate}[leftmargin=*]
+            
+        \item Определим тип уравнения:
+        \begin{tcolorbox}
+        \begin{tabular}{l  l}
+            \begin{minipage}{0.4\textwidth}\begin{itemize}[leftmargin=*]
+                \item Гиперболическое если: $b^2-ac>0$
+                \item Эллиптическое если: $b^2-ac<0$
+                \item Параболлическое если: $b^2-ac=0$
+            \end{itemize}\end{minipage} &
+            \begin{minipage}{0.5\textwidth}
+            Найдём это значение для нашего уравнения:
+            
+            $y^2-x^2y^2=y^2(1-x^2)$. Предположим,что $y\neq 0$.
+
+            $\begin{cases}
+                x<1, \to \text{Гиперболическое}\\ 
+                x>1, \to \text{Эллиптическое} \\
+                x=1. \to \text{Параболлическое}
+            \end{cases}$
+            \end{minipage}\\
+            \end{tabular}
+        \end{tcolorbox}
+    
+
+    \item Теперь решение будет зависеть от выбранных условий, для каждого своё 
+    характеристическое уравнение.
+    
+    \begin{tabularx}{\textwidth} { 
+         >{\centering}X 
+         >{\centering}X 
+         >{\centering}X  }
+            \begin{tcolorbox}[height=1cm]
+                Гиперболическое
+            \end{tcolorbox}      
+            \begin{tcolorbox}
+            $\begin{cases}
+            dy=(b+\sqrt{b^2-ac})dx,\\
+            dy=(b-\sqrt{b^2-ac})dx,
+            \end{cases}$
+            $\begin{cases}
+                dy=(1+\sqrt{1-x})dx,\\
+                dy=(1-\sqrt{1-x})dx,
+            \end{cases}$
+            $\begin{cases}
+                \int dy=\int(1+\sqrt{1-x})dx,\\
+                \int dy=\int(1-\sqrt{1-x})dx,
+            \end{cases}$
+            $\begin{cases}
+                y=x-\frac{2}{3}(1-x)^{\frac{3}{2}}+C_1,\\
+                y=x+\frac{2}{3}(1-x)^{\frac{3}{2}}+c_2.
+            \end{cases}$
+            \end{tcolorbox}
+            &
+            \begin{tcolorbox}[height=1cm]
+                Эллиптическое
+            \end{tcolorbox}
+
+            \begin{tcolorbox}
+                $\begin{cases}
+                ady=(b+i\sqrt{b^2-ac})dx,\\
+                ady=(b-i\sqrt{b^2-ac})dx.
+            \end{cases}$
+
+            \vspace*{2mm}
+                Нужно выбрать одно для решения
+            
+            $dy=(1+\sqrt{1-x})dx\\$
+            $\int dy=\int(1+i\sqrt{1-x})dx$
+            $y=x-\frac{2}{3}i(1-x)^{\frac{3}{2}}+C$
+
+            \end{tcolorbox}
+            &
+           \begin{tcolorbox}[height=1cm]
+            Параболлическое 
+            \end{tcolorbox}
+            \begin{tcolorbox}
+                $ady=bdx$
+
+                $dy=dx$
+
+                $\int dy=\int dx$
+
+                $y=x+C$
+            \end{tcolorbox}
+
+    \end{tabularx}
+
+    Проводим замену переменных
+
+    \begin{tabularx}{\textwidth} { 
+        >{\centering}X 
+        >{\centering}X 
+        >{\centering}X  }
+        \begin{tcolorbox}[height=3cm]
+            $C_1=\xi(x,y)=y-x+\frac{2}{3}(1-x)^{\frac{3}{2}}$
+
+            $C_2=\eta(x,y)=y+x-\frac{2}{3}(1-x)^{\frac{3}{2}}$
+        \end{tcolorbox}&
+        \begin{tcolorbox}[height=3cm]
+            $ReC=\xi(x,y)=y-x$
+
+            $ImC=\eta(x,y)=-\frac{2}{3}(1-x)^{\frac{3}{2}}$
+        \end{tcolorbox}&
+        \begin{tcolorbox}[height=3cm]
+            $C=\xi(x,y)=y-x$
+
+            $\eta(x,y)=y+x$ - выбирается произвольно,
+            чтобы выполнялось условие 
+            из следующего пункта.
+        \end{tcolorbox}
+
+    \end{tabularx}
+    Нахождение производных от новых переменных по формулам
+
+    \begin{tabular}{ll}
+        \begin{tcolorbox}[width=4.5cm,height=1.5cm, top=-0.3cm]
+            $$\D{u}{x}=\D{\xi}{x}\D{v}{\xi}+\D{\eta}{x}\D{v}{\eta}$$
+        \end{tcolorbox}&
+        \begin{tcolorbox}[width=4.5cm,height=1.5cm, top=-0.3cm]
+            $$\D{u}{y}=\D{\xi}{y}\D{v}{\xi}+\D{\eta}{y}\D{v}{\eta}$$
+        \end{tcolorbox}
+    \end{tabular}
+    
+    \begin{tcolorbox}[width=11cm,height=1.5cm, top=-0.4cm]
+        $$\DQ{u}{x}=\left(\D{\xi}{x}\right)^2\DQ{v}{\xi}+2\left(\D{\xi}{x}\D{\eta}{x}\right)\DM{v}{\xi}{\eta}+\left(\D{\eta}{x}\right)^2\DQ{v}{\eta}$$
+    \end{tcolorbox}
+    \begin{tcolorbox}[width=13cm,height=1.5cm, top=-0.4cm]
+        $$\DM{u}{x}{y}=\left(\D{\xi}{x}\D{\xi}{y}\right)\DQ{v}{\xi}+2\left(\D{\xi}{x}\D{\eta}{y}+\D{\xi}{y}\D{\eta}{x}\right)\DM{v}{\xi}{\eta}+\left(\D{\xi}{y}\D{\eta}{x}\right)^2\DQ{v}{\eta}$$
+    \end{tcolorbox}
+    \begin{tcolorbox}[width=11cm,height=1.5cm, top=-0.4cm]
+        $$\DQ{u}{y}=\left(\D{\xi}{y}\right)^2\DQ{v}{\xi}+
+        2\left(\D{\xi}{y}\D{\eta}{y}\right)\DM{v}{\xi}{\eta}+\left(\D{\eta}{y}\right)^2\DQ{v}{\eta}$$
+    \end{tcolorbox}
+    \item Посчитаем матрицу 
+
+        $\delta=\begin{vmatrix}
+            \D{\xi}{x}&\D{\xi}{y}\\
+            \D{\eta}{x}&\D{\eta}{y}
+        \end{vmatrix}\neq 0 $
+
+    \begin{tabularx}{\textwidth} { 
+        >{\centering}l 
+        >{\centering}l 
+        >{\centering}l}
+        \begin{tcolorbox}[width=5.3cm]
+            $\begin{vmatrix}
+                -1+(1-x)^{\frac{1}{2}}&1\\
+                1-(1-x)^{\frac{1}{2}}&1
+            \end{vmatrix}\neq 0$   
+        \end{tcolorbox}
+        &
+        \begin{tcolorbox}[width=4.4cm]
+            $\begin{vmatrix}
+                -1 & 1 \\
+                (1-x)^{\frac{1}{2}}& 0
+            \end{vmatrix}\neq 0$
+        \end{tcolorbox}
+        &
+        \begin{tcolorbox}[width=3.3cm]
+            $\begin{vmatrix}
+                -1 & 1\\
+                1 &  1
+            \end{vmatrix}\neq 0$
+        \end{tcolorbox}
+        
+    \end{tabularx}
+
+    \end{enumerate}
+    
+\end{document}

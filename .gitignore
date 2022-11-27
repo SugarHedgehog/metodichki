@@ -11,6 +11,8 @@
 *.cb
 *.cb2
 .*.lb
+##some file
+Отработки шаброва
 
 ## Intermediate documents:
 *.dvi

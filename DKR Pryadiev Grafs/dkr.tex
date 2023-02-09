@@ -1,0 +1,607 @@
+\documentclass[a4paper, 12pt,fleqn]{extarticle}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainfont{CMU Serif}
+\newfontfamily{\cyrillicfont}{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\newfontfamily{\cyrillicfontsf}{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
+\setdefaultlanguage{russian}
+\usepackage[left=1cm,bottom=2cm,top=1cm]{geometry}
+%%% Дополнительная работа с математикой
+\usepackage{amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{amsmath}
+\usepackage{icomma}
+
+%% Шрифты
+\usepackage{euscript} % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+
+%% Перенос знаков в формулах по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+	{\hbox{$\mathsurround=0pt #1$}}{}}
+\newcommand{\D}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\DQ}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+\begin{document}
+\begin{center}
+    \hfill \break
+    \large{МИНОБРНАУКИ РОССИИ}\\
+    \footnotesize{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ}\\ 
+    \footnotesize{ВЫСШЕГО ПРОФЕССИОНАЛЬНОГО ОБРАЗОВАНИЯ}\\
+    \small{\textbf{«ВОРОНЕЖСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ»}}\\
+    \hfill \break
+    \normalsize{Математический факультет}\\
+     \hfill \break
+    \normalsize{Кафедра теории функций и геометрии}\\
+    \hfill\break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \large{Начально-краевая задача для волнового уравнения на геометрическом графе-звезде}\\
+    \hfill \break
+    \hfill \break
+    \hfill \break\
+    \hfill \break
+    \hfill \break
+    \normalsize{Домашняя контрольная работа\\
+    \hfill \break
+    Направление  010501 Фундаментальные математика и механика\\
+
+    \hfill \break
+    }\\
+    \hfill \break
+    \hfill \break
+    \end{center}
+    \hfill \break
+     
+    \normalsize{ 
+    \begin{tabular}{cccc}
+    Зав.кафедрой & \underline{\hspace{3cm}} &  д.физ.-мат.н.,  проф. & Е.М. Семёнов \\\\
+    Обучающийся & \underline{\hspace{3cm}} & &А.С. Суматохина \\\\
+    Руководитель & \underline{\hspace{3cm}}&  д.физ.-мат.н.,  проф. & В.Л. Прядиев \\\\
+    \end{tabular}
+    }\\
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \begin{center} Воронеж 2022 \end{center}
+    \thispagestyle{empty} % выключаем отображение номера для этой страницы
+     
+    % КОНЕЦ ТИТУЛЬНОГО ЛИСТА
+Условия: $n_1, d_2, d_3$.
+$\alpha_1=1,\ \alpha_2=2,\ \alpha_3=2$
+\begin{gather}
+    \DQ{u_j}{x}(x,t)=\DQ{u_j}{t},\ x\in[0,1],\ t\geq 0,\ j=\overline{1,3}\\
+    u_2(1,t)=0, \ t\geq 0 \label{eq:2} \\ 
+    u_3(1,t)=0,  \ t\geq 0  \\
+    \D{u_1}{x}(0,t)=0, \ t\geq 0\\
+    \D{u_1}{x}(0,t)+2\D{u_2}{x}(0,t)+2\D{u_3}{x}(0,t)=0, \ t\geq 0\\
+    u_1(0,t)=u_2(0,t)=u_3(0,t), \ t\geq 0 \label{eq:6}\\
+    u_j(x,0)=\varphi_j(x), j=\overline{1,3}, \ t\geq 0\\
+    \D{u_j}{t}(x,0)=0, \ t\geq 0.
+\end{gather}
+Решение ищется в виде:
+    \begin{equation}\label{eq:9}
+        u_j(x,t)=0.5(\tilde{\varphi}_j(x+t)+\tilde{\varphi}_j(x-t)), j=\overline{1,3}.
+    \end{equation}
+Подставляем в (\ref{eq:9}) уравнения (\ref{eq:2})-(\ref{eq:6})
+\[\begin{cases}
+    \tilde{\varphi}_2(1+t)+\tilde{\varphi}_2(1-t)=0 \\
+    \tilde{\varphi}_3(1+t)+\tilde{\varphi}_3(1-t)=0 \\
+    \tilde{\varphi}'_1(1+t)+\tilde{\varphi}'_1(1-t)=0 \\
+    \tilde{\varphi}'_1(t)+\tilde{\varphi}'_1(-t)+2(\tilde{\varphi}'_2(t)+\tilde{\varphi}'_2(-t))+2(\tilde{\varphi}'_3(t)+\tilde{\varphi}'_3(-t))=0\\
+    \tilde{\varphi}_1(t)+\tilde{\varphi}_1(-t)=\tilde{\varphi}_2(t)+\tilde{\varphi}_2(-t)\\
+    \tilde{\varphi}_2(t)+\tilde{\varphi}_2(-t)=\tilde{\varphi}_3(t)+\tilde{\varphi}_3(-t)\\
+\end{cases}\]
+Проводим замены $\tilde{\varphi}_j(-t)=\psi(1+t)$ и $\tilde{\varphi}_j(1-t)=\psi(t)$, получаем систему:
+\[\begin{cases}
+    \tilde{\varphi}_2(1+t)+\psi_2(t)=0\\
+    \tilde{\varphi}_3(1+t)+\psi_3(t)=0\\
+    \tilde{\varphi}'_1(1+t)+\tilde{\varphi}'_1(1-t)=0\\
+    \tilde{\varphi}'_1(t)+\tilde{\varphi}'_1(-t)+2(\tilde{\varphi}'_2(t)+\tilde{\varphi}'_2(-t))+2(\tilde{\varphi}'_3(t)+\tilde{\varphi}'_3(-t))=0\\
+    \tilde{\varphi}_1(t)+\psi_1(1+t)=\tilde{\varphi}_2(t)+\psi_2(1+t)\\
+    \tilde{\varphi}_2(t)+\psi_2(1+t)=\tilde{\varphi}_3(t)+\psi_3(1+t)\\
+\end{cases}\]
+Интегрируем третью и четвёртую строку:
+\[\int_0^t \tilde{\varphi}'_1(1+s)+\tilde{\varphi}'_1(1-s)ds=
+\tilde{\varphi}_1(1+t)-\tilde{\varphi}_1(1-t)\]
+Отсюда: $\tilde{\varphi}_1(1+t)-\psi_1(t)=0$
+\[\int_0^t \tilde{\varphi}'_1(s)+\tilde{\varphi}'_1(-s)+2(\tilde{\varphi}'_2(s)+\tilde{\varphi}'_2(-s))+2(\tilde{\varphi}'_3(s)+\tilde{\varphi}'_3(-s))ds=\]
+\[\tilde{\varphi}_1(t)-\tilde{\varphi}_1(-t)+2(\tilde{\varphi}_2(t)-\tilde{\varphi}_2(-t))+2(\tilde{\varphi}_3(t)-\tilde{\varphi}_3(-t))\]
+Получаем: $\tilde{\varphi}_1(t)-\psi_1(1+t)+2\tilde{\varphi}_2(t)-2\psi_2(1+t)+2\tilde{\varphi}_3(t)-2\psi_3(1+t)=0$
+
+После всех преобразований систему будет выглядеть:
+\[\begin{cases}
+    \tilde{\varphi}_2(1+t)+\psi_2(t)=0\\
+    \tilde{\varphi}_3(1+t)+\psi_3(t)=0\\
+    \tilde{\varphi}_1(1+t)-\psi_1(t)=0\\
+    \tilde{\varphi}_1(t)-\psi_1(1+t)+2\tilde{\varphi}_2(t)-2\psi_2(1+t)+2\tilde{\varphi}_3(t)-2\psi_3(1+t)=0\\
+    \tilde{\varphi}_1(t)+\psi_1(1+t)=\tilde{\varphi}_2(t)+\psi_2(1+t)\\
+    \tilde{\varphi}_2(t)+\psi_2(1+t)=\tilde{\varphi}_3(t)+\psi_3(1+t)\\
+\end{cases}\]
+Рассмотрим функцию $\eta(t)=(\tilde{\varphi}_1(t),\tilde{\varphi}_2(t),\tilde{\varphi}_3(t),\psi_1(t),\psi_2(t),\psi_3(t))^T$, тогда система принимает вид:
+$A\eta(t+1)=B\eta(t)$
+\[A=\begin{bmatrix}
+    0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0\\
+1 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & -1 & -2 & -2\\
+0 & 0 & 0 & 1 & -1 & 0\\
+0 & 0 & 0 & 0 & 1 & -1
+\end{bmatrix},\ B=\begin{bmatrix}
+0 & 0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 1\\
+0 & 0 & 0 & -1 & 0 & 0\\
+1 & 2 & 2 & 0 & 0 & 0\\
+1 & -1 & 0 & 0 & 0 & 0\\
+0 & 1 & -1 & 0 & 0 & 0
+\end{bmatrix}\]
+Выразим в явной форме $\eta(t+1)$:
+\begin{gather*}
+    A\eta(t+1)=B\eta(t)\\
+    A^{-1}A\eta(t+1)=A^{-1}B\eta(t) \\
+    \eta(t+1)=A^{-1}B\eta(t)
+\end{gather*}
+\[A^{-1}=\begin{bmatrix}
+0 & 0 & 1 & 0 & 0 & 0\\
+1 & 0 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & -0.2 & 0.8 & 0.4\\
+0 & 0 & 0 & -0.2 & -0.2 & 0.4\\
+0 & 0 & 0 & -0.2 & -0.2 & -0.6
+\end{bmatrix}\]
+Пусть $A^{-1}B\eta(t)=C=\eta(t+1)$
+\[C=\begin{bmatrix}
+0& 0& 0& -1& 0& 0\\ 
+0& 0& 0& 0& 1& 0\\ 
+0& 0& 0& 0& 0& 1\\ 
+0.6& -0.8& -0.8& 0& 0& 0\\ 
+-0.4& 0.2& -0.8& 0& 0& 0\\ 
+-0.4& -0.8& 0.2& 0& 0& 0
+\end{bmatrix}\]
+Найдём собственные значения $C$.
+\begin{gather*}
+    \lambda_1 = -\frac{1 - 2 i}{\sqrt{5}}=\cos(\pi - \arctg(2)) + i \sin(\pi - \arctg(2)),\\
+    \lambda_2 = -\frac{1 + 2 i}{\sqrt{5}}=\cos(-\pi + \arctg(2)) + i \sin(-\pi + \arctg(2)),\\
+    \lambda_3=-1,\\
+    \lambda_4=1,\\
+    \lambda_5 = \frac{1 + 2 i}{\sqrt{5}}=\cos(\arctg(2)) + i \sin(\arctg(2)),\\
+    \lambda_1 = \frac{1 - 2 i}{\sqrt{5}}=\cos(-\arctg(2)) + i \sin(-\arctg(2)).
+\end{gather*}
+Собственные значения не имеют периода, поэтому матрица $C$ не будет периодичной. Ранее мы выяснили, что $\eta(t+n)=C^n \eta(t)$, найдём все матрицы $C$ до шестой степени.
+\[C^2=
+\begin{bmatrix}
+    -0.6 & 0.8 & 0.8 & 0 & 0 & 0\\
+-0.4 & 0.2 & -0.8 & 0 & 0 & 0\\
+-0.4 & -0.8 & 0.2 & 0 & 0 & 0\\
+0 & 0 & 0 & -0.6 & -0.8 & -0.8\\
+0 & 0 & 0 & 0.4 & 0.2 & -0.8\\
+0 & 0 & 0 & 0.4 & -0.8 & 0.2
+\end{bmatrix}\]
+\[C^3=
+\begin{bmatrix}
+    0 & 0 & 0 & 0.6 & 0.8 & 0.8\\
+    0 & 0 & 0 & 0.4 & 0.2 & -0.8\\
+    0 & 0 & 0 & 0.4 & -0.8 & 0.2\\
+    0.28 & 0.96 & 0.96 & 0 & 0 & 0\\
+    0.48 & 0.36 & -0.64 & 0 & 0 & 0\\
+    0.48 & -0.64 & 0.36 & 0 & 0 & 0  
+\end{bmatrix}\]
+\[C^4=
+\begin{bmatrix}
+    -0.28 & -0.96 & -0.96 & 0 & 0 & 0\\
+    0.48 & 0.36 & -0.64 & 0 & 0 & 0\\
+    0.48 & -0.64 & 0.36 & 0 & 0 & 0\\
+    0 & 0 & 0 & -0.28 & 0.96 & 0.96\\
+    0 & 0 & 0 & -0.48 & 0.36 & -0.64\\
+    0 & 0 & 0 & -0.48 & -0.64 & 0.36  
+\end{bmatrix}\]
+\[C^5=\begin{bmatrix}
+    0 & 0 & 0 & 0.28 & -0.96 & -0.96\\
+    0 & 0 & 0 & -0.48 & 0.36 & -0.64\\
+    0 & 0 & 0 & -0.48 & -0.64 & 0.36\\
+    -0.936 & -0.352 & -0.352 & 0 & 0 & 0\\
+    -0.176 & 0.968 & -0.032 & 0 & 0 & 0\\
+    -0.176 & -0.032 & 0.968 & 0 & 0 & 0 
+\end{bmatrix}\]
+\[C^6=
+\begin{bmatrix}
+    0.936 & 0.352 & 0.352 & 0 & 0 & 0\\
+-0.176 & 0.968 & -0.032 & 0 & 0 & 0\\
+-0.176 & -0.032 & 0.968 & 0 & 0 & 0\\
+0 & 0 & 0 & 0.936 & -0.352 & -0.352\\
+0 & 0 & 0 & 0.176 & 0.968 & -0.032\\
+0 & 0 & 0 & 0.176 & -0.032 & 0.968
+\end{bmatrix}\]
+
+Выпишем формулы для $\eta$. Если $x \in [0,1]$, то:
+\[\eta(x)=
+\begin{bmatrix}
+    \tilde{\varphi_1}(x)\\
+    \tilde{\varphi_2}(x)\\
+    \tilde{\varphi_3}(x)\\
+    \tilde{\varphi_1}(1-x)\\
+    \tilde{\varphi_2}(1-x)\\
+    \tilde{\varphi_3}(1-x)\\
+\end{bmatrix}
+    \]
+    Если $x \in [1,2]$:
+    \[C\cdot \eta(x-1)=\begin{bmatrix}
+        0& 0& 0& -1& 0& 0\\ 
+        0& 0& 0& 0& 1& 0\\ 
+        0& 0& 0& 0& 0& 1\\ 
+        0.6& -0.8& -0.8& 0& 0& 0\\ 
+        -0.4& 0.2& -0.8& 0& 0& 0\\ 
+        -0.4& -0.8& 0.2& 0& 0& 0
+        \end{bmatrix}\cdot
+        \begin{bmatrix}
+            \tilde{\varphi_1}(x-1)\\%x
+            \tilde{\varphi_2}(x-1)\\%y
+            \tilde{\varphi_3}(x-1)\\%z
+            \tilde{\varphi_1}(2-x)\\%q
+            \tilde{\varphi_2}(2-x)\\%w
+            \tilde{\varphi_3}(2-x)\\%r
+        \end{bmatrix}
+        =\begin{bmatrix}
+            -\tilde{\varphi_1}(2-x)\\
+            \tilde{\varphi_2}(2-x)\\
+            \tilde{\varphi_3}(2-x)\\
+            0.6\tilde{\varphi_1}(x-1)-0.8\tilde{\varphi_2}(x-1)-0.8\tilde{\varphi_3}(x-1)\\
+            -0.4\tilde{\varphi_1}(x-1)+0.2\tilde{\varphi_2}(x-1)-0.8\tilde{\varphi_3}(x-1)\\
+            -0.4\tilde{\varphi_1}(x-1)-0.8\tilde{\varphi_2}(x-1)+0.2\tilde{\varphi_3}(x-1)
+        \end{bmatrix}\]
+        Если $x \in [2,3]$:
+        \[C^2\cdot\eta(x-2)=
+        \begin{bmatrix}
+            -0.6 & 0.8 & 0.8 & 0 & 0 & 0\\
+        -0.4 & 0.2 & -0.8 & 0 & 0 & 0\\
+        -0.4 & -0.8 & 0.2 & 0 & 0 & 0\\
+        0 & 0 & 0 & -0.6 & -0.8 & -0.8\\
+        0 & 0 & 0 & 0.4 & 0.2 & -0.8\\
+        0 & 0 & 0 & 0.4 & -0.8 & 0.2
+        \end{bmatrix}\cdot 
+        \begin{bmatrix}
+            \tilde{\varphi_1}(x-2)\\%x
+            \tilde{\varphi_2}(x-2)\\%y
+            \tilde{\varphi_3}(x-2)\\%z
+            \tilde{\varphi_1}(3-x)\\%q
+            \tilde{\varphi_2}(3-x)\\%w
+            \tilde{\varphi_3}(3-x)\\%r
+        \end{bmatrix}=\]
+        \[\begin{bmatrix}
+            -0.6 \tilde{\varphi_1}(x-2) + 0.8 \tilde{\varphi_2}(x-2) + 0.8 \tilde{\varphi_3}(x-2)\\
+            -0.4 \tilde{\varphi_1}(x-2) + 0.2 \tilde{\varphi_2}(x-2) - 0.8 \tilde{\varphi_3}(x-2)\\
+            -0.4 \tilde{\varphi_1}(x-2) - 0.8 \tilde{\varphi_2}(x-2) + 0.2 \tilde{\varphi_3}(x-2)\\
+            -0.6 \tilde{\varphi_1}(3-x)  - 0.8 \tilde{\varphi_2}(3-x)- 0.8 \tilde{\varphi_3}(3-x)\\
+            0.4 \tilde{\varphi_1}(3-x) + 0.2 \tilde{\varphi_2}(3-x) - 0.8 \tilde{\varphi_3}(3-x)\\
+            0.4 \tilde{\varphi_1}(3-x)  - 0.8 \tilde{\varphi_2}(3-x)+ 0.2 \tilde{\varphi_3}(3-x)
+        \end{bmatrix}
+        \]
+        Если $x \in [3,4]$:
+        \[C^3\cdot\eta(x-3)=
+        \begin{bmatrix}
+            0 & 0 & 0 & 0.6 & 0.8 & 0.8\\
+            0 & 0 & 0 & 0.4 & 0.2 & -0.8\\
+            0 & 0 & 0 & 0.4 & -0.8 & 0.2\\
+            0.28 & 0.96 & 0.96 & 0 & 0 & 0\\
+            0.48 & 0.36 & -0.64 & 0 & 0 & 0\\
+            0.48 & -0.64 & 0.36 & 0 & 0 & 0  
+        \end{bmatrix}
+        \begin{bmatrix}
+            \tilde{\varphi_1}(x-3)\\%x
+            \tilde{\varphi_2}(x-3)\\%y
+            \tilde{\varphi_3}(x-3)\\%z
+            \tilde{\varphi_1}(4-x)\\%q
+            \tilde{\varphi_2}(4-x)\\%w
+            \tilde{\varphi_3}(4-x)\\%r
+        \end{bmatrix}=\]
+        \[
+            \begin{bmatrix}
+                0.6 \tilde{\varphi_1}(4-x)  + 0.8 \tilde{\varphi_2}(4-x)+ 0.8 \tilde{\varphi_3}(4-x) \\
+                0.4 \tilde{\varphi_1}(4-x) + 0.2 \tilde{\varphi_2}(4-x) - 0.8 \tilde{\varphi_3}(4-x) \\
+                0.4 \tilde{\varphi_1}(4-x) - 0.8 \tilde{\varphi_2}(4-x) + 0.2 \tilde{\varphi_3}(4-x) \\
+                0.28 \tilde{\varphi_1}(x-3) + 0.96 \tilde{\varphi_2}(x-3) + 0.96 \tilde{\varphi_3}(x-3) \\
+                0.48 \tilde{\varphi_1}(x-3) + 0.36 \tilde{\varphi_2}(x-3) - 0.64 \tilde{\varphi_3}(x-3) \\
+                0.48 \tilde{\varphi_1}(x-3) - 0.64 \tilde{\varphi_2}(x-3) + 0.36 \tilde{\varphi_3}(x-3) \\
+            \end{bmatrix}
+            \]
+            Если $x \in [4,5]$:
+            \[C^4\cdot\eta(x+3)=
+            \begin{bmatrix}
+                -0.28 & -0.96 & -0.96 & 0 & 0 & 0\\
+                0.48 & 0.36 & -0.64 & 0 & 0 & 0\\
+                0.48 & -0.64 & 0.36 & 0 & 0 & 0\\
+                0 & 0 & 0 & -0.28 & 0.96 & 0.96\\
+                0 & 0 & 0 & -0.48 & 0.36 & -0.64\\
+                0 & 0 & 0 & -0.48 & -0.64 & 0.36  
+            \end{bmatrix}
+            \begin{bmatrix}
+                \tilde{\varphi_1}(x+3)\\%x
+                \tilde{\varphi_2}(x+3)\\%y
+                \tilde{\varphi_3}(x+3)\\%z
+                \tilde{\varphi_1}(5-x)\\%q
+                \tilde{\varphi_2}(5-x)\\%w
+                \tilde{\varphi_3}(5-x)\\%r
+            \end{bmatrix}=
+            \]
+        \[
+            \begin{bmatrix}
+            -0.28 \tilde{\varphi_1}(x+3) - 0.96 \tilde{\varphi_2}(x+3) - 0.96 \tilde{\varphi_3}(x+3) \\
+            0.48 \tilde{\varphi_1}(x+3) + 0.36 \tilde{\varphi_2}(x+3) - 0.64 \tilde{\varphi_3}(x+3) \\
+            0.48 \tilde{\varphi_1}(x+3) - 0.64 \tilde{\varphi_2}(x+3) + 0.36 \tilde{\varphi_3}(x+3) \\
+            -0.28 \tilde{\varphi_1}(5-x) + 0.96 \tilde{\varphi_3}(5-x) + 0.96 \tilde{\varphi_2}(5-x) \\
+            -0.48 \tilde{\varphi_1}(5-x) - 0.64 \tilde{\varphi_3}(5-x) + 0.36 \tilde{\varphi_2}(5-x) \\
+            -0.48 \tilde{\varphi_1}(5-x) + 0.36 \tilde{\varphi_3}(5-x) - 0.64 \tilde{\varphi_2}(5-x) \\
+            \end{bmatrix}
+            \]
+            Если $x \in [5,6]$:
+            \[C^5\cdot\eta(x-5)=
+            \begin{bmatrix}
+                    0 & 0 & 0 & 0.28 & -0.96 & -0.96\\
+                    0 & 0 & 0 & -0.48 & 0.36 & -0.64\\
+                    0 & 0 & 0 & -0.48 & -0.64 & 0.36\\
+                    -0.936 & -0.352 & -0.352 & 0 & 0 & 0\\
+                    -0.176 & 0.968 & -0.032 & 0 & 0 & 0\\
+                    -0.176 & -0.032 & 0.968 & 0 & 0 & 0  
+            \end{bmatrix}
+            \begin{bmatrix}
+                \tilde{\varphi_1}(x-5)\\%x
+                \tilde{\varphi_2}(x-5)\\%y
+                \tilde{\varphi_3}(x-5)\\%z
+                \tilde{\varphi_1}(x+4)\\%q
+                \tilde{\varphi_2}(x+4)\\%w
+                \tilde{\varphi_3}(x+4)\\%r
+            \end{bmatrix}=
+            \]
+            
+            \[
+            \begin{bmatrix}
+                0.28 \tilde{\varphi_1}(x+4) - 0.96 \tilde{\varphi_3}(x+4) - 0.96 \tilde{\varphi_2}(x+4) \\
+                -0.48 \tilde{\varphi_1}(x+4) - 0.64 \tilde{\varphi_3}(x+4) + 0.36 \tilde{\varphi_2}(x+4) \\
+                -0.48 \tilde{\varphi_1}(x+4) + 0.36 \tilde{\varphi_3}(x+4) - 0.64 \tilde{\varphi_2}(x+4) \\
+                -0.936 \tilde{\varphi_1}(x-5) - 0.352 \tilde{\varphi_2}(x-5) - 0.352 \tilde{\varphi_3}(x-5) \\
+                -0.176 \tilde{\varphi_1}(x-5) + 0.968 \tilde{\varphi_2}(x-5) - 0.032 \tilde{\varphi_3}(x-5) \\
+                -0.176 \tilde{\varphi_1}(x-5) - 0.032 \tilde{\varphi_2}(x-5) + 0.968 \tilde{\varphi_3}(x-5) +\\
+            \end{bmatrix}
+            \]
+            Если $x \in [6;7]$:
+            \[C^6\eta(x-6)=
+\begin{bmatrix}
+    0.936 & 0.352 & 0.352 & 0 & 0 & 0\\
+-0.176 & 0.968 & -0.032 & 0 & 0 & 0\\
+-0.176 & -0.032 & 0.968 & 0 & 0 & 0\\
+0 & 0 & 0 & 0.936 & -0.352 & -0.352\\
+0 & 0 & 0 & 0.176 & 0.968 & -0.032\\
+0 & 0 & 0 & 0.176 & -0.032 & 0.968
+\end{bmatrix}
+\begin{bmatrix}
+    \tilde{\varphi_1}(x-6)\\%x
+    \tilde{\varphi_2}(x-6)\\%y
+    \tilde{\varphi_3}(x-6)\\%z
+    \tilde{\varphi_1}(7-x)\\%q
+    \tilde{\varphi_2}(7-x)\\%w
+    \tilde{\varphi_3}(7-x)\\%r
+\end{bmatrix}=\]
+\[
+\begin{bmatrix}
+    0.936 \tilde{\varphi_1}(x-6) + 0.352 \tilde{\varphi_2}(x-6) + 0.352 \tilde{\varphi_3}(x-6)\\
+    -0.176 \tilde{\varphi_1}(x-6) + 0.968 \tilde{\varphi_2}(x-6) - 0.032 \tilde{\varphi_3}(x-6) \\
+    -0.176 \tilde{\varphi_1}(x-6) - 0.032 \tilde{\varphi_2}(x-6) + 0.968 \tilde{\varphi_3}(x-6) \\
+    0.936 \tilde{\varphi_1}(7-x) - 0.352 \tilde{\varphi_2}(7-x) - 0.352 \tilde{\varphi_3}(7-x) \\
+    0.176 \tilde{\varphi_1}(7-x) + 0.968 \tilde{\varphi_2}(7-x) - 0.032 \tilde{\varphi_3}(7-x) \\
+0.176 \tilde{\varphi_1}(7-x) - 0.032 \tilde{\varphi_2}(7-x) + 0.968 \tilde{\varphi_3}(7-x) \\
+\end{bmatrix}\]
+
+Если $x \in [7;8]$:
+\[C^7\eta(x-7)=
+\begin{bmatrix}
+    \tilde{\varphi_1}(x-7)\\%x
+    \tilde{\varphi_2}(x-7)\\%y
+    \tilde{\varphi_3}(x-7)\\%z
+    \tilde{\varphi_1}(8-x)\\%q
+    \tilde{\varphi_2}(8-x)\\%w
+    \tilde{\varphi_3}(8-x)\\%r
+\end{bmatrix}
+\begin{bmatrix}
+0 & 0 & 0 & -0.936 & 0.352 & 0.352\\
+0 & 0 & 0 & 0.176 & 0.968 & -0.032\\
+0 & 0 & 0 & 0.176 & -0.032 & 0.968\\
+0.8432 & -0.5376 & -0.5376 & 0 & 0 & 0\\
+-0.2688 & 0.0784 & -0.9216 & 0 & 0 & 0\\
+-0.2688 & -0.9216 & 0.0784 & 0 & 0 & 0\\
+\end{bmatrix}=\]
+\[
+    \begin{bmatrix}
+        -0.936 \tilde{\varphi_1}(8-x) + 0.352 \tilde{\varphi_2}(8-x) + 0.352 \tilde{\varphi_3}(8-x)\\
+        0.176 \tilde{\varphi_1}(8-x) + 0.968 \tilde{\varphi_2}(8-x) - 0.032 \tilde{\varphi_3}(8-x)\\
+        0.176 \tilde{\varphi_1}(8-x) - 0.032 \tilde{\varphi_2}(8-x) + 0.968 \tilde{\varphi_3}(8-x)\\
+        0.8432 \tilde{\varphi_1}(x-7) - 0.5376 \tilde{\varphi_2}(x-7) - 0.5376 \tilde{\varphi_3}(x-7)\\
+        -0.2688 \tilde{\varphi_1}(x-7) + 0.0784 \tilde{\varphi_2}(x-7) - 0.9216 \tilde{\varphi_3}(x-7)\\
+        -0.2688 \tilde{\varphi_1}(x-7) - 0.9216 \tilde{\varphi_2}(x-7) + 0.0784 \tilde{\varphi_3}(x-7)\\
+        \end{bmatrix}\]
+Выписываем формулы для $\tilde{\varphi}=(\tilde{\varphi_1}, \tilde{\varphi_2}, \tilde{\varphi_3})^T$
+\[
+    \tilde{\varphi_1}=
+    \begin{cases}
+        -0.936 \tilde{\varphi_1}(x+6) + 0.352 \tilde{\varphi_2}(x+6) + 0.352 \tilde{\varphi_3}(x+6)&x\in[-6;-5]\\
+        0.936 \tilde{\varphi_1}(x+5) + 0.352 \tilde{\varphi_2}(x+5) + 0.352 \tilde{\varphi_3}(x+5)&x\in[-5;-4]\\
+        0.28 \tilde{\varphi_1}(x+4) - 0.96 \tilde{\varphi_3}(x+4) - 0.96 \tilde{\varphi_2}(x+4)&x\in[-4;-3] \\
+        -0.28 \tilde{\varphi_1}(x+3) - 0.96 \tilde{\varphi_2}(x+3) - 0.96 \tilde{\varphi_3}(x+3)&x\in[-3;-2] \\
+        0.6 \tilde{\varphi_1}(x+2)  + 0.8 \tilde{\varphi_2}(x+2)+ 0.8 \tilde{\varphi_3}(x+2)&x\in[-2;-1]\\
+        -0.6 \tilde{\varphi_1}(x+1) + 0.8 \tilde{\varphi_2}(x+1) + 0.8 \tilde{\varphi_3}(x+1)&x\in[-1;0]\\
+        \tilde{\varphi_1}(x)&x\in[0,1]\\
+        -\tilde{\varphi_1}(2-x)&x\in[1,2]\\
+        -0.6 \tilde{\varphi_1}(x-2) + 0.8 \tilde{\varphi_2}(x-2) + 0.8 \tilde{\varphi_3}(x-2)&x\in[2,3]\\
+        0.6 \tilde{\varphi_1}(4-x)  + 0.8 \tilde{\varphi_2}(4-x) + 0.8 \tilde{\varphi_3}(4-x)&x\in[3,4]\\
+        -0.28 \tilde{\varphi_1}(x-4) - 0.96 \tilde{\varphi_2}(x-4) - 0.96 \tilde{\varphi_3}(x-4)&x\in[4,5] \\
+        0.28 \tilde{\varphi_1}(6-x) - 0.96 \tilde{\varphi_3}(6-x) - 0.96 \tilde{\varphi_2}(6-x)&x\in[5,6] \\
+        0.936 \tilde{\varphi_1}(x-6) + 0.352 \tilde{\varphi_2}(x-6) + 0.352 \tilde{\varphi_3}(x-6)&x\in[6,7]\\
+        -0.936 \tilde{\varphi_1}(8-x) + 0.352 \tilde{\varphi_2}(8-x) + 0.352 \tilde{\varphi_3}(8-x)&x\in[7,8]
+    \end{cases}\]
+    \[
+        \tilde{\varphi_2}=
+        \begin{cases}
+           -0.176 \tilde{\varphi_1}(x+6) - 0.968 \tilde{\varphi_2}(x+6) + 0.032 \tilde{\varphi_3}(x+6)&x\in[-6;-5]\\
+           0.176 \tilde{\varphi_1}(x+5) - 0.968 \tilde{\varphi_2}(x+5) + 0.032 \tilde{\varphi_3}(x+5)&x\in[-5;-4]\\
+           0.48 \tilde{\varphi_1}(x+4) + 0.64 \tilde{\varphi_3}(x+4) - 0.36 \tilde{\varphi_2}(x+4)&x\in[-4;-3] \\
+           -0.48 \tilde{\varphi_1}(x+3) - 0.36 \tilde{\varphi_2}(x+3) + 0.64 \tilde{\varphi_3}(x+3)&x\in[-3;-2] \\
+           -0.4 \tilde{\varphi_1}(x+2) - 0.2 \tilde{\varphi_2}(x+2) + 0.8 \tilde{\varphi_3}(x+2)&x\in[-2;-1]\\
+           0.4 \tilde{\varphi_1}(x+1) - 0.2 \tilde{\varphi_2}(x+1) + 0.8 \tilde{\varphi_3}(x+1)&x\in[-1;0]\\
+           \tilde{\varphi_2}(x)&x\in[0,1]\\
+           \tilde{\varphi_2}(2-x)&x\in[1,2]\\
+           -0.4 \tilde{\varphi_1}(x-2) + 0.2 \tilde{\varphi_2}(x-2) - 0.8 \tilde{\varphi_3}(x-2)&x\in[2,3]\\
+           0.4 \tilde{\varphi_1}(4-x) + 0.2 \tilde{\varphi_2}(4-x) - 0.8 \tilde{\varphi_3}(4-x) &x\in[3,4]\\
+           0.48 \tilde{\varphi_1}(x-4) + 0.36 \tilde{\varphi_2}(x-4) - 0.64 \tilde{\varphi_3}(x-4)&x\in[4,5] \\
+           -0.48 \tilde{\varphi_1}(6-x) - 0.64 \tilde{\varphi_3}(6-x) + 0.36 \tilde{\varphi_2}(6-x)&x\in[5,6] \\
+           -0.176 \tilde{\varphi_1}(x-6) + 0.968 \tilde{\varphi_2}(x-6) - 0.032 \tilde{\varphi_3}(x-6)&x\in[6,7]\\
+           0.176 \tilde{\varphi_1}(8-x) + 0.968 \tilde{\varphi_2}(8-x) - 0.032 \tilde{\varphi_3}(8-x)&x\in[7,8]\\
+        \end{cases}\]
+        \[
+            \tilde{\varphi_3}=
+            \begin{cases}
+               -0.176 \tilde{\varphi_1}(x+6) + 0.032 \tilde{\varphi_2}(x+6) - 0.968 \tilde{\varphi_3}(x+6)&x\in[-6;-5]\\
+               0.176 \tilde{\varphi_1}(x+5) + 0.032 \tilde{\varphi_2}(x+) - 0.968 \tilde{\varphi_3}(x+)&x\in[-5;-4]\\
+               0.48 \tilde{\varphi_1}(x+4) - 0.36 \tilde{\varphi_3}(x+4) + 0.64 \tilde{\varphi_2}(x+4)&x\in[-4;-3] \\
+               -0.48 \tilde{\varphi_1}(x+3) + 0.64 \tilde{\varphi_2}(x+3) - 0.36 \tilde{\varphi_3}(x+3)&x\in[-3;-2] \\
+               -0.4 \tilde{\varphi_1}(x+2) + 0.8 \tilde{\varphi_2}(x+2) - 0.2 \tilde{\varphi_3}(x+2)&x\in[-2;-1]\\
+               0.4 \tilde{\varphi_1}(x+1) + 0.8 \tilde{\varphi_2}(x+1) - 0.2 \tilde{\varphi_3}(x+1)&x\in[-1;0]\\
+               \tilde{\varphi_3}(x)&x\in[0,1]\\
+               \tilde{\varphi_3}(2-x)&x\in[1,2]\\
+               -0.4 \tilde{\varphi_1}(x-2) - 0.8 \tilde{\varphi_2}(x-2) + 0.2 \tilde{\varphi_3}(x-2)&x\in[2,3]\\
+               0.4 \tilde{\varphi_1}(4-x) - 0.8 \tilde{\varphi_2}(4-x) + 0.2 \tilde{\varphi_3}(4-x)&x\in[3,4]\\
+               0.48 \tilde{\varphi_1}(x-4) - 0.64 \tilde{\varphi_2}(x-4) + 0.36 \tilde{\varphi_3}(x-4)&x\in[4,5] \\
+               -0.48 \tilde{\varphi_1}(6-x) + 0.36 \tilde{\varphi_3}(6-x) - 0.64 \tilde{\varphi_2}(6-x)&x\in[5,6] \\
+               -0.176 \tilde{\varphi_1}(x-6) - 0.032 \tilde{\varphi_2}(x-6) + 0.968 \tilde{\varphi_3}(x-6)&x\in[6,7]\\
+               0.176 \tilde{\varphi_1}(8-x) - 0.032 \tilde{\varphi_2}(8-x) + 0.968 \tilde{\varphi_3}(8-x)&x\in[7,8]\\
+            \end{cases}\]
+Подставим в общие формулы данные нам $\varphi_j,\ j=\overline{1, 3}$:
+\[
+    \tilde{\varphi_1}=
+    \begin{cases}
+        0.936 \tilde{\varphi_1}(x+6) &x\in[-6;-5]\\
+        -0.936 \tilde{\varphi_1}(x+5)&x\in[-5;-4]\\
+        -0.28 \tilde{\varphi_1}(x+4)&x\in[-4;-3] \\
+        0.28 \tilde{\varphi_1}(x+3)&x\in[-3;-2] \\
+        -0.6 \tilde{\varphi_1}(x+2)&x\in[-2;-1]\\
+        0.6 \tilde{\varphi_1}(x+1)&x\in[-1;0]\\
+        \tilde{\varphi_1}(x)&x\in[0,1]\\
+        -\tilde{\varphi_1}(2-x)&x\in[1,2]\\
+        -0.6 \tilde{\varphi_1}(x-2)&x\in[2,3]\\
+        0.6 \tilde{\varphi_1}(4-x)&x\in[3,4]\\
+        -0.28 \tilde{\varphi_1}(x-4)&x\in[4,5] \\
+        0.28 \tilde{\varphi_1}(6-x)&x\in[5,6] \\
+        0.936 \tilde{\varphi_1}(x-6)&x\in[6,7]\\
+        -0.936 \tilde{\varphi_1}(8-x)&x\in[7,8]
+    \end{cases}\]
+    \[
+        =
+        \begin{cases}
+           -0.176 \tilde{\varphi_1}(x+6) &x\in[-6;-5]\\
+           0.176 \tilde{\varphi_1}(x+5)&x\in[-5;-4]\\
+           0.48 \tilde{\varphi_1}(x+4) &x\in[-4;-3] \\
+           -0.48 \tilde{\varphi_1}(x+3)&x\in[-3;-2] \\
+           -0.4 \tilde{\varphi_1}(x+2) &x\in[-2;-1]\\
+           0.4 \tilde{\varphi_1}(x+1) &x\in[-1;0]\\
+           0&x\in[0,1]\\
+           0&x\in[1,2]\\
+           -0.4 \tilde{\varphi_1}(x-2)&x\in[2,3]\\
+           0.4 \tilde{\varphi_1}(4-x)&x\in[3,4]\\
+           0.48 \tilde{\varphi_1}(x-4)&x\in[4,5] \\
+           -0.48 \tilde{\varphi_1}(6-x)&x\in[5,6] \\
+           -0.176 \tilde{\varphi_1}(x-6)&x\in[6,7]\\
+           0.176 \tilde{\varphi_1}(8-x)&x\in[7,8]\\
+        \end{cases}\]
+        \[
+            =
+            \begin{cases}
+               -0.176 \tilde{\varphi_1}(x+6)&x\in[-6;-5]\\
+               0.176 \tilde{\varphi_1}(x+5)&x\in[-5;-4]\\
+               0.48 \tilde{\varphi_1}(x+4)&x\in[-4;-3] \\
+               -0.48 \tilde{\varphi_1}(x+3)&x\in[-3;-2] \\
+               -0.4 \tilde{\varphi_1}(x+2)&x\in[-2;-1]\\
+               0.4 \tilde{\varphi_1}(x+1)&x\in[-1;0]\\
+               0&x\in[0,1]\\
+               0&x\in[1,2]\\
+               -0.4 \tilde{\varphi_1}(x-2)&x\in[2,3]\\
+               0.4 \tilde{\varphi_1}(4-x)&x\in[3,4]\\
+               0.48 \tilde{\varphi_1}(x-4)&x\in[4,5] \\
+               -0.48 \tilde{\varphi_1}(6-x)&x\in[5,6] \\
+               -0.176 \tilde{\varphi_1}(x-6)&x\in[6,7]\\
+               0.176 \tilde{\varphi_1}(8-x)&x\in[7,8]\\
+            \end{cases}\]
+
+        После подстановки функции $\tilde{\varphi_2}$ и $\tilde{\varphi_3}$ совпали.
+        \newpage    
+
+        \begin{figure}
+            \caption{        График $\tilde{\varphi_1}(x)$ на отрезке $x\in [-6;8]$   }
+            \includegraphics[width=\linewidth]{pictures/u_1.pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{        График $\tilde{\varphi_2}(x)$ на отрезке $x\in [-6;8]$   }
+            \includegraphics[width=\linewidth]{pictures/u_2(x).pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{График $u_1=(\tilde{\varphi_1}(x+t)+\tilde{\varphi_1}(x-t))$ при $t=0.5$}
+            \includegraphics[width=\linewidth]{pictures/ДКР №2(fi1,t=0.5).pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{График $u_1=(\tilde{\varphi_1}(x+t)+\tilde{\varphi_1}(x-t))$ при $t=1$}
+            \includegraphics[width=\linewidth]{pictures/ДКР №2(fi1,t=1).pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{График $u_1=(\tilde{\varphi_1}(x+t)+\tilde{\varphi_1}(x-t))$ при $t=2$}
+            \includegraphics[width=\linewidth,height=12cm]{pictures/ДКР №2(fi1,t=2).pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{График $u_1=(\tilde{\varphi_1}(x+t)+\tilde{\varphi_1}(x-t))$ при $t=3$}
+            \includegraphics[width=\linewidth,height=12cm]{pictures/ДКР №2(fi1,t=3).pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{График $u_1=(\tilde{\varphi_1}(x+t)+\tilde{\varphi_1}(x-t))$ при $t=5$}
+            \includegraphics[width=\linewidth,height=12cm]{pictures/ДКР №2(fi1,t=5).pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{График $u_1=(\tilde{\varphi_1}(x+t)+\tilde{\varphi_1}(x-t))$ при $t=6$}
+            \includegraphics[width=\linewidth]{pictures/ДКР №2(fi1,t=6).pdf}
+        \end{figure}
+
+        \begin{figure}
+            \caption{График $u_2=(\tilde{\varphi_2}(x+t)+\tilde{\varphi_2}(x-t))$ при $t=0.5$}
+            \includegraphics[width=\linewidth]{pictures/ДКР №2(fi2,t=0.5).pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{График $u_2=(\tilde{\varphi_2}(x+t)+\tilde{\varphi_2}(x-t))$ при $t=1$}
+            \includegraphics[width=\linewidth]{pictures/ДКР №2(fi2,t=1).pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{График $u_2=(\tilde{\varphi_2}(x+t)+\tilde{\varphi_2}(x-t))$ при $t=2$}
+            \includegraphics[width=\linewidth,height=12cm]{pictures/ДКР №2(fi2,t=2).pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{График $u_2=(\tilde{\varphi_2}(x+t)+\tilde{\varphi_2}(x-t))$ при $t=3$}
+            \includegraphics[width=\linewidth,height=12cm]{pictures/ДКР №2(fi2,t=3).pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{График $u_2=(\tilde{\varphi_2}(x+t)+\tilde{\varphi_2}(x-t))$ при $t=5$}
+            \includegraphics[width=\linewidth,height=12cm]{pictures/ДКР №2(fi2,t=5).pdf}
+        \end{figure}
+        \begin{figure}
+            \caption{График $u_2=(\tilde{\varphi_2}(x+t)+\tilde{\varphi_2}(x-t))$ при $t=6$}
+            \includegraphics[width=\linewidth]{pictures/ДКР №2(fi2,t=6).pdf}
+        \end{figure}
+        %%Если(-6<x<-5,-0.176q(x+6),Если(-5<x<-4,0.176q(x+5),Если(-4<x<-3,0.48q(x+4),Если(-3<x<-2,-0.48q(x+3),Если(-2<x<-1,-0.4q(x+2),Если(-1<x<0,0.4q(x+1),Если(0<x<2,0,Если(2<x<3,-0.4q(x-2),Если(3<x<4,0.4q(4-x),Если(4<x<5,0.48q(x-4),Если(5<x<6,-0.48q(6-x),Если(6<x<7,-0.176q(x-6),Если(7<x<8,0.176q(8-x))))))))))))))
+\end{document}

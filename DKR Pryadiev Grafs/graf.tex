@@ -1,0 +1,44 @@
+\documentclass[a4paper, 12pt,fleqn]{article}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainfont{CMU Serif}
+\newfontfamily{\cyrillicfont}{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\newfontfamily{\cyrillicfontsf}{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
+\setdefaultlanguage{russian}
+\usepackage[left=1cm,bottom=2cm,top=1cm]{geometry}
+%%% Дополнительная работа с математикой
+\usepackage{amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{amsmath}
+\usepackage{icomma}
+
+%% Шрифты
+\usepackage{euscript} % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.9}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}
+    \addplot coordinates {
+        (0,1) (2,4) (7,8) (10,15)
+    };
+    \end{axis}
+    \end{tikzpicture}
+\begin{tikzpicture}
+        \begin{axis}
+        \addplot3 table [x = b, y = a, z = c] {
+            a      b      c
+            1      1      1
+            2      3      4 
+            3      5      5 
+            4      8      6
+            5      2      7
+        };
+        \end{axis}
+        \end{tikzpicture}
+\end{document}

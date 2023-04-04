@@ -1,6 +1,6 @@
 \documentclass[aspectratio=169]{beamer}
 \usepackage{fontspec}
-\usepackage{wrapfig}
+
 \setmainfont{CMU Serif}
 \newfontfamily{\cyrillicfont}{CMU Serif}
 \setsansfont{CMU Sans Serif}
@@ -12,6 +12,7 @@
 \usepackage{polyglossia}
 %% Math
 \usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools} % Advanced math tools.
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
 
 \usetheme{Rochester}
 \usecolortheme[style=light]{Nord}
@@ -35,6 +36,9 @@
 \setdefaultlanguage{russian}
 \setotherlanguage{english}
 
+\usepackage{multicol}
+\setlength{\columnsep}{0.5cm}
+
 \begin{document}
 \maketitle
 
@@ -43,7 +47,7 @@
         %TODO: Тут написан какой-то бред
         \item Дефицит заданий для подготовки
         \item Списывание ответов учениками
-        \item При появлении новых заданий в экзамене, дефицит материалов увеличивается в разы.
+        \item При появлении новых заданий в экзамене — дефицит материалов увеличивается в разы
         \item Некоторые задания решаются слишком быстро, а их составление вручную занимает несоразмерно много времени.
     \end{itemize}
 \end{frame}
@@ -53,28 +57,38 @@
 \end{frame}
 
 \begin{frame}{Примеры генерации задач №10}
-    \vspace{-0.5cm}
-    \begin{figure}[t]
-        \includegraphics[scale=0.45]{images/449724462142151n0}
-    \end{figure}
-    На рисунке изображены графики функций $f(x)=2x^{2}-23x+65$ и $g(x)=ax^{2} +bx+c$, которые пересекаются в точках $A$ и $B$. Найдите ординату точки $B$.
+    \begin{multicols}{2}
+          
+        На рисунке изображён график функции вида $f(x)=ax^3+x^2+x+d$. Найдите сумму $d+a$.
+
+        Ответ: $-3,5$
+        
+
+        \includegraphics[width=0.4\textwidth]{images/293185407352766n0}
+    \end{multicols}
+         
+\end{frame}
+
+\begin{frame}{Примеры генерации задач №10}
+    \begin{multicols}{2}
+        На рисунке изображён график функции $f(x)=\frac{k}{x}+b$. Найдите значение $x$, при котором $f(x)=-1,75$.
+
+        Ответ: $9$
+
+        \includegraphics[width=0.4\textwidth]{images/5535657652049n0.png}
+    \end{multicols}
     
 \end{frame}
 
 \begin{frame}{Примеры генерации задач №10}
-    \vspace{-0.5cm}
-    \begin{figure}[t]
-    \includegraphics[scale=0.45]{images/610459930097164n0}
-    \end{figure}
-    На рисунке изображён график функции $f(x)=\frac{k}{x}+b$. Найдите $f(-20)$.
-\end{frame}
+    \begin{multicols}{2}
+        На рисунке изображены графики функций $f(x)=\frac{a}{x+c}$ и $g(x)=kx+b$, которые пересекаются в точках $A$ и $B$. Найдите абсциссу точки $B$.
 
-\begin{frame}{Примеры генерации задач №10}
-    \vspace{-0.5cm}
-    \begin{figure}[t]
-    \includegraphics[scale=0.45]{images/1971545344438219n0}
-    \end{figure}
-    На рисунке изображёны графики двух линейных функций. Найдите ординату точки пересечения графиков.
+        Ответ: $5$
+
+        \includegraphics[width=0.4\textwidth]{images/17222136364202n0.png}
+    \end{multicols}
+    
 
 \end{frame}
 
@@ -83,18 +97,22 @@
         \item Генерация коэффициентов функций
         \item Подсчёт количества точек в узлах целочисленной решётки (функция \texttt{intPoints})
         \item Отрисовка целочисленной сетки и осей координат (функция drawCoordinatePlane)
-        \item Отрисовка фунций с помощью функции (функция \texttt{graph9AdrawFunction})
+        \item Отрисовка графика (функция \texttt{graph9AdrawFunction})
     \end{itemize}
     
 \end{frame}
 
-\begin{frame}{Пример Ларина}
+\begin{frame}{Задание по мотивам вариантов А. Ларина}
 
-    \vspace{-0.5cm}
-    \begin{figure}[t]
-        \includegraphics[scale=0.45]{images/453912618511153n0}
-    \end{figure}
-    На рисунке изображён график функции вида $f(x)=|kx+b|+c$, где числа $b$, $c$ и $k$ — целые, $k \leq 0$, $b\geq0$. Найдите сумму $k+b+c$.\vspace{2.5cm}
+    \begin{multicols}{2}
+        На рисунке изображён график функции вида $f(x)=|kx+b|+c$, где числа $b$, $c$ и $k$ — целые, $k \leq 0$, $b\geq0$. Найдите сумму $k+b+c$.
+
+        \includegraphics[width=0.4\textwidth]{images/453912618511153n0.png}
+    
+    \end{multicols}
+    
+        
+    
 
 \end{frame}
 
@@ -102,38 +120,45 @@
 \begin{frame}{Достижения}
     \begin{itemize}
         \item Полностью покрыт открытый банк заданий ФИПИ
+        \item Разработано 35 шаблонов
+        \item В ядро добавлено несколько вспомогательных функций, которые позволят быстро разрабатывать новые шаблоны при добавлении новых прототипов в обзад.
     \end{itemize}
     
 \end{frame}
 
 \begin{frame}{Примеры генерации задач №7}
-    \vspace{-0.5cm}
-    \begin{figure}[t]
-        \includegraphics[scale=0.38]{images/9299084059373277n0}
-    \end{figure}
-    На рисунке изображён график $y=f'(x)$ — производной функции $f(x)$, определенной на интервале $(-3;5)$. В какой точке отрезка $[2; 3]$ функция $f(x)$ принимает наибольшее значение?
+    
+    \begin{multicols}{2}
+        На рисунке изображён график $y=f'(x)$ — производной функции $f(x)$, определенной на интервале $(-3;5)$. В какой точке отрезка $[2; 3]$ функция $f(x)$ принимает наибольшее значение?
+
+        \includegraphics[width=0.5\textwidth]{images/9299084059373277n0}
+    \end{multicols}
+          
 \end{frame}
 
 \begin{frame}{Примеры генерации задач №7}
-    \vspace{-0.5cm}
-    \begin{figure}[t]
-        \includegraphics[scale=0.38]{images/776525944899729n0}
-    \end{figure}
-    На рисунке изображен график производной функции $f(x)$, определенной на интервале $(-1; 8)$. Найдите количество точек, в которых касательная к графику функции $f(x)$ параллельна прямой $y=-3x+ 14{,}8 $ или совпадает с ней.
+    
+    \begin{multicols}{2}
+        На рисунке изображен график производной функции $f(x)$, определенной на интервале $(-1; 8)$. Найдите количество точек, в которых касательная к графику функции $f(x)$ параллельна прямой $y=-3x+ 14{,}8 $ или совпадает с ней.
+
+        \includegraphics[width=0.5\textwidth]{images/776525944899729n0}
+      \end{multicols}
+        
+   
 \end{frame}
 
 \begin{frame}{Примеры генерации задач №7}
-    \vspace{-0.5cm}
-    \begin{figure}[t]
-        \includegraphics[scale=0.38]{images/020693809529216n0}
-    \end{figure}
-    На рисунке изображен график функции $y=f(x)$, определенной на интервале $(-6;8)$. Найдите сумму точек экстремума функции $f(x)$.
+    \begin{multicols}{2}
+        На рисунке изображен график функции $y=f(x)$, определенной на интервале $(-6;8)$. Найдите сумму точек экстремума функции $f(x)$.
+
+        \includegraphics[width=0.5\textwidth]{images/020693809529216n0}
+    \end{multicols}
 \end{frame}
 
 \begin{frame}{Этапы генерации}
     \begin{itemize}
         \item Генерация точек, через которые будет проходить функция
-        \item Использование сторонней библиотеки \texttt{Spline.js} для построение по точкам функции
+        \item Использование сторонней библиотеки \texttt{Spline.js} для построение по точкам сплайна третьего порядка.
         \item Проверка на нахождение графика в рамках видимости %что за бред?
         \item Нахождение количества экстремумов функции
         \item Отрисовка графика функции

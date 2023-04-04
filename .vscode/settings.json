@@ -37,15 +37,16 @@
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.recipes": [
       {
+        "name": "latexmk (lualatex)",
+        "tools": ["lualatexmk"]
+      },   
+      {
         "name": "pdflatex",
         "tools": [
              "pdflatex",
         ]
     },
-      {
-        "name": "latexmk (lualatex)",
-        "tools": ["lualatexmk"]
-      }   
+      
       
     ],
     "files.exclude": {

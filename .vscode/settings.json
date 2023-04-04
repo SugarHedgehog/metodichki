@@ -1,5 +1,4 @@
-{
-    "latex-workshop.latex.tools": [
+{    "latex-workshop.latex.tools": [
       {
         "name": "lualatexmk",
         "command": "latexmk",
@@ -13,14 +12,41 @@
           "%DOC%"
         ],
         "env": {}
-      }
+      },
+      {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-output-directory=%OUTDIR%",
+            "%DOC%"
+        ],
+        "env": {}
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+            }
     ],
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.recipes": [
       {
+        "name": "pdflatex",
+        "tools": [
+             "pdflatex",
+        ]
+    },
+      {
         "name": "latexmk (lualatex)",
         "tools": ["lualatexmk"]
-      }
+      }   
+      
     ],
     "files.exclude": {
       "**/**.aux": true,
@@ -46,3 +72,6 @@
     ],
     "cSpell.language": "en,ru,en-GB,ru-RU"
   }
+  
+
+    

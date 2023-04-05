@@ -1,6 +1,5 @@
 \documentclass[aspectratio=169]{beamer}
 \usepackage{fontspec}
-
 \setmainfont{CMU Serif}
 \newfontfamily{\cyrillicfont}{CMU Serif}
 \setsansfont{CMU Sans Serif}
@@ -14,33 +13,36 @@
 \usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools} % Advanced math tools.
 \usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
 
-\usetheme{Rochester}
+\usetheme{boxes}
 \usecolortheme[style=light]{Nord}
 \usefonttheme{Nord}
 \setbeamertemplate{navigation symbols}{}%remove navigation symbols
-
-
 \usepackage{minted}
 \usemintedstyle{nord}
-
-\title{Программная реализация
-(на языке JavaScript)
-алгоритмов генерации ФОС
-по математике 2023}
-\subtitle{Математический факультет 3 курс}
-\author{Суматохина Александра }
-\date{}
-
 
 %%% Polyglossia setup after (nearly) everything as described in documentation.
 \setdefaultlanguage{russian}
 \setotherlanguage{english}
 
 \usepackage{multicol}
+\usepackage{xcolor}
 \setlength{\columnsep}{0.5cm}
 
 \begin{document}
-\maketitle
+\begin{frame}
+   \begin{center}
+    \vspace{1.5cm}
+    \Large\textcolor{NordBrightBlue}{\textbf{Программная реализация(на языке JavaScript)алгоритмов генерации ФОС по математике 2023}}\\
+        \end{center}
+        \vspace{1cm}
+        \large\textcolor{NordBlue}{\textit{Автор: Суматохина А.С.}}\\
+        \large\textcolor{NordBlue}{\textit{Научный руководитель: Авдеев Н.Н.}}\\
+        \vspace{1cm}
+        \begin{center}
+            \today
+        \end{center}
+        
+\end{frame}
 
 \begin{frame}{Существующие проблемы}
     \begin{itemize}
@@ -53,7 +55,7 @@
 \end{frame}
 
 \begin{frame}{Проект «Час ЕГЭ»}
-    «Час ЕГЭ» — компьютерный образовательный проект, разрабатываемый с 2013года при математическом факультете ВГУ в рамках «OpenSource кластера» и предназначенный для помощи учащимся старших классов подготовиться к тестовой части единого государственного экзамена.
+    «Час ЕГЭ» — компьютерный образовательный проект, разрабатываемый с 2013 года при математическом факультете ВГУ в рамках «OpenSource кластера» и предназначенный для помощи учащимся старших классов подготовиться к тестовой части единого государственного экзамена.
 \end{frame}
 
 \begin{frame}{Примеры генерации задач №10}
@@ -131,6 +133,8 @@
     \begin{multicols}{2}
         На рисунке изображён график $y=f'(x)$ — производной функции $f(x)$, определенной на интервале $(-3;5)$. В какой точке отрезка $[2; 3]$ функция $f(x)$ принимает наибольшее значение?
 
+        Ответ: $3$
+
         \includegraphics[width=0.5\textwidth]{images/9299084059373277n0}
     \end{multicols}
           
@@ -141,6 +145,8 @@
     \begin{multicols}{2}
         На рисунке изображен график производной функции $f(x)$, определенной на интервале $(-1; 8)$. Найдите количество точек, в которых касательная к графику функции $f(x)$ параллельна прямой $y=-3x+ 14{,}8 $ или совпадает с ней.
 
+        Ответ: $3$
+
         \includegraphics[width=0.5\textwidth]{images/776525944899729n0}
       \end{multicols}
         
@@ -150,6 +156,8 @@
 \begin{frame}{Примеры генерации задач №7}
     \begin{multicols}{2}
         На рисунке изображен график функции $y=f(x)$, определенной на интервале $(-6;8)$. Найдите сумму точек экстремума функции $f(x)$.
+
+        Ответ: $5$
 
         \includegraphics[width=0.5\textwidth]{images/020693809529216n0}
     \end{multicols}
@@ -164,6 +172,19 @@
         \item Отрисовка графика функции
     \end{itemize}
     
+\end{frame}
+
+\begin{frame}{Ссылки}
+    \begin{thebibliography}{10}
+        \bibitem{chasdok1} Момот Е. А., Арахов Н. Д. Разработка и внедрение ПО для сбора статистики результатов подготовки к ЕГЭ по математике профильного уровня //Актуальные проблемы прикладной математики, информатики и механики. – 2021. – С. 1-2.
+        \bibitem{egemath}Открытый банк задач ЕГЭ по Математике.Профильный уровень. – URL:  https://prof.mathege.ru/
+        \bibitem{fipi}Федеральный институт педагогических измерений. – URL:  https://fipi.ru/ege/otkrytyy-bank-zadaniy-ege
+    \end{thebibliography}
+\end{frame}
+
+\begin{frame}
+    \center
+    \Large\textcolor{NordBrightBlue}{\textbf{Спасибо за внимание}}\\
 \end{frame}
 
 \end{document}

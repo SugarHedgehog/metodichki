@@ -95,17 +95,6 @@
 
 \end{frame}
 
-\begin{frame}{Этапы генерации}
-    \begin{itemize}
-        \item Генерация коэффициентов функций
-        \item Подсчёт количества точек в узлах целочисленной решётки (функция \texttt{intPoints})
-        \item Отрисовка целочисленной сетки и осей координат (функция drawCoordinatePlane)
-        \item Отрисовка графика (функция \texttt{graph9AdrawFunction})
-        \item Отображение нескольких точек в узлах решётки (функция \texttt{graph9AmarkCircles})
-    \end{itemize}
-    
-\end{frame}
-
 \begin{frame}{Задание по мотивам вариантов А. Ларина}
 
     \begin{multicols}{2}
@@ -116,12 +105,18 @@
         \includegraphics[width=0.4\textwidth]{images/453912618511153n0.png}
     
     \end{multicols}
-    
-        
-    
-
 \end{frame}
 
+\begin{frame}{Этапы генерации}
+    \begin{itemize}
+        \item Генерация коэффициентов функций
+        \item Подсчёт количества точек в узлах целочисленной решётки (функция \texttt{intPoints})
+        \item Отрисовка целочисленной сетки и осей координат (функция \texttt{drawCoordinatePlane})
+        \item Отрисовка графика (функция \texttt{graph9AdrawFunction})
+        \item Отображение нескольких точек в узлах решётки (функция \texttt{graph9AmarkCircles})
+    \end{itemize}
+    
+\end{frame}
 
 \begin{frame}{Достижения}
     \begin{itemize}
@@ -170,7 +165,7 @@
 \begin{frame}{Этапы генерации}
     \begin{itemize}
         \item Генерация точек, через которые будет проходить функция
-        \item Использование сторонней библиотеки \texttt{cubic-spline} для построение по точкам сплайна третьего порядка.
+        \item Использование сторонней библиотеки \texttt{cubic-spline} для построения графика функции по точкам сплайна третьего порядка.
         \item Проверка на нахождение графика в рамках видимости %что за бред?
         \item Нахождение количества экстремумов функции
         \item Отрисовка графика функции

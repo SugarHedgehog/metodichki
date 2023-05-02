@@ -1,0 +1,415 @@
+\documentclass[a4paper, 12pt]{extarticle}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainfont{CMU Serif}
+\newfontfamily{\cyrillicfont}{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\newfontfamily{\cyrillicfontsf}{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
+\setdefaultlanguage{russian}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{mathrsfs}
+\usepackage[left=1cm, right=1cm]{geometry}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    }
+
+\urlstyle{same}
+
+\begin{document}
+\section*{§ 1. Определения и простейшие свойства}
+Пусть $E, F$ - линейные нормированные пространства. Отображение $A$ назовем отображением из $E$ в $F$, если для $A$ область определения $D(A) \subset E$, а множество значений $R(A) \subset F$. В таком случае пишем $A: D(A) \subset E \rightarrow F$.
+
+Предположим, что пространства $E, F$ оба вещественные, или оба комплексные. Отображение $A$ из $E$ в $F$ называется \hypertarget{linOperator}{\textbf{линейным оператором}}, если:
+
+\begin{enumerate}
+	\item $D(A)$ - линейное многообразие в $E$;
+
+	\item $A(\lambda x)=\lambda A x$, где $x \in D(A)$ и $\lambda$ число;
+
+	\item $A(x+y)=A x+A y$, где $x, y \in D(A)$.
+
+\end{enumerate}
+
+Нетрудно показать, что для \hyperlink{linOperator}{линейного оператора} $A$ множество значений $R(A)$ является линейным многообразием в $F$. Заметим также, что $A \Theta=\Theta$.
+
+\hyperlink{linOperator}{Линейный оператор} $f$ из $E$ - вещественного линейного нормированного пространства в $\mathbb{R}^{1}$ называется вещественным линейным функционалом. \hyperlink{linOperator}{Линейный оператор} $f$ из $E$ - комплексного линейного нормированного пространства в $\mathbb{C}^{1}$ называется комплексным линейным функционалом.
+
+Замечание. Так как $D(A)$ - линейное многообразие в $E$, то $D(A)$ с нормой, порожденной пространством $E$, можно считать самостоятельным линейным нормированным пространством. Поэтому часто считают, что линейный опеpaтор $A$ задан на всем пространстве $E$ и пишут $A: E \rightarrow F$, то есть $D(A)=E$.
+
+Теорема 1.1. Пусть $E, F$ - линейные нормированные пространства и $A: E \rightarrow F$ - \hyperlink{linOperator}{линейный оператор}. Пусть оператор А непрерывен в точке $x_{0} \in E$. Тогда оператор $A$ непрерывен в любой точке $x \in E$.
+
+Доказательство. Пусть последовательность $\left\{x_{n}\right\} \subset E$ такая, что $x_{n} \rightarrow x$ при $n \rightarrow \infty$. Рассмотрим
+
+$$
+	A x_{n}-A x=A\left(x_{n}-x+x_{0}\right)-A x_{0} .
+$$
+
+Здесь $y_{n}=x_{n}-x+x_{0} \rightarrow x_{0}$ при $n \rightarrow \infty$. Следовательно,
+
+$$
+	\left\|A x_{n}-A x\right\|_{F}=\left\|A y_{n}-A x_{0}\right\|_{F} \underset{n \rightarrow \infty}{\longrightarrow} 0 .
+$$
+
+\hyperlink{linOperator}{Линейный оператор} $A: D(A) \subset E \rightarrow F$ называется \hypertarget{ogranichenn}{ограниченным} на $D(A)$, если
+
+$$
+	(\exists C \geq 0)(\forall x \in D(A))\left[\|A x\|_{F} \leq C\|x\|_{E}\right] .
+$$
+
+Теорема 1.2. Пусть $E, F$ - линейные нормированные пространства. \hyperlink{linOperator}{Линейный оператор} $A: E \rightarrow F$ непрерывен на $E$ тогда и только тогда, когда он \hyperlink{ogranichenn}{ограничен} на $E$.
+
+Доказательство. Пусть оператор $A$ непрерывен на $E$, но не является \hyperlink{ogranichenn}{ограниченным}. Тогда
+
+$$
+	(\forall n \in \mathbb{N})\left(\exists x_{n} \in E\right)\left[\left\|A x_{n}\right\|_{F}>n\left\|x_{n}\right\|_{E}\right]
+$$
+
+Заметим, что $x_{n} \neq \Theta$. Определим элементы $x_{n}^{\prime}=x_{n} /\left(n\left\|x_{n}\right\|_{E}\right)$. Тогда $\left\|x_{n}^{\prime}\right\|_{E}=$ $=1 / n \rightarrow 0$ при $n \rightarrow \infty$, то есть $x_{n}^{\prime} \rightarrow \Theta \in E$. Из непрерывности оператора $A$ следует
+
+$$
+	\left\|A x_{n}^{\prime}\right\|_{F}=\left\|A x_{n}^{\prime}-A \Theta\right\|_{F} \underset{n \rightarrow \infty}{\longrightarrow} 0 .
+$$
+
+С другой стороны
+
+$$
+	\left\|A x_{n}^{\prime}\right\|_{F}=\frac{1}{n\left\|x_{n}\right\|_{E}}\left\|A x_{n}\right\|_{F}>\frac{1}{n\left\|x_{n}\right\|_{E}} n\left\|x_{n}\right\|_{E}=1 .
+$$
+
+Из полученного противоречия следует ограниченность оператора $A$ на $E$.
+
+Теперь предположим, что оператор $A$ \hyperlink{ogranichenn}{ограничен} на $E$. Тогда из оценки $\|A x-A y\|_{F} \leq C\|x-y\|_{E}$ для $x, y \in E$ следует, что оператор $A$ на $E$ удовлетворяет условию Липшица и, следовательно, непрерывен на $E . \odot$
+
+Замечание. Полученные утверждения выполняются и для линейных функционалов, как частного случая линейных операторов. Отметим здесь, что линейный функционал $f$, определенный на $D(f) \subset E$ \hyperlink{ogranichenn}{ограничен} на $D(f)$, если
+
+$$
+	(\exists C \geq 0)(\forall x \in D(f))\left[|f(x)| \leq C\|x\|_{E}\right] .
+$$
+
+Теорема 1.3. Пусть $E, F$ - линейные нормированные пространства, $и$ пространство $E$ конечномерно. Пусть $A: E \rightarrow F$ \hyperlink{linOperator}{линейный оператор}. Тогда оператор $A$ \hyperlink{ogranichenn}{ограничен} на $E$.
+
+Доказательство. Пусть $E=\mathscr{L}\left(\omega_{1}, \omega_{2}, \ldots, \omega_{m}\right)$, где $\left\{\omega_{k}\right\}_{k=1}^{m}-$ базис пространства $E$. Тогда всякий $x \in E$ представим в виде $x=\sum_{k=1}^{m} x_{k} \omega_{k}$, где $x_{k}-$ координаты элемента $x$ в базисе $\left\{\omega_{k}\right\}$. Определим в $E$ новую норму $\|x\|_{E}^{*}=\sum_{k=1}^{m}\left|x_{k}\right|$. Исходная норма $\|x\|_{E}$ и новая $\|x\|_{E}^{*}$ эквивалентны. Тогда
+
+$$
+	(\exists M>0)(\forall x \in E)\left[\|x\|_{E}^{*} \leq M\|x\|_{E}\right]
+$$
+
+Далее для любого $x \in E$ получим
+
+$$
+	\begin{gathered}
+		\|A x\|_{F}=\left\|A \sum_{k=1}^{m} x_{k} \omega_{k}\right\|_{F}=\left\|\sum_{k=1}^{m} x_{k} A \omega_{k}\right\|_{F} \leq \sum_{k=1}^{m}\left|x_{k}\right|\left\|A \omega_{k}\right\|_{F} \leq \\
+		\leq \max _{k}\left\|A \omega_{k}\right\|_{F} \sum_{k=1}^{m}\left|x_{k}\right| \leq M \max _{k}\left\|A \omega_{k}\right\|_{F}\|x\|_{E}=C\|x\|_{E},
+	\end{gathered}
+$$
+
+где константа $C=M \max _{k}\left\|A \omega_{k}\right\|_{F}<\infty$. $~$
+
+\begin{itemize}
+	\item ЗАДАЧА.
+\end{itemize}
+
+1.1. Пусть $E$ - банахово пространство и $F$ - линейное нормированное пространство. Пусть $A: E \rightarrow F$ линейный \hyperlink{ogranichenn}{ограниченный} оператор такой, что $(\exists c>0)(\forall x \in E)\left(\|A x\|_{F} \geq c\|x\|_{E}\right)$. Показать, что множество значений оператора $R(A)$ - подпространство $F$.
+
+\section*{$\S$ 2. Норма линейного ограниченного оператора}
+Пусть $E, F$ - линейные нормированные пространства. Пусть \hyperlink{linOperator}{линейный оператор} $A: D(A) \subset E \rightarrow F$ \hyperlink{ogranichenn}{ограниченный} на $D(A)$. Тогда из (1.1) следует, что числовое множество
+
+$$
+	M=\left\{\frac{\|A x\|_{F}}{\|x\|_{E}} \mid(x \in D(A)) \wedge(x \neq \Theta)\right\}
+$$
+
+ограничено сверху константой $C \geq 0$. Обозначим
+
+$$
+	\|A\|=\sup M=\sup _{\substack{x \in D(A) \\ x \neq \Theta}} \frac{\|A x\|_{F}}{\|x\|_{E}} \leq C<\infty .
+$$
+
+Величина $\|A\|$ называется нормой оператора $A$ на $D(A)$. Если $D(A)=E$, то $\|A\|$ называется просто нормой оператора $A$. Иногда норму оператора обозначают с указанием пространств $\|A\|_{E \rightarrow F}$.
+
+Очевидно, что
+
+$$
+	(\forall x \in D(A))\left[\|A x\|_{F} \leq\|A\|\|x\|_{E}\right]
+$$
+
+С другой стороны
+
+$$
+	(\forall \varepsilon>0)\left(\exists x_{\varepsilon} \in D(A)\right)\left[\frac{\left\|A x_{\varepsilon}\right\|_{F}}{\left\|x_{\varepsilon}\right\|_{E}}>\|A\|-\varepsilon\right]
+$$
+
+то есть $\left\|A x_{\varepsilon}\right\|_{F}>(\|A\|-\varepsilon)\left\|x_{\varepsilon}\right\|_{E}$. Таким образом, $\|A\|=\min C$, где константы $C$ фигурируют в условии (1.1).
+
+Теорема 2.1. Пусть $E, F$ - линейные нормированные пространства. Пусть $A: D(A) \subset E \rightarrow F$ - \hyperlink{linOperator}{линейный оператор}, \hyperlink{ogranichenn}{ограниченный} на $D(A)$. Тогд
+
+$$
+	\|A\|=\sup _{\substack{x \in D(A) \\ x \neq \Theta}} \frac{\|A x\|_{F}}{\|x\|_{E}}=\sup _{\substack{x \in D(A) \\\|x\|_{E} \leq 1}}\|A x\|_{F}=\sup _{\substack{x \in D(A) \\\|x\|_{E}=1}}\|A x\|_{F} .
+$$
+
+Доказательство. Заметим, что
+
+$$
+	\begin{gathered}
+		\|A\|=\sup _{\substack{x \in D(A) \\
+				x \neq \Theta}} \frac{\|A x\|_{F}}{\|x\|_{E}}=\sup _{\substack{x \in D(A) \\
+				x \neq \Theta}}\left\|A \frac{x}{\|x\|_{E}}\right\|_{F} \leq \\
+		\leq \sup _{\substack{y \in D(A) \\
+				\|y\|=1}}\|A y\|_{F}=\sup _{\substack{y \in D(A) \\
+				\|y\|=1}} \frac{\|A y\|_{F}}{\|y\|_{E}} \leq\|A\| .
+	\end{gathered}
+$$
+
+Осталось показать, что
+
+$$
+	\sup _{\substack{x \in D(A) \\\|x\|_{E} \leq 1}}\|A x\|_{F}=\|A\|
+$$
+
+Пусть $x \in D(A)$ такой, что $\|x\|_{E} \leq 1$. Тогда $\|A x\|_{F} \leq\|A\|\|x\|_{E} \leq\|A\|$. Отсюда следует
+
+$$
+	\|A\| \geq \sup _{\substack{x \in D(A) \\\|x\|_{E} \leq 1}}\|A x\|_{F} \geq \sup _{\substack{x \in D(A) \\\|x\|_{E}=1}}\|A x\|_{F}=\|A\| .
+$$
+
+Пример 2.1. ЛиНЕЙНЫЙ ОПЕРАТОР ФРЕДГОЛЬМА В $C[a, b]$.
+
+В вещественном пространстве $C[a, b]$ определим оператор Фредгольма
+
+$$
+	A x(t)=\int_{a}^{b} K(t, s) x(s) d s
+$$
+
+где функция $K(t, s)$ непрерывная по совокупности переменных $t, s \in[a, b]$. Для функции $x \in C[a, b]$ функция $A x(t)$ непрерывная по $t \in[a, b]$, так как функция $K(t, s) x(s)$ непрерывная по совокупности переменных $t, s \in[a, b]$ (см., напр., [18]). Следовательно, оператор $A: C[a, b] \rightarrow C[a, b]$.
+
+Очевидно, что оператор $A$ линейный. Установим ограниченность.
+
+$$
+	\begin{gathered}
+		\|A x\|=\max _{a \leq t \leq b}\left|\int_{a}^{b} K(t, s) x(s) d s\right| \leq \max _{a \leq t \leq b} \int_{a}^{b}|K(t, s) \| x(s)| d s \leq \\
+		\leq \max _{a \leq t \leq b} \int_{a}^{b}|K(t, s)| d s\|x\| .
+	\end{gathered}
+$$
+
+Итак, оператор $A$ \hyperlink{ogranichenn}{ограниченный} и
+
+$$
+	\|A\| \leq \max _{a \leq t \leq b} \int_{a}^{b}|K(t, s)| d s<\infty
+$$
+
+Покажем, что на самом деле в (2.2) имеет место равенство. В силу непрерывности по $t \in[a, b]$ функции $\int_{a}^{b}|K(t, s)| d s$ найдется $t_{0} \in[a, b]$, что
+
+$$
+	\max _{a \leq t \leq b} \int_{a}^{b}|K(t, s)| d s=\int_{a}^{b}\left|K\left(t_{0}, s\right)\right| d s .
+$$
+
+Для произвольного $\varepsilon>0$ определим функцию
+
+$$
+	x_{\varepsilon}(t)=\frac{K\left(t_{0}, t\right)}{\varepsilon+\left|K\left(t_{0}, t\right)\right|} \in C[a, b] .
+$$
+
+Заметим, что $\left\|x_{\varepsilon}\right\| \leq 1$. Далее получим
+
+$$
+	\begin{gathered}
+		\|A\|=\sup _{\|x\| \leq 1}\|A x\| \geq\left\|A x_{\varepsilon}\right\| \geq\left|A x_{\varepsilon}\left(t_{0}\right)\right| \geq A x_{\varepsilon}\left(t_{0}\right)=\int_{a}^{b} K\left(t_{0}, s\right) x_{\varepsilon}(s) d s= \\
+		=\int_{a}^{b} K\left(t_{0}, s\right) \frac{K\left(t_{0}, s\right)}{\varepsilon+\left|K\left(t_{0}, s\right)\right|} d s=\int_{a}^{b} \frac{\left(\left|K\left(t_{0}, s\right)\right|+\varepsilon-\varepsilon\right)\left|K\left(t_{0}, s\right)\right|}{\varepsilon+\left|K\left(t_{0}, s\right)\right|} d s= \\
+		=\int_{a}^{b}\left|K\left(t_{0}, s\right)\right| d s-\varepsilon \int_{a}^{b} \frac{\left|K\left(t_{0}, s\right)\right|}{\varepsilon+\left|K\left(t_{0}, s\right)\right|} d s \geq \int_{a}^{b}\left|K\left(t_{0}, s\right)\right| d s-\varepsilon(b-a) .
+	\end{gathered}
+$$
+
+В силу произвольности $\varepsilon>0$ получим
+
+$$
+	\|A\| \geq \int_{a}^{b}\left|K\left(t_{0}, s\right)\right| d s=\max _{a \leq t \leq b} \int_{a}^{b}|K(t, s)| d s .
+$$
+
+Таким образом, из (2.2) и (2.3) следует для оператора Фредгольма
+
+$$
+	\|A\|=\max _{a \leq t \leq b} \int_{a}^{b}|K(t, s)| d s .
+$$
+
+Пример 2.2. ПРОСТЕЙШИЙ ОПЕРАТОР ДИФФЕРЕНЦИРОВАНИЯ. В пространстве $C[0,1]$ рассмотрим оператор
+
+$$
+	A x(t)=\frac{d}{d t} x(t)
+$$
+
+За область определения этого оператора примем множество $D(A)=C^{1}[0,1]$, то есть множество непрерывно дифференцируемых на $[0,1]$ функций. Тогда $A$ - \hyperlink{linOperator}{линейный оператор}, действующий в $C[0,1]$.
+
+Покажем неограниченность оператора $A$ на $D(A)$. Для $n \in \mathbb{N}$ положим $x_{n}(t)=\sin n \pi t$. Тогда $A x_{n}(t)=n \pi \cos n \pi t$. Для $x \in C[0,1]$ норма $\|x\|_{C}=$ $=\max _{0 \leq t \leq 1}|x(t)|$, поэтому
+
+$$
+	\left\|x_{n}\right\|_{C}=1, \quad\left\|A x_{n}\right\|_{C}=n \pi=n \pi\left\|x_{n}\right\|_{C}
+$$
+
+Из последнего равенства следует, что условие (1.1) ограниченности оператора $A$ не выполняется, так как $n \pi \rightarrow \infty$ при $n \rightarrow \infty$.
+
+Рассмотрим оператор, который задается формулой (2.4), но уже из пространства $C^{1}[0,1]$ с нормой $\|x\|_{C^{1}}=\|x\|_{C}+\left\|x^{\prime}\right\|_{C}$ в пространство $C[0,1]$. Итак, $A: C^{1}[0,1] \rightarrow C[0,1]$. Очевидно, что оператор $A$ линейный. Кроме того, для всех $x \in C^{1}[0,1]$
+
+$$
+	\|A x\|_{C}=\left\|x^{\prime}\right\|_{C} \leq\|x\|_{C}+\left\|x^{\prime}\right\|_{C}=\|x\|_{C^{1}}
+$$
+
+Получили, что оператор дифференцирования $A: C^{1}[0,1] \rightarrow C[0,1]$ \hyperlink{ogranichenn}{ограничен} и $\|A\|_{C^{1} \rightarrow C} \leq 1$. Найдем точное значение нормы оператора. Для $n \in \mathbb{N}$ рассмотрим функции $x_{n}(t)=(n \pi)^{-1} \sin n \pi t$. Тогда $A x_{n}(t)=\cos n \pi t$ и, следовательно, $\left\|A x_{n}\right\|_{C}=1$. Далее получим
+
+$$
+	\left\|x_{n}\right\|_{C^{1}}=\left\|x_{n}\right\|_{C}+\left\|x_{n}^{\prime}\right\|_{C}=\frac{1}{n \pi}+1
+$$
+
+Следовательно,
+
+$$
+	\|A\|_{C^{1} \rightarrow C}=\sup _{\substack{x \in C^{1} \\ x \neq \Theta}} \frac{\|A x\|_{C}}{\|x\|_{C^{1}}} \geq \frac{\left\|A x_{n}\right\|_{C}}{\left\|x_{n}\right\|_{C^{1}}}=\frac{n \pi}{1+n \pi} .
+$$
+
+Учитывая, что $n \in \mathbb{N}$ любые, из (2.5) при $n \rightarrow \infty$ получим $\|A\|_{C^{1} \rightarrow C} \geq 1$. Таким образом, для оператора дифференцирования $\|A\|_{C^{1} \rightarrow C}=1$.
+
+
+\section*{$\S$ §. Пространство линейных ограниченных операторов}
+Пусть $E, F$ - линейные нормированные пространства, причем оба вещественные или оба комплексные. Через $L(E, F)$ обозначим множество всех линейных \hyperlink{ogranichenn}{ограниченных}операторов $A: E \rightarrow F$. В случае $F=E$ вместо $L(E, E)$ пишут $L(E)$.
+
+Определим на множестве $L(E, F)$ операции умножения на число и сложение. Считаем для числа $\lambda$ и $A, B \in L(E, F)$ операторы $\lambda A$ и $A+B$ такие, что для $x \in E$
+
+$$
+	(\lambda A) x=(\lambda) A x, \quad(A+B) x=A x+B x .
+$$
+
+Нетрудно видеть, что так определенные операторы $\lambda A$ и $A+B$ принадлежат $L(E, F)$. В качестве нуля $\Theta \in L(E, F)$ определим оператор $\Theta$ такой, что $\Theta x=\Theta \in F$ для всех $x \in E$. Легко проверить выполнение в $L(E, F)$ всех аксиом линейного пространства.
+
+В полученном линейном пространстве $L(E, F)$ определим норму. Для $A \in L(E, F)$ положим, как и в $(2.1)$,
+
+$$
+	\|A\|=\sup _{\substack{x \in E \\ x \neq \Theta}} \frac{\|A x\|_{F}}{\|x\|_{E}} .
+$$
+
+Для проверки аксиом нормы напомним
+
+$$
+	(\forall x \in E)\left[\|A x\|_{F} \leq\|A\|\|x\|_{E}\right] .
+$$
+
+1). Очевидно, что $\|A\| \geq 0$. Пусть теперь $\|A\|=0$. Тогда $\|A x\|_{F}=0$ для всех $x \in E$. Следовательно, $A x=\Theta$ для всех $x \in E$ и оператор $A=\Theta \in L(E, F)$. Для $\Theta \in L(E, F)$ свойство $\|\Theta\|=0$ очевидно. Доказана первая аксиома. 2). Вторая аксиома нормы следует из соотношения
+
+$$
+	\|\lambda A\|=\sup _{\substack{x \in E \\ x \neq \Theta}} \frac{\|\lambda A x\|_{F}}{\|x\|_{E}}=|\lambda|\|A\| .
+$$
+
+3). Третья аксиома нормы следует из оценки для всех $x \in E$.
+
+$$
+	\|(A+B) x\|_{F} \leq\|A x\|_{F}+\|B x\|_{F} \leq(\|A\|+\|B\|)\|x\|
+$$
+
+которая означает $\|A+B\| \leq\|A\|+\|B\|$.
+
+Итак, $L(E, F)$ - линейное нормированное пространство и определена сходимость по норме операторов. Пусть последовательность операторов $\left\{A_{n}\right\}_{n=1}^{\infty} \subset L(E, F)$ такая, что для некоторого оператора $A \in L(E, F)$ выполняется $\left\|A_{n}-A\right\| \rightarrow 0$ при $n \rightarrow \infty$. В таком случае говорят, что операторы $A_{n}(n \in \mathbb{N})$ сходятся к оператору $A$ по операторной норме. Такую сходимость $A_{n} \rightarrow A$ называют также равномерной сходимостью, поскольку она равносильна $\left\|A_{n} x-A x\right\|_{F} \rightarrow 0$ при $n \rightarrow \infty$ равномерно по $x$ из любого шара $B[\Theta, r]=\left\{x \in E \mid\|x\|_{E} \leq r\right\}$. Факт равномерной сходимости операторов при $n \rightarrow \infty$ будем обозначать $A_{n} \rightrightarrows A$.
+
+Теорема 3.1. Пусть $E$ - линейное нормированное пространство и пространство $F$ банахово. Тогда пространство $L(E, F)$ с операторной нормой является банаховым пространством.
+
+Доказательство. Возьмем произвольную фундаментальную последовательность $\left\{A_{n}\right\}_{n=1}^{\infty} \subset L(E, F)$, то есть
+
+$$
+	(\forall \varepsilon>0)(\exists N \in \mathbb{N})(\forall n \geq N)(\forall p \in \mathbb{N})\left[\left\|A_{n+p}-A_{n}\right\|<\varepsilon\right]
+$$
+
+Пусть $x \in E$. Из неравенства
+
+$$
+	\left\|A_{n+p} x-A_{n} x\right\|_{F} \leq\left\|A_{n+p}-A_{n}\right\|\|x\|_{E}
+$$
+
+и (3.1) следует фундаментальность последовательности $\left\{A_{n} x\right\}_{n=1}^{\infty} \subset F$. Но пространство $F$ полное, поэтому эта последовательность сходится в $F$. Обозначим $\lim _{n \rightarrow \infty} A_{n} x=y(x) \in F$. Таким образом, определено отображение $A: E \rightarrow F$, действующее по правилу $A x=y(x)=\lim _{n \rightarrow \infty} A_{n} x$.
+
+Линейность отображения $A$ очевидным образом следует из линейности операторов $A_{n}$ и свойств предела. Итак, $A: E \rightarrow F$ - \hyperlink{linOperator}{линейный оператор}.
+
+Установим ограниченность этого оператора. Так как всякая фундаментальная последовательность ограничена, то $(\exists C>0)(\forall n \in \mathbb{N})\left[\left\|A_{n}\right\| \leq C\right]$. Следовательно, для всех $x \in E$ выполняется $\left\|A_{n} x\right\|_{F} \leq\left\|A_{n}\right\|\|x\|_{E} \leq C\|x\|_{E}$. Отсюда при $n \rightarrow \infty$ получим $\|A x\|_{F} \leq C\|x\|_{E}$, то есть оператор $A$ \hyperlink{ogranichenn}{ограниченный} и $A \in L(E, F)$.
+
+Покажем, что $\left\|A_{n}-A\right\| \rightarrow 0$ при $n \rightarrow \infty$. Возьмем произвольное $\varepsilon>0$ и пусть выполнено (3.1). Тогда для $x \in E$ с $\|x\|_{E} \leq 1$ получим из (3.1) и (3.2)
+
+$$
+	(\forall n \geq N)(\forall p \in \mathbb{N})\left[\left\|A_{n+p} x-A_{n} x\right\|_{F}<\varepsilon\right]
+$$
+
+В последней оценке $p \rightarrow \infty$. Получим для всех $x \in E$ с $\|x\|_{E} \leq 1$ и всех $n \geq N$ оценку $\left\|A x-A_{n} x\right\|_{F} \leq \varepsilon$. Отсюда для всех $n \geq N$ следует
+
+$$
+	\left\|A-A_{n}\right\|=\sup _{\substack{x \in E \\\|x\|_{E} \leq 1}}\left\|\left(A-A_{n}\right) x\right\|_{F} \leq \varepsilon
+$$
+
+Итак,
+
+$$
+	(\forall \varepsilon>0)(\exists N \in \mathbb{N})(\forall n \geq N)\left[\left\|A-A_{n}\right\| \leq \varepsilon\right]
+$$
+
+что означает $A_{n} \rightrightarrows A$. $\odot$
+
+Отдельно рассмотрим пространство $L\left(E, \mathbb{R}^{1}\right)$, если пространство $E$ вещественное, и пространство $L\left(E, \mathbb{C}^{1}\right)$, если пространство $E$ комплексное. Оба эти пространства являются пространствами линейных ограниченных функционалов, вещественных или комплексных соответственно. Обозначать эти пространства принято символом $E^{*}$. Называют пространство $E^{*}$ пространством, сопряженным к пространству $E$. Заметим, что всякое сопряженное пространство является полным, так как пространства чисел $\mathbb{R}^{1}$ и $\mathbb{C}^{1}$ полные.
+
+Замечание. Если пространства $E$ и $F$ комплексные, то операцию умножения оператора на число иногда определяют формулой $(\lambda A) x=\bar{\lambda}(A x)$. При этом пространство $L(E, F)$ также будет ЛНП, которое полно, если полно пространство $F$. Соответственно, будет полно и сопряженное пространство $E^{*}=L\left(E, \mathbb{C}^{1}\right)$, в котором умножение функционала на число определяется подобным образом $(\lambda f) x=\bar{\lambda}(f x)$. Обратим внимание, что сопряженное пространство $E^{*}$ иногда определяют как пространство полулинейных ограниченных функционалов $f(\alpha x+\beta y)=\bar{\alpha} f(x)+\bar{\beta} f(y)$. При таком определении пространство $E^{*}$ также полно. Заметим, что в вещественном случае все эти подходы совпадают.
+
+Определим суперпозицию (произведение) линейных операторов. Пусть $E_{1}$, $E_{2}, E_{3}$ - линейные нормированные пространства. Пусть заданы операторы $A \in L\left(E_{1}, E_{2}\right)$ и $B \in L\left(E_{2}, E_{3}\right)$. Определим на $E_{1}$ отображение
+
+$$
+	(B A) x=B(A x)
+$$
+
+Очевидно, $B A: E_{1} \rightarrow E_{3}$ и является \hyperlink{linOperator}{линейным оператором}. Из оценки
+
+$$
+	\|(B A) x\|_{E_{3}}=\|B(A x)\|_{E_{3}} \leq\|B\|\|A x\|_{E_{2}} \leq\|B\|\|A\|\|x\|_{E_{1}}
+$$
+
+следует ограниченность оператора $B A$ и оценка нормы $\|B A\| \leq\|B\|\|A\|$. Таким образом, оператор $B A \in L\left(E_{1}, E_{3}\right)$.
+
+Если оператор $A \in L(E)$, то определены операторы $A^{n} \in L(E)$ для всех $n \in \mathbb{N}$. Следовательно, можно определять многочлены от операторов, а также операторные ряды, что позволяет определять и некоторые функции от операторов.
+
+Заметим, что вообще операторы $B A \neq A B$ (один из этих операторов может быть не определен). Но и в случае, когда определены оба оператора $B A$ и $A B$, равенство выполняется не всегда. Например, в пространстве $C[0,1]$ заданы операторы $(A x)(t)=t x(t)$ и $(B x)(t)=\int_{0}^{t} x(s) d s$. Очевидно, что $A, B \in L(C[0,1])$ и
+
+$$
+	A B x(t)=t \int_{0}^{t} x(s) d s \neq \int_{0}^{t} s x(s) d s=B A x(t)
+$$
+
+Если выполняется равенство $A B=B A$, то говорят, что операторы коммутируют или перестановочны.
+
+В пространстве $L(E, F)$ определим еще одну сходимость операторов, аналогом которой для функций является поточечная сходимость.
+
+Пусть последовательность операторов $\left\{A_{n}\right\}_{n=1}^{\infty} \subset L(E, F)$ такая, что для некоторого оператора $A \in L(E, F)$ выполняется $\left\|A_{n} x-A x\right\|_{F} \rightarrow 0$ при $n \rightarrow \infty$ для всех $x \in E$. В таком случае говорят, что операторы $A_{n}(n \in \mathbb{N})$ сходятся к оператору $A$ силъно. Факт сильной сходимости операторов при $n \rightarrow \infty$ будем обозначать $A_{n} \stackrel{\text { сильно }}{\longrightarrow} A$.
+
+Из неравенства $\left\|A_{n} x-A x\right\|_{F} \leq\left\|A_{n}-A\right\|\|x\|_{E}$ следует, что из равномерной сходимости операторов следует сильная сходимость. Обратное утверждение неверно, что видно из следующего примера.
+
+Пример 3.1. В пространстве последовательностей $l_{2}$ операторы
+
+$$
+	P_{n} x=\left(x_{1}, x_{2}, \ldots, x_{n}, 0,0, \ldots\right) \text { где } n \in \mathbb{N} \text { и } x=\left(x_{1}, x_{2}, \ldots, x_{k}, \ldots\right) \in l_{2} .
+$$
+
+. Очевидно, что $P_{n} \in L\left(l_{2}\right)$ и для $x \in l_{2}$
+
+$$
+	\left\|I x-P_{n} x\right\|=\left\|\left(0,0, \ldots, 0, x_{n+1}, x_{n+2}, \ldots\right)\right\|=\left(\sum_{k=n+1}^{\infty}\left|x_{k}\right|^{2}\right)^{1 / 2} \underset{n \rightarrow \infty}{\longrightarrow} 0 .
+$$
+
+Получили $P_{n} \stackrel{\text { сильно }}{\longrightarrow} I$. Справедлива оценка
+
+$$
+	\left\|I x-P_{n} x\right\|=\left(\sum_{k=n+1}^{\infty}\left|x_{k}\right|^{2}\right)^{1 / 2} \leq\|x\|
+$$
+
+
+\end{document}

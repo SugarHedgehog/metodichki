@@ -1,0 +1,42 @@
+\documentclass[a4paper, 14pt]{extarticle}
+\usepackage{ifxetex,ifluatex,ifpdf}
+
+\ifluatex
+    \usepackage{fontspec}
+    \usepackage{polyglossia}
+    \setmainfont{CMU Serif}
+    \newfontfamily{\cyrillicfont}{CMU Serif}
+    \setsansfont{CMU Sans Serif}
+    \newfontfamily{\cyrillicfontsf}{CMU Sans Serif}
+    \setmonofont{CMU Typewriter Text}
+    \newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
+    \setdefaultlanguage{russian}
+    \else  
+    \ifpdf
+        \usepackage[english, russian]{babel}
+        \usepackage[T2A]{fontenc}
+        \else
+        \ifxetex
+        	\usepackage{fontspec}
+        	\defaultfontfeatures{Ligatures={TeX}}
+        	\setmainfont{Noto Serif}
+        	\setsansfont{Noto Sans}
+        	\setmonofont{Noto Sans Mono}
+        \fi
+    \fi
+\fi
+
+\usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+
+
+\begin{document}
+
+\include{title}
+
+\include{summary-of-the-work}
+
+\include{review}
+
+\end{document}
+
+%%Author: Alexandra Sumatokhina 

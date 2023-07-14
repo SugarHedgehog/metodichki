@@ -1,0 +1,49 @@
+\documentclass[a4paper, 12pt]{extarticle}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainfont{CMU Serif}
+\newfontfamily{\cyrillicfont}{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\newfontfamily{\cyrillicfontsf}{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
+\setdefaultlanguage{russian}
+
+\usepackage{graphicx}
+\graphicspath{{examples/image/}}
+
+\usepackage{multicol}
+\setlength{\columnsep}{2cm}
+
+\usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{enumitem}
+
+\newcommand{\ptototypeRE}[1]{Прототип №#1 подборки ”РешуЕГЭ”}
+\newcommand{\ptototypeOBZ}[1]{Прототип №#1 Открытый банк задач ЕГЭ по математике}
+
+\newcommand{\examples}[4]{\begin{multicols}{2} #1\\\\ Ответ: $#2$\\\\ \includegraphics[width=#4\textwidth]{#3}\end{multicols}}
+
+\begin{document}
+
+\setenumerate[0]{parsep=3pt, topsep=\parsep}
+\include{title}
+
+\input{summary-of-the-work}
+
+\input{examples/sphere}
+
+\input{examples/poly}
+
+\input{examples/cone}
+
+\input{examples/cylinder}
+
+\input{examples/pyramid}
+
+\input{examples/cube}
+
+\input{examples/figure}
+
+\include{review}
+
+\end{document}

@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage[automake,order=letter]{glossaries}
+
+\makeglossaries
+
+\newglossaryentry{anna}{name={Анна},description={}}
+\newglossaryentry{boris}{name={Борис},description={}}
+\newglossaryentry{viktoria}{name={Виктория},description={}}
+\newglossaryentry{georgiy}{name={Георгий},description={}}
+
+\begin{document}
+
+\section{Отсортированный список}
+
+\printglossary[title={Список},type=\glsdefaulttype]
+
+\end{document}

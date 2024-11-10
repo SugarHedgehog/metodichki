@@ -1,0 +1,34 @@
+\documentclass[a4paper, 12pt]{extarticle}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainfont{CMU Serif}
+\newfontfamily{\cyrillicfont}{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\newfontfamily{\cyrillicfontsf}{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
+\setdefaultlanguage{russian}
+
+\usepackage{graphicx}
+\graphicspath{{examples/image/}}
+
+\usepackage{multicol}
+\setlength{\columnsep}{2cm}
+
+\usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{enumitem}
+
+
+\begin{document}
+
+\tableofcontents
+
+\include{intro.tex}
+
+\include{part_1.tex}
+
+\include{part_2.tex}
+
+\include{conclus.tex}
+
+\end{document}

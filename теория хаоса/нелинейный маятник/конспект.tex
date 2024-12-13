@@ -1,0 +1,69 @@
+\documentclass[10pt]{article}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+
+% Section: Introduction to Nonlinear Pendulum
+\section*{§ 3. Пример: нелинейный маятник •}
+В этом разделе рассматриваются три модели, которые иллюстрируют различные виды нелинейных колебаний для системы с одной степенью свободы.
+
+% Subsection: Hamiltonian and Equations of Motion
+\subsection*{Гамильтониан и уравнения движения}
+Гамильтониан нелинейного маятника с единичной массой представлен как:
+\begin{equation*}
+H=1 / 2 \dot{x}^{2}-\omega_{0}^{2} \cos x, \tag{3.1}
+\end{equation*}
+где $q=x$ и $p=\dot{x}$. Уравнения движения:
+\begin{equation*}
+\ddot{x}+\omega_{0}^{2} \sin x=0 . \tag{3.2}
+\end{equation*}
+
+% Subsection: Equilibrium States
+\subsection*{Состояния равновесия}
+Состояния равновесия определяются уравнениями:
+\begin{equation*}
+\dot{x}_{s}=0, \quad \sin x_{s}=0 . \tag{3.3}
+\end{equation*}
+Решения: $\dot{x}_{s}=0, x_{s}=\pi n, n=0, \pm 1, \ldots$
+
+% Subsection: Phase Portrait and Separatrix
+\subsection*{Фазовый портрет и сепаратриса}
+Фазовые траектории при $H<\omega_{0}^{2}$ и $H>\omega_{0}^{2}$ описываются, включая сепаратрису с энергией $H_{s}=\omega_{0}^{2}$.
+
+% Subsection: Soliton-like Solutions
+\subsection*{Солитоноподобные решения}
+Решение на сепаратрисе:
+\begin{equation*}
+v= \pm 2 \omega_{0} / \operatorname{ch}\left(\omega_{0} t\right) \tag{3.7}
+\end{equation*}
+
+% Subsection: General Solution and Action-Angle Variables
+\subsection*{Общее решение и переменные действие-угол}
+Используются переменные действие-угол для нахождения общего решения уравнения движения.
+
+% Subsection: Nonlinear Oscillation Frequency
+\subsection*{Частота нелинейных колебаний}
+Частота нелинейных колебаний маятника определяется как:
+\begin{equation*}
+\omega(H)=\frac{\pi}{2} \omega_{0} \begin{cases}\frac{1}{F(\pi / 2 ; x)} & (x \leqslant 1), \\ \frac{x}{F(\pi / 2 ; 1 / x)} & (x \geqslant 1) .\end{cases} \tag{3.12}
+\end{equation*}
+
+% Subsection: Spectrum of Nonlinear Pendulum
+\subsection*{Спектр нелинейного маятника}
+Анализируется спектр колебаний маятника и его зависимость от энергии $H$.
+
+% Subsection: General Properties of Oscillation Period
+\subsection*{Общие свойства периода колебаний}
+Исследуется период колебаний системы в потенциальной яме и его зависимость от энергии.
+
+\end{document}

@@ -5,65 +5,113 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage[version=4]{mhchem}
-\usepackage{stmaryrd}
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
 \graphicspath{ {./images/} }
 
 \begin{document}
 
-% Section: Introduction to Nonlinear Pendulum
-\section*{§ 3. Пример: нелинейный маятник •}
-В этом разделе рассматриваются три модели, которые иллюстрируют различные виды нелинейных колебаний для системы с одной степенью свободы.
+\section*{§ 3. Пример: нелинейный маятник}
 
-% Subsection: Hamiltonian and Equations of Motion
-\subsection*{Гамильтониан и уравнения движения}
-Гамильтониан нелинейного маятника с единичной массой представлен как:
-\begin{equation*}
-H=1 / 2 \dot{x}^{2}-\omega_{0}^{2} \cos x, \tag{3.1}
-\end{equation*}
-где $q=x$ и $p=\dot{x}$. Уравнения движения:
-\begin{equation*}
-\ddot{x}+\omega_{0}^{2} \sin x=0 . \tag{3.2}
-\end{equation*}
+\subsection*{1. Введение}
+Описываемые здесь и далее три модели дают некоторое представление о возможных видах нелинейных колебаний в случае одной степени свободы, но далеко не исчерпывают всего их разнообразия.
 
-% Subsection: Equilibrium States
-\subsection*{Состояния равновесия}
-Состояния равновесия определяются уравнениями:
-\begin{equation*}
-\dot{x}_{s}=0, \quad \sin x_{s}=0 . \tag{3.3}
-\end{equation*}
-Решения: $\dot{x}_{s}=0, x_{s}=\pi n, n=0, \pm 1, \ldots$
+\subsection*{2. Основные уравнения}
+\subsubsection*{2.1 Гамильтониан системы}
+Гамильтониан нелинейного маятника с единичной массой:
+\begin{equation}
+H=\frac{1}{2} \dot{x}^{2} - \omega_{0}^{2} \cos x
+\end{equation}
 
-% Subsection: Phase Portrait and Separatrix
-\subsection*{Фазовый портрет и сепаратриса}
-Фазовые траектории при $H<\omega_{0}^{2}$ и $H>\omega_{0}^{2}$ описываются, включая сепаратрису с энергией $H_{s}=\omega_{0}^{2}$.
+\subsubsection*{2.2 Уравнение движения}
+\begin{equation}
+\ddot{x} + \omega_{0}^{2} \sin x = 0
+\end{equation}
 
-% Subsection: Soliton-like Solutions
-\subsection*{Солитоноподобные решения}
-Решение на сепаратрисе:
-\begin{equation*}
-v= \pm 2 \omega_{0} / \operatorname{ch}\left(\omega_{0} t\right) \tag{3.7}
-\end{equation*}
+\subsection*{3. Состояния равновесия}
+\begin{itemize}
+    \item Условия равновесия:
+    \[\dot{x}_{s} = 0, \quad \sin x_{s} = 0\]
+    \item Решения: $x_{s} = \pi n$, где $n = 0, \pm 1, \ldots$
+    \item Характер точек равновесия:
+        \begin{itemize}
+            \item При четных $n$ - эллиптические точки
+            \item При нечетных $n$ - гиперболические точки
+        \end{itemize}
+\end{itemize}
 
-% Subsection: General Solution and Action-Angle Variables
-\subsection*{Общее решение и переменные действие-угол}
-Используются переменные действие-угол для нахождения общего решения уравнения движения.
+\subsection*{4. Анализ траекторий}
+\subsubsection*{4.1 Типы движения}
+\begin{itemize}
+    \item При $H < \omega_{0}^{2}$ - финитные колебания ("захваченные" частицы)
+    \item При $H > \omega_{0}^{2}$ - инфинитное движение ("пролетные" частицы)
+\end{itemize}
 
-% Subsection: Nonlinear Oscillation Frequency
-\subsection*{Частота нелинейных колебаний}
-Частота нелинейных колебаний маятника определяется как:
-\begin{equation*}
-\omega(H)=\frac{\pi}{2} \omega_{0} \begin{cases}\frac{1}{F(\pi / 2 ; x)} & (x \leqslant 1), \\ \frac{x}{F(\pi / 2 ; 1 / x)} & (x \geqslant 1) .\end{cases} \tag{3.12}
-\end{equation*}
+\subsubsection*{4.2 Сепаратриса}
+\begin{itemize}
+    \item Энергия на сепаратрисе: $H_{s} = \omega_{0}^{2}$
+    \item Решение на сепаратрисе:
+    \[\dot{x} = \pm 2 \omega_{0} \cos (x / 2)\]
+    \item Интегральное решение:
+    \[\omega_{0} t = \ln \operatorname{tg}\left(\frac{x}{4} + \frac{\pi}{4}\right)\]
+    \item Явное решение:
+    \[x = 4 \operatorname{arctg} e^{\omega_{0} t} - \pi\]
+\end{itemize}
 
-% Subsection: Spectrum of Nonlinear Pendulum
-\subsection*{Спектр нелинейного маятника}
-Анализируется спектр колебаний маятника и его зависимость от энергии $H$.
+\subsection*{5. Солитонное решение}
+\begin{itemize}
+    \item Выражение для скорости:
+    \[v = \pm \frac{2 \omega_{0}}{\operatorname{ch}\left(\omega_{0} t\right)}\]
+    \item Характеристики солитона:
+        \begin{itemize}
+            \item Ширина профиля $\sim 1 / \omega_{0}$
+            \item Экспоненциальное спадание при $t \to \pm\infty$
+        \end{itemize}
+\end{itemize}
 
-% Subsection: General Properties of Oscillation Period
-\subsection*{Общие свойства периода колебаний}
-Исследуется период колебаний системы в потенциальной яме и его зависимость от энергии.
+\subsection*{6. Переменные действие-угол}
+\subsubsection*{6.1 Параметризация}
+\begin{itemize}
+    \item Параметр $x$:
+    \[x^{2} = \frac{\omega_{0}^{2} + H}{2 \omega_{0}^{2}} = \frac{1}{2}(1 + H / \omega_{0}^{2})\]
+    \item Переменная $\xi$:
+    \begin{align*}
+    x \sin \xi = \sin (x / 2) &\quad (x \leq 1)\\
+    \sin \xi = \sin (x / 2) &\quad (x \geq 1)
+    \end{align*}
+\end{itemize}
+
+\subsection*{7. Действие $I(H)$}
+\begin{equation}
+I(H) = \frac{2}{\pi} \int_{0}^{x_{0}} d x \left[2\left(H + \omega_{0}^{2} \cos x\right)\right]^{1/2}
+\end{equation}
+где точка поворота $x_{0}$ находится из условия $H + \omega_{0}^{2} \cos x_{0} = 0$.
+
+\subsection*{8. Спектральный анализ}
+\begin{itemize}
+    \item Число $N$:
+    \[N = \frac{\omega_{0}}{\omega(H)} = \frac{2}{\pi} F\left(\frac{\pi}{2}; x\right)\]
+    
+    \item Разложение в ряд Фурье:
+    \[
+    \dot{x} = 8 \omega \begin{cases}
+    \sum_{n=1}^{\infty} \frac{a^{n-1/2}}{1+a^{2n-1}} \cos [(2n-1) \omega t], & (x \leq 1)\\
+    1/4 + \sum_{n=1}^{\infty} \frac{a^{n}}{1+a^{2n}} \cos (n \omega t), & (x \geq 1)
+    \end{cases}
+    \]
+\end{itemize}
+
+\subsection*{9. Период колебаний}
+\begin{equation}
+T = \frac{2 \pi}{\omega} = \oint \frac{d x}{[2(H-V(x))]^{1/2}}
+\end{equation}
+
+\subsection*{10. Асимптотическое поведение}
+\begin{equation}
+T \sim \frac{2 \pi}{\omega_{0}} \begin{cases}
+\ln(H_{s}/\Delta), & n=1\\
+(\Delta/H_{s})^{-(n-1)/2}, & n>1
+\end{cases}
+\end{equation}
 
 \end{document}

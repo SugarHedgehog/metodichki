@@ -277,3 +277,5 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 chas-ege/tasks.tex
+*.600gf
+*.gf

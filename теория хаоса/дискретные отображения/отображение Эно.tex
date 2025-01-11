@@ -1,0 +1,64 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Отображение Эно: Подробный Конспект}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Введение}
+Отображение Эно (Essentially Non-Oscillatory, ENO) — это метод численного анализа, используемый для решения гиперболических уравнений. Он был разработан для минимизации численных осцилляций, которые могут возникать при решении задач с разрывами или крутыми градиентами.
+
+\section{Основные концепции}
+\subsection{Гиперболические уравнения}
+Гиперболические уравнения описывают волновые процессы и распространение сигналов. Примером является уравнение переноса:
+\begin{equation}
+\frac{\partial u}{\partial t} + a \frac{\partial u}{\partial x} = 0
+\end{equation}
+
+\subsection{Численные осцилляции}
+При использовании стандартных численных методов, таких как метод конечных разностей, могут возникать осцилляции вблизи разрывов. Это связано с дисперсионными свойствами численных схем.
+
+\section{Метод Эно}
+\subsection{Основная идея}
+Метод Эно выбирает локально гладкие интервалы для интерполяции, избегая разрывов. Это достигается за счет адаптивного выбора шаблона интерполяции.
+
+\subsection{Алгоритм}
+1. \textbf{Выбор шаблона:} Для каждого узла выбирается шаблон, который минимизирует осцилляции.
+2. \textbf{Интерполяция:} Используется полином для интерполяции значений на выбранном шаблоне.
+3. \textbf{Обновление:} Вычисленные значения используются для обновления решения на следующем временном шаге.
+
+\section{Применение}
+Метод Эно широко применяется в задачах, где важна точность вблизи разрывов, например, в аэродинамике и гидродинамике.
+
+\section{Преимущества и недостатки}
+\subsection{Преимущества}
+- Устойчивость к осцилляциям.
+- Высокая точность вблизи разрывов.
+
+\subsection{Недостатки}
+- Сложность реализации.
+- Большие вычислительные затраты.
+
+\section{Заключение}
+Отображение Эно является мощным инструментом для решения задач с разрывами. Несмотря на сложность реализации, его преимущества делают его незаменимым в ряде приложений.
+
+\begin{thebibliography}{9}
+\bibitem{Harten1987}
+A. Harten, B. Engquist, S. Osher, and S. R. Chakravarthy, \textit{Uniformly high order accurate essentially non-oscillatory schemes, III}, Journal of Computational Physics, 1987.
+
+\bibitem{Shu1988}
+C.-W. Shu and S. Osher, \textit{Efficient implementation of essentially non-oscillatory shock-capturing schemes}, Journal of Computational Physics, 1988.
+\end{thebibliography}
+
+\end{document}

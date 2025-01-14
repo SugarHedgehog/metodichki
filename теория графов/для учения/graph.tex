@@ -1,103 +1,79 @@
-\documentclass[a4paper, 12pt]{extarticle}
-\usepackage{etoolbox}
-\usepackage{fontspec}
-\usepackage{polyglossia}
-\usepackage{enumitem} % Added for list spacing control
-\setmainfont{CMU Serif}
-\newfontfamily{\cyrillicfont}{CMU Serif}
-\setsansfont{CMU Sans Serif}
-\newfontfamily{\cyrillicfontsf}{CMU Sans Serif}
-\setmonofont{CMU Typewriter Text}
-\newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
-\setdefaultlanguage{russian}
+\documentclass[a4paper,12pt,twocolumn]{extarticle} \usepackage{etoolbox,fontspec,polyglossia,pdflscape,enumitem,amsfonts,amssymb,amsthm,mathtools,amsmath,icomma,euscript,mathrsfs,graphicx,wrapfig,array,tabularx,tabulary,booktabs,longtable,multirow,multicol,tikz,pdfpages}
 
-%%% Дополнительная работа с математикой
-\usepackage{amsfonts,amssymb,amsthm,mathtools} % AMS
-\usepackage{amsmath}
-\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+% Настройка языка и шрифтов 
+\setdefaultlanguage{russian} \setmainfont{CMU Serif} \setsansfont{CMU Sans Serif} \setmonofont{CMU Typewriter Text} \newfontfamily{\cyrillicfont}{CMU Serif} \newfontfamily{\cyrillicfontsf}{CMU Sans Serif} \newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
 
-%% Шрифты
-\usepackage{euscript} % Шрифт Евклид
-\usepackage{mathrsfs} % Красивый матшрифт
+% Уменьшение межстрочного интервала 
+\linespread{0.9}
 
-%% Свои команды
-\DeclareMathOperator{\sgn}{\mathop{sgn}}
+% Уменьшение отступов абзацев 
+\setlength{\parindent}{0.8em} \setlength{\parskip}{0.1em}
 
-%% Перенос знаков в формулах (по Львовскому)
-\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
-    {\hbox{$\mathsurround=0pt #1$}}{}}
+% Уменьшение отступов в списках 
+\setlist{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=0.8em}
 
-%%% Работа с картинками
-\usepackage{graphicx}
-\graphicspath{{Изображения/}{image}}
-\setlength\fboxsep{3pt}
-\setlength\fboxrule{1pt}
-\usepackage{wrapfig}
+% Уменьшение отступов вокруг формул 
+\setlength{\abovedisplayskip}{3pt} \setlength{\belowdisplayskip}{3pt} \setlength{\abovedisplayshortskip}{1pt} \setlength{\belowdisplayshortskip}{1pt}
 
-%%% Работа с таблицами
-\usepackage{array,tabularx,tabulary,booktabs}
-\usepackage{longtable}
-\usepackage{multirow}
-\usepackage{blindtext}
-\usepackage{multicol}
-\usepackage{pdfpages}
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.5cm]{geometry}
-\usepackage{tikz}
-\usepackage{wrapfig}
+% Уменьшение отступов вокруг секций 
+\usepackage{titlesec} \titlespacing{\section}{0pt}{2pt}{2pt} \titlespacing{\subsection}{0pt}{2pt}{2pt}
 
-\renewcommand{\thesubsection}{\arabic{subsection}}
-\newtheorem*{theorem}{Теорема}
-\newtheorem{corollary}{Следствие}
+% Компактная геометрия страницы 
+\usepackage[a4paper,landscape,left=1cm,right=1cm,top=0.8cm,bottom=0.8cm,columnsep=0.8cm,headsep=0.2cm]{geometry}
 
-% Глобальные настройки для всех списков
-\setlist{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
+% Базовые команды и настройки 
+\DeclareMathOperator{\sgn}{\mathop{sgn}} \newcommand*{\hm}[1]{#1\nobreak\discretionary{}{\hbox{$\mathsurround=0pt #1$}}{}} \graphicspath{{Изображения/}{image}} \setlength\fboxsep{2pt} \setlength\fboxrule{0.8pt}
+
+% Настройка теорем 
+\renewcommand{\thesubsection}{\arabic{subsection}} \newtheorem*{theorem}{Теорема} \newtheorem{corollary}{Следствие}
+%%% Отключение колонтитулов и нумерации
+\pagestyle{empty}
 
 \begin{document}
-
 % Неориентированные графы, cтепени, изоморфизм.
 \input{1.tex}
 
 % Маршруты, связность, метрика графа.
-\input{2.tex}
+\newpage\input{2.tex}
 
 %Самодополнительные графы
-\input{3.tex}
+\newpage\input{3.tex}
 
 % Экстремальные графы
-\input{4.tex}
+\newpage\input{4.tex}
 
 % Числа Рамсея
-\input{5.tex}
+\newpage\input{5.tex}
 
 % Эйлеровы графы
-\input{6.tex}
+\newpage\input{6.tex}
 
 %Деревья
-\input{7.tex}
+\newpage\input{7.tex}
 
 %Диаметр и радиус графа
-\input{8.tex}
+\newpage\input{8.tex}
 
 %Хроматическое число графа
-\input{9.tex}
+\newpage\input{9.tex}
 
 %Цикломатическое число графа
-\input{10.tex}
+\newpage\input{10.tex}
 
-\subsection{Плоские графы, формула Эйлера}
-\subsection{Линейно независимые циклы}
-\subsection{Хроматическое число плоского графа}
-\subsection{Примеры неплоских графов}
-\subsection{Ориентированные графы, порядковая функция}
-\subsection{Функция Гранди}
-\subsection{Внутреннее устойчивое множество}
-\subsection{Внешнее устойчивое множество}
-\subsection{Ядро графа}
-\subsection{Игры на графе, игра НИМ}
-\subsection{Транспортные сети}
-\subsection{Теорема Кёнига-Холла}
-\subsection{Приложения к матрицам}
-\subsection{Бистохастические матрицы}
-\subsection{Теорема Биркгофа - фон Неймана}
+%\subsection{Плоские графы, формула Эйлера}
+%\subsection{Линейно независимые циклы}
+%\subsection{Хроматическое число плоского графа}
+%\subsection{Примеры неплоских графов}
+%\subsection{Ориентированные графы, порядковая функция}
+%\subsection{Функция Гранди}
+%\subsection{Внутреннее устойчивое множество}
+%\subsection{Внешнее устойчивое множество}
+%\subsection{Ядро графа}
+%\subsection{Игры на графе, игра НИМ}
+%\subsection{Транспортные сети}
+%\subsection{Теорема Кёнига-Холла}
+%\subsection{Приложения к матрицам}
+%\subsection{Бистохастические матрицы}
+%\subsection{Теорема Биркгофа - фон Неймана}
 
 \end{document}

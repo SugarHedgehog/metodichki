@@ -1,0 +1,22 @@
+\subsection{Диаметр и радиус графа}
+
+\noindent\textbf{Определение.} \textit{Расстояние} $d(u,v)$ между вершинами (длина кратчайшей простой цепи):
+\[ d(u,v) = \begin{cases} 
+\text{длина кратчайшей }(u\text{-}v)\text{-цепи}, & \text{если вершины соединены} \\
+\infty, & \text{если вершины не соединены}
+\end{cases} \]
+
+\noindent\textbf{Свойства метрики} (для связного графа):
+\noindent 1) $d(u,v) \geq 0$; $d(u,v) = 0 \Leftrightarrow u = v$ (неотрицательность)
+\noindent 2) $d(u,v) = d(v,u)$ (симметричность)
+\noindent 3) $d(u,v) + d(v,w) \geq d(u,w)$ (неравенство треугольника)
+
+\noindent\textbf{Термины:}
+\noindent • \textit{Геодезическая} -- кратчайшая простая $(u\text{-}v)$-цепь
+\noindent • \textit{Диаметр графа} $d(G)$ -- длина самой длинной геодезической
+
+\noindent\textbf{Степени графа:} 
+\noindent Для графа $G$ определяется $G^k$ ($k$-я степень):
+\noindent • $V(G^k) = V(G)$ (те же вершины)
+\noindent • Вершины $u,v$ смежны в $G^k \Leftrightarrow d(u,v) \leq k$ в $G$
+\noindent\textit{Примеры:} $C_5^2 = K_5$, $P_4^2 = K_1 + K_3$

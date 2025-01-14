@@ -1,0 +1,103 @@
+\documentclass[a4paper, 12pt]{extarticle}
+\usepackage{etoolbox}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{enumitem} % Added for list spacing control
+\setmainfont{CMU Serif}
+\newfontfamily{\cyrillicfont}{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\newfontfamily{\cyrillicfontsf}{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
+\setdefaultlanguage{russian}
+
+%%% Дополнительная работа с математикой
+\usepackage{amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{amsmath}
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+%% Шрифты
+\usepackage{euscript} % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+    {\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}
+\graphicspath{{Изображения/}{image}}
+\setlength\fboxsep{3pt}
+\setlength\fboxrule{1pt}
+\usepackage{wrapfig}
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{pdfpages}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\newtheorem*{theorem}{Теорема}
+\newtheorem{corollary}{Следствие}
+
+% Глобальные настройки для всех списков
+\setlist{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
+
+\begin{document}
+
+% Неориентированные графы, cтепени, изоморфизм.
+\input{1.tex}
+
+% Маршруты, связность, метрика графа.
+\input{2.tex}
+
+%Самодополнительные графы
+\input{3.tex}
+
+% Экстремальные графы
+\input{4.tex}
+
+% Числа Рамсея
+\input{5.tex}
+
+% Эйлеровы графы
+\input{6.tex}
+
+%Деревья
+\input{7.tex}
+
+%Диаметр и радиус графа
+\input{8.tex}
+
+%Хроматическое число графа
+\input{9.tex}
+
+%Цикломатическое число графа
+\input{10.tex}
+
+\subsection{Плоские графы, формула Эйлера}
+\subsection{Линейно независимые циклы}
+\subsection{Хроматическое число плоского графа}
+\subsection{Примеры неплоских графов}
+\subsection{Ориентированные графы, порядковая функция}
+\subsection{Функция Гранди}
+\subsection{Внутреннее устойчивое множество}
+\subsection{Внешнее устойчивое множество}
+\subsection{Ядро графа}
+\subsection{Игры на графе, игра НИМ}
+\subsection{Транспортные сети}
+\subsection{Теорема Кёнига-Холла}
+\subsection{Приложения к матрицам}
+\subsection{Бистохастические матрицы}
+\subsection{Теорема Биркгофа - фон Неймана}
+
+\end{document}

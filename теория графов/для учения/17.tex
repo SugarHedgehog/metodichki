@@ -1,0 +1,38 @@
+\subsection{Внутреннее устойчивое множество}
+Граф $G = (X, \Gamma)$, множество $S \subseteq V$ называется \textit{внутренне устойчивым}, если $\Gamma S \cap S = \emptyset$.
+\textbf{Число внутренней устойчивости}
+\[
+\alpha(G) = \max_{S \in \mathfrak{S}} |S|
+\]
+\textbf{Связь с хроматическим числом}
+\[
+\alpha(G) \gamma(G) \geq |X|
+\]
+\textbf{Пример}
+Граф с $\gamma(G) = 4$, где белые вершины образуют наибольшее внутренне устойчивое множество.
+
+\textbf{Лемма 1}
+\[
+\alpha(G \times H) \geq \alpha(G) \cdot \alpha(H)
+\]
+\textbf{Емкость графа}
+\[
+\theta(G) = \sup_{n} \sqrt[n]{\alpha(G^n)}
+\]
+
+\textbf{Лемма 2}
+Сохраняющее отображение $\sigma$ переводит $S$ во внутренне устойчивое множество $\sigma(S)$.
+
+\textbf{Лемма 3}
+Если $\sigma(X)$ внутренне устойчиво, то $\theta(G) = \alpha(G)$.
+
+\textbf{Теорема 7 (Шеннон)}
+Если для $G$ или $H$ существует $\sigma$, то
+\[
+\alpha(G \times H) = \alpha(G)\alpha(H)
+\]
+\textbf{Следствие}
+Если $\sigma$ переводит вершины $G$ во внутренне устойчивое множество, то
+\[
+\alpha(G) = \sup_n \sqrt[n]{\alpha(G^n)} = \alpha(G)
+\]

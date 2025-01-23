@@ -1,28 +1,44 @@
 \subsection{Цикломатическое число графа}
 
-\noindent\textbf{Определение.} \textit{Мультиграф} $(X,U)$ -- пара из множества вершин $X$ и множества рёбер $U$, где пара вершин может соединяться несколькими рёбрами.
+\noindent\textbf{Мультиграф} $(X,U)$ -- пара из множества вершин $X$ и множества рёбер $U$, где пара вершин может соединяться несколькими рёбрами.
 
 \noindent\textbf{Важные числовые характеристики:}
-\noindent Для мультиграфа $G$ с $n$ вершинами, $m$ рёбрами, $p$ компонентами:
-\[\rho(G) = n - p \quad \text{(ранг графа)}\]
-\[\nu(G) = m - n + p = m - \rho(G) \quad \text{(цикломатическое число)}\]
+\begin{itemize}
+    \item Для мультиграфа $G$ с $n$ вершинами, $m$ рёбрами, $p$ компонентами:
+    \begin{itemize}
+        \item Ранг графа: $\rho(G) = n - p$
+        \item Цикломатическое число: $\nu(G) = m - n + p = m - \rho(G)$
+    \end{itemize}
+\end{itemize}
 
 \noindent\textbf{Теорема 1.} При добавлении ребра между $a$ и $b$:
-\noindent Если $a,b$ соединены цепью или совпадают:
-\[\rho(G') = \rho(\bar{G}), \quad \nu(G') = \nu(\bar{G}) + 1\]
-\noindent Иначе:
-\[\rho(G) = \rho(\bar{G}) + 1, \quad \nu(G') = \nu(\bar{G})\]
+\begin{itemize}
+    \item Если $a,b$ соединены цепью или совпадают:
+    \begin{itemize}
+        \item $\rho(G') = \rho(\bar{G})$
+        \item $\nu(G') = \nu(\bar{G}) + 1$
+    \end{itemize}
+    \item Иначе:
+    \begin{itemize}
+        \item $\rho(G) = \rho(\bar{G}) + 1$
+        \item $\nu(G') = \nu(\bar{G})$
+    \end{itemize}
+\end{itemize}
 
 \noindent\textbf{Векторное представление циклов:}
-\noindent • Каждому ребру присваивается ориентация
-\noindent • Для цикла $\mu$: $c^k = r_k - s_k$, где $r_k,s_k$ -- число проходов по/против ориентации
-\noindent • Цикл представляется вектором $(c^1,\ldots,c^m)$
-\noindent • Циклы независимы $\Leftrightarrow$ их векторы линейно независимы
+\begin{itemize}
+    \item Каждому ребру присваивается ориентация
+    \item Для цикла $\mu$: $c^k = r_k - s_k$, где $r_k,s_k$ -- число проходов по/против ориентации
+    \item Цикл представляется вектором $(c^1,\ldots,c^m)$
+    \item Циклы независимы $\Leftrightarrow$ их векторы линейно независимы
+\end{itemize}
 
 \noindent\textbf{Теорема 2.} Цикломатическое число $\nu(G)$ равно максимальному количеству независимых циклов.
 
 \noindent\textbf{Следствия:}
-\noindent 1) $\nu(G)=0$ $\Leftrightarrow$ граф без циклов
-\noindent 2) $\nu(G)=1$ $\Leftrightarrow$ граф содержит ровно один цикл
+\begin{enumerate}
+    \item $\nu(G)=0$ $\Leftrightarrow$ граф без циклов
+    \item $\nu(G)=1$ $\Leftrightarrow$ граф содержит ровно один цикл
+\end{enumerate}
 
 \noindent\textbf{Теорема 3.} В сильно связном графе цикломатическое число равно максимальному количеству независимых контуров.

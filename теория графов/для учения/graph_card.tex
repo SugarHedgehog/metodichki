@@ -1,0 +1,100 @@
+\documentclass[a5paper,12pt]{extarticle} 
+\usepackage{etoolbox,fontspec,polyglossia,pdflscape,enumitem,amsfonts,amssymb,amsthm,mathtools,amsmath,icomma,euscript,mathrsfs,graphicx,wrapfig,array,tabularx,tabulary,booktabs,longtable,multirow,multicol,tikz,pdfpages}
+
+% Настройка языка и шрифтов 
+\setdefaultlanguage{russian} \setmainfont{CMU Serif} \setsansfont{CMU Sans Serif} \setmonofont{CMU Typewriter Text} \newfontfamily{\cyrillicfont}{CMU Serif} \newfontfamily{\cyrillicfontsf}{CMU Sans Serif} \newfontfamily{\cyrillicfonttt}{CMU Typewriter Text}
+
+% Уменьшение межстрочного интервала 
+\linespread{0.9}
+
+% Уменьшение отступов абзацев 
+\setlength{\parindent}{0.8em} \setlength{\parskip}{0.1em}
+
+% Уменьшение отступов в списках 
+\setlist{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=0.1em}
+
+% Уменьшение отступов вокруг формул 
+\setlength{\abovedisplayskip}{3pt} \setlength{\belowdisplayskip}{3pt} \setlength{\abovedisplayshortskip}{1pt} \setlength{\belowdisplayshortskip}{1pt}
+
+% Уменьшение отступов вокруг секций 
+\usepackage{titlesec} \titlespacing{\section}{0pt}{2pt}{2pt} \titlespacing{\subsection}{0pt}{2pt}{2pt}
+
+% Компактная геометрия страницы 
+\usepackage[a5paper,left=1cm,right=1cm,top=0.8cm,bottom=0.8cm,columnsep=0.8cm,headsep=0.2cm]{geometry}
+
+% Базовые команды и настройки 
+\DeclareMathOperator{\sgn}{\mathop{sgn}} \newcommand*{\hm}[1]{#1\nobreak\discretionary{}{\hbox{$\mathsurround=0pt #1$}}{}} \graphicspath{{Изображения/}{image}} \setlength\fboxsep{2pt} \setlength\fboxrule{0.8pt}
+
+% Настройка теорем 
+\renewcommand{\thesubsection}{\arabic{subsection}} \newtheorem*{theorem}{Теорема} \newtheorem{corollary}{Следствие}
+%%% Отключение колонтитулов и нумерации
+\pagestyle{empty}
+
+\begin{document}
+% Неориентированные графы, cтепени, изоморфизм.
+\input{1.tex}
+
+% Маршруты, связность, метрика графа.
+\newpage\input{2.tex}
+
+%Самодополнительные графы
+\newpage\input{3.tex}
+
+% Экстремальные графы
+\newpage\input{4.tex}
+
+% Числа Рамсея
+\newpage\input{5.tex}
+
+% Эйлеровы графы
+\newpage\input{6.tex}
+
+%Деревья
+\newpage\input{7.tex}
+
+%Диаметр и радиус графа
+\newpage\input{8.tex}
+
+%Хроматическое число графа
+\newpage\input{9.tex}
+
+%Цикломатическое число графа
+\newpage\input{10.tex}
+
+%Плоские графы, формула Эйлера
+\newpage\input{11.tex}
+
+%Линейно независимые циклы
+\newpage\input{12.tex}
+
+%Хроматическое число плоского графа
+\newpage\input{13.tex}
+
+%Примеры неплоских графов
+\newpage\input{14.tex}
+
+%Ориентированные графы, порядковая функция
+\newpage\input{15.tex}
+
+%Функция Гранди
+\newpage\input{16.tex}
+
+%Внутреннее устойчивое множество
+\newpage\input{17.tex}
+
+%Внешнее устойчивое множество
+\newpage\input{18.tex}
+
+%Ядро графа
+\newpage\input{19.tex}
+
+%Игры на графе, игра НИМ
+\newpage\input{20.tex}
+
+%\subsection{Транспортные сети}
+%\subsection{Теорема Кёнига-Холла}
+%\subsection{Приложения к матрицам}
+%\subsection{Бистохастические матрицы}
+%\subsection{Теорема Биркгофа - фон Неймана}
+
+\end{document}

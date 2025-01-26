@@ -1,6 +1,6 @@
-\subsection{Самодополнительные графы}
+\textbf{Самодополнительные графы}
 
-\begin{wrapfigure}{r}{0.25\textwidth}
+\begin{wrapfigure}{r}{0.3\textwidth}
     \begin{tikzpicture}[scale=0.8]
     % Первый граф (G)
     \begin{scope}[xshift=0cm]
@@ -31,15 +31,13 @@
 \end{wrapfigure}
 
 \noindent\textbf{Дополнение графа} $\overline{G}$ (граф с теми же вершинами, но противоположными связями):
-\begin{itemize}[noitemsep,topsep=0pt]
+\begin{itemize}
 \item Множество вершин: $V(\overline{G}) = V(G)$
 \item Две вершины смежны в $\overline{G}$ $\Leftrightarrow$ несмежны в $G$
 \end{itemize}
 
-\noindent\textbf{Самодополнительный граф} -- граф, изоморфный своему дополнению (структура графа совпадает со структурой его дополнения).
-
 \noindent\textbf{Полный граф} $K_p$ (все вершины попарно соединены):
-\begin{itemize}[noitemsep,topsep=0pt]
+\begin{itemize}
 \item Содержит $p$ вершин
 \item Имеет $\binom{p}{2}$ рёбер
 \item Является регулярным степени $p-1$
@@ -47,3 +45,87 @@
 \end{itemize}
 
 \noindent\textbf{Вполне несвязный граф} $\overline{K_p}$ -- дополнение полного графа (регулярный граф степени 0).
+
+\begin{figure}[h]
+    \begin{tikzpicture}[scale=0.8]
+        \begin{scope}
+        % Define the coordinates for the points
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (2, 0);
+        \coordinate (C) at (0, 2);
+        \coordinate (D) at (2, 2);
+    
+        % Draw the lines
+        \draw[thick] (A) -- (B);
+        \draw[thick] (A) -- (C);
+        \draw[thick] (B) -- (D);
+    
+        % Draw the nodes and add labels
+        \filldraw (A) circle (2pt) node[below left] {\scriptsize a};
+        \filldraw (B) circle (2pt) node[below right] {\scriptsize b};
+        \filldraw (C) circle (2pt) node[above left] {\scriptsize c};
+        \filldraw (D) circle (2pt) node[above right] {\scriptsize d};
+    \end{scope}
+        
+    
+        \begin{scope}[xshift=3.5cm]
+            % Define the coordinates for the points
+            \coordinate (A) at (0, 0);
+            \coordinate (B) at (2, 0);
+            \coordinate (C) at (0, 2);
+            \coordinate (D) at (2, 2);
+        
+            % Draw the lines
+            \draw[thick] (A) -- (D);
+            \draw[thick] (B) -- (C);
+            \draw[thick] (C) -- (D);
+        
+            % Draw the nodes
+            \filldraw (A) circle (2pt) node[below left] {\scriptsize a};
+            \filldraw (B) circle (2pt) node[below right] {\scriptsize b};
+            \filldraw (C) circle (2pt) node[above left] {\scriptsize c};
+            \filldraw (D) circle (2pt) node[above right] {\scriptsize d};
+            \end{scope}
+    
+            \begin{scope}[xshift=7cm]
+                % Define the coordinates for the points
+                \coordinate (A) at (0, 0);
+                \coordinate (B) at (2, 0);
+                \coordinate (C) at (0, 2);
+                \coordinate (D) at (2, 2);
+            
+                % Draw the lines
+                \draw[thick] (B) -- (D);
+                \draw[thick] (A) -- (C);
+                \draw[thick] (C) -- (D);
+            
+                % Draw the nodes
+                \filldraw (A) circle (2pt) node[below left] {\scriptsize b};
+                \filldraw (B) circle (2pt) node[below right] {\scriptsize a};
+                \filldraw (C) circle (2pt) node[above left] {\scriptsize c};
+                \filldraw (D) circle (2pt) node[above right] {\scriptsize d};
+                \end{scope}
+            
+                \begin{scope}[xshift=11.5cm]
+                    % Define the coordinates for the points
+                    \coordinate (A) at (0, 0);
+                    \coordinate (B) at (2, 0);
+                    \coordinate (C) at (0, 2);
+                    \coordinate (D) at (2, 2);
+                
+                    % Draw the lines
+                    \draw[thick] (A) -- (B);
+                    \draw[thick] (A) -- (C);
+                    \draw[thick] (B) -- (D);
+                
+                    % Draw the nodes and add labels
+                    \filldraw (A) circle (2pt) node[below left] {\scriptsize c};
+                    \filldraw (B) circle (2pt) node[below right] {\scriptsize d};
+                    \filldraw (C) circle (2pt) node[above left] {\scriptsize b};
+                    \filldraw (D) circle (2pt) node[above right] {\scriptsize a};
+                \end{scope}
+        
+    \end{tikzpicture}
+    \caption{Граф - Его дополние - переворачиваем - Получили тот же граф}
+\end{figure}
+    

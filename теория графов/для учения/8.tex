@@ -1,4 +1,4 @@
-\subsection{Диаметр и радиус графа}
+\textbf{Диаметр и радиус графа}
 
 \noindent\textbf{Расстояние} $d(u,v)$ между вершинами (длина кратчайшей простой цепи):
 \[
@@ -9,21 +9,21 @@ d(u,v) = \begin{cases}
 \]
 
 \noindent\textbf{Свойства метрики} (для связного графа):
-\begin{enumerate}[noitemsep,topsep=0pt]
+\begin{enumerate}
     \item $d(u,v) \geq 0$; $d(u,v) = 0 \Leftrightarrow u = v$ (неотрицательность)
     \item $d(u,v) = d(v,u)$ (симметричность)
     \item $d(u,v) + d(v,w) \geq d(u,w)$ (неравенство треугольника)
 \end{enumerate}
 
 \noindent\textbf{Термины:}
-\begin{itemize}[noitemsep,topsep=0pt]
+\begin{itemize}
     \item \textit{Геодезическая} -- кратчайшая простая $(u\text{-}v)$-цепь
     \item \textit{Диаметр графа} $d(G)$ -- длина самой длинной геодезической
 \end{itemize}
 
 \noindent\textbf{Степени графа:} 
 Для графа $G$ определяется $G^k$ ($k$-я степень):
-\begin{itemize}[noitemsep,topsep=0pt]
+\begin{itemize}
     \item $V(G^k) = V(G)$ (те же вершины)
     \item Вершины $u,v$ смежны в $G^k \Leftrightarrow d(u,v) \leq k$ в $G$
 \end{itemize}

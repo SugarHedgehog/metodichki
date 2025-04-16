@@ -22,6 +22,7 @@
 \setbeamertemplate{navigation symbols}{}%remove navigation symbols
 \usepackage{minted}
 \usemintedstyle{nord}
+%\setbeamerfont{footline}{size=\large}
 
 \usepackage[dvipsnames]{xcolor}
 \usepackage{verbatim}
@@ -91,7 +92,7 @@
   sharp corners = southeast,
   listing only,
 }
-
+\setbeamerfont{footline}{size=\footnotesize}
 \setbeamertemplate{footline}[frame number]
 
 %%% Polyglossia setup after  (nearly) everything as described in documentation.
@@ -112,7 +113,7 @@
 	\vspace{0.5cm}
 	\large\textcolor{NordBlue}{\textit{Докладчик: Суматохина А.С.}}\\
 	\large\textcolor{NordBlue}{\textit{Научный руководитель: д.ф.-м.н., проф. Семенов Е.М.}}\\
-	\large\textcolor{NordBlue}{\textit{Научный консультант: асп. Авдеев Н.Н}}\\
+	\large\textcolor{NordBlue}{\textit{Научный консультант: асп. Авдеев Н.Н.}}\\
 	\vspace{0.5cm}
 	\begin{center}
 		16 апреля 2025 г.
@@ -138,48 +139,58 @@
 	«Час ЕГЭ» — компьютерный образовательный проект, разрабатываемый с 2013~года при математическом факультете ВГУ в рамках «OpenSource кластера» и предназначенный для помощи учащимся старших классов подготовиться к тестовой части единого государственного экзамена
 \end{frame}
 
-\begin{frame}{Достижения}
-	\begin{itemize}
-		%Там уже было, но я ДОПИСАЛА за год
-		%добавить
-		\item Полностью покрыт открытый банк заданий ФИПИ ЕГЭ профильного уровня по темам:
-		      \begin{itemize}
-			      \item Планиметрия — 26 шаблонов принято
-			      \item Вектора — 18 шаблонов (10 принято, 8 на рецензировании)
-			      \item Стереометрия — 61 шаблонов (8 принято, 53 на рецензировании)
-			      \item Теория вероятности — 10 шаблонов (9 принято, 1  на рецензировании)
-			      \item Теория вероятности (повышенной сложности) — 11 шаблонов принято
-			      \item Производная и первообразная — 17 шаблонов на рецензировании
-		      \end{itemize}
-	\end{itemize}
-\end{frame}
+%\begin{frame}{Достижения}
+%	\begin{itemize}
+%		%Там уже было, но я ДОПИСАЛА за год
+%		%добавить
+%		\item Полностью покрыт открытый банк заданий ФИПИ ЕГЭ профильного уровня по темам:
+%		      \begin{itemize}
+%			      \item Планиметрия — 26 шаблонов принято
+%			      \item Вектора — 18 шаблонов (10 принято, 8 на рецензировании)
+%			      \item Стереометрия — 61 шаблонов (8 принято, 53 на рецензировании)
+%			      \item Теория вероятности — 10 шаблонов (9 принято, 1  на рецензировании)
+%			      \item Теория вероятности (повышенной сложности) — 11 шаблонов принято
+%			      \item Производная и первообразная — 17 шаблонов на рецензировании
+%		      \end{itemize}
+%	\end{itemize}
+%\end{frame}
 
 \begin{frame}{Достижения}
 	\begin{itemize}
-		\item Покрыты темы из ФИПИ ЕГЭ базового уровня по темам:
+		\item Покрыт ОБЗ ФИПИ ЕГЭ базового уровня по темам:
 		      \begin{itemize}
-			      \item Планиметрии — 60 шаблонов на рецензировании
-			      \item Теории вероятности — 11 шаблонов (2  принято, 9 на рецензировании)
+			      \item Планиметрии — 60 шаблонов на внутреннем рецензировании (code review)
+			      \item Теории вероятности — 11 шаблонов (2  принято, 9 на code review)
 		      \end{itemize}
-		\item Покрыты темы из ФИПИ ОГЭ уровня по темам:
+		\item Покрыт ОБЗ ФИПИ ОГЭ по темам:
 		\begin{itemize}
-			\item Планиметрия по теме треугольники — 16 шаблонов проходят рецензирование
-			\item Графики функций — 2 шаблона находятся на рецензировании
+			\item Планиметрия по теме треугольники — 16 шаблонов на code review
 		\end{itemize}
+		\item По теме графики функций — 2 шаблона на code review
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Библиотека для работы с геометрическими фигурами}
 	\begin{itemize}
-		\item Разработана библиотека \texttt{flatten-shape-geometry} и опубликована на NPM со следующими зависимостями:
-		      \texttt{@flatten-js/core}, \texttt{mathjs}, \texttt{radians-degrees} и \texttt{degrees-radians}
-		\item \texttt{flatten-shape-geometry} содержит классы: ShapeWithConnectionMatrix, Angle,  Triangle, Square, Rectangle, Rhombus, Parallelogram, Trapezoid
-		\item В библиотеке пресутсвуют вспомогательные функции для поиска перпендикуляра от точки к отрезку, сдвига координат, нахождения центра описанной окружности и другие
+		\item Разработана библиотека \texttt{flatten-shape-geometry} и опубликована на NPM, зависящая от библиотек:
+		      \texttt{@flatten-js/core}, \texttt{mathjs} и других
+		\item \texttt{flatten-shape-geometry} содержит классы: ShapeWithConnectionMatrix, Angle,  Triangle, Quadrilateral, Square, Rectangle, Rhombus, Parallelogram, Trapezoid
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Библиотека для работы с геометрическими фигурами}
+	\begin{itemize}
+		\item В библиотеке пресутсвуют вспомогательные функции:
+		\begin{itemize}
+			\item Нахождения перпендикуляра опущенного из точки на отрезок
+			\item Сдвига координат
+			\item Нахождения центра описанной окружности
+		\end{itemize}
 		\item Для класса Circle из \texttt{@flatten-js/core} написаны методы:
 		      \begin{itemize}
 			      \item Получения точки на окружности по заданному углу
 			      \item Построения отрезков: радиусов, диаметров и хорд
-			      \item Построения касательных (отрезков) из точки к окружности, заданной длины
+			      \item Построения касательных из точки к окружности
 		      \end{itemize}
 	\end{itemize}
 \end{frame}
@@ -215,34 +226,34 @@
 			\node[squarednodeclass](square)  	[right=of trapezoid]  {Square};
 
 			%Edges
-			\draw[->] (angle) --(vector) ;
-			\draw[->] (angle) -- (segment);
-			\draw[->] (angle) -- (point);
+			\draw[->, dashed] (angle) --(vector) ;
+			\draw[->, dashed] (angle) -- (segment);
+			\draw[->, dashed] (angle) -- (point);
 
-			\draw[->] (general) --(line) ;
-			\draw[->] (general) -- (segment);
-			\draw[->] (general) -- (point);
+			\draw[->, dashed] (general) --(line) ;
+			\draw[->, dashed] (general) -- (segment);
+			\draw[->, dashed] (general) -- (point);
 
 			\draw[->] (swcm) -- (polygon);
 			\draw[->] (triangle) -- (swcm);
-			\draw[->] (triangle) -- (angle);
+			\draw[->, dashed] (triangle) -- (angle);
 			\draw[->] (quadrilateral) -- (swcm);
-			\draw[->] (quadrilateral) -- (angle);
+			\draw[->, dashed] (quadrilateral) -- (angle);
 
 			\draw[->] (rhombus) -- (quadrilateral);
 			\draw[->] (trapezoid) -- (quadrilateral);
 			\draw[->] (rectangle) -- (quadrilateral);
 			\draw[->] (square) -- (quadrilateral);
 
-			\draw[->] (ecm) -- (circle);
-			\draw[->] (ecm) -- (segment);
+			\draw[->, dashed] (ecm) -- (circle);
+			\draw[->, dashed] (ecm) -- (segment);
 
 		\end{tikzpicture}
 	\end{center}
 	SWCM - ShapeWithConnectionMatrix; \\ ECM - Extra Circle Methods;
 \end{frame}
 
-\begin{frame}[fragile]{Раннее успешное использование нейросетей для генрации кода}
+\begin{frame}[fragile]{Раннее успешное использование нейросетей для генерации кода}
 	\begin{leftBox}
 		write a 2D to 3D projector in JS without using libraries. input:  point = \{x,y,z\}, camera= \{x,y,z, angleX, angleY, angleZ, scale\}
 	\end{leftBox}
@@ -293,7 +304,7 @@
 
 \begin{frame}[fragile]{Тестирование метода Circle.tangentsFromPoint при помощи DeepSeek R1}
 	\begin{leftBox}
-		Напишит тесты для метода tangentsFromPoint для окружности с ценром в $(0,0)$, радиусом $5$ и точкой $(10, 0)$
+		Напиши тесты для метода tangentsFromPoint для окружности с центром в $(0,0)$, радиусом $5$ и точкой $(10, 0)$
 	\end{leftBox}
 	
 	\begin{rightBox}
@@ -324,6 +335,15 @@
 		\bibitem{egemath} Открытый банк заданий ЕГЭ. – URL: https://fipi.ru/ege/otkrytyy-bank-zadaniy-ege
 		\bibitem{ogemath} Открытый банк заданий ОГЭ – URL:  https://fipi.ru/oge/otkrytyy-bank-zadaniy-oge
 	\end{thebibliography}
+\end{frame}
+
+\begin{frame}{Итоги}
+	\begin{itemize}
+		\item Нейросети способны генерировать простейшие тесты без уточнений от программиста
+		\item При усложнении задачи качество тестов существенно падает
+		\item Нейросети не могут полностью заменить программиста в написании тестов
+		\item Требуется экспертная оценка и доработка сгенерированных тестов человеком
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
